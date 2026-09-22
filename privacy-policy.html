@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - MarryWithDignity</title>
+  <meta name="description" content="Privacy Policy of MarryWithDignity. Learn how we safeguard donor information and protect the dignity and privacy of beneficiary orphan and needy brides in Pakistan.">
+  <link rel="canonical" href="https://marrywithdignity.org/privacy-policy.html">
+
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#065f46">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Nastaliq Urdu -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/rareui.css">
+  <link rel="stylesheet" href="assets/language.css">
+  
+  <style>
+    :root {
+      --primary-900: #064e3b;
+      --primary-800: #065f46;
+      --primary-700: #047857;
+      --primary-600: #059669;
+      --primary-500: #10b981;
+      --primary-100: #d1fae5;
+      --primary-50: #ecfdf5;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 6px 20px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.12);
+      --shadow-primary: 0 8px 25px -4px rgba(4, 120, 87, 0.28);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--slate-700);
+      background-color: var(--slate-50);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition-fast);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+      z-index: 1000;
+      padding: 14px 0;
+      width: 100%;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+            .nav-logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 2px 5px rgba(6, 78, 59, 0.12));
+    }
+
+    .nav-logo-link:hover .nav-logo {
+      transform: scale(1.06);
+    }
+
+    .nav-logo-brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.15;
+    }
+
+    .nav-logo-title {
+      font-size: 1.30rem;
+      font-weight: 800;
+      color: var(--primary-900);
+      letter-spacing: -0.35px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-logo-title .text-gold {
+      color: var(--accent-gold-dark, #b45309);
+    }
+
+    .nav-logo-tagline {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--primary-700);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--slate-700);
+      padding: 6px 2px;
+      position: relative;
+      white-space: nowrap;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-700);
+    }
+
+    .nav-cta-btn {
+      background: var(--primary-700);
+      color: var(--white) !important;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 14px rgba(4, 120, 87, 0.28);
+      transition: all var(--transition-normal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .nav-cta-btn:hover {
+      background: var(--primary-800);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(4, 120, 87, 0.38);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-800);
+      font-size: 1.35rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-menu-toggle:hover, .mobile-menu-toggle:focus {
+      background: var(--primary-50);
+      border-color: var(--primary-200);
+      color: var(--primary-700);
+    }
+
+    /* HEADER BANNER */
+    .page-hero {
+      background: radial-gradient(100% 100% at 50% 0%, #ecfdf5 0%, #f8fafc 100%);
+      padding: 60px 0 45px 0;
+      text-align: center;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .page-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      color: var(--primary-700);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--slate-900);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+      color: var(--slate-600);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* CONTENT WRAPPER */
+    .policy-container {
+      max-width: 880px;
+      margin: 50px auto 80px auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 50px 45px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .policy-section {
+      margin-bottom: 40px;
+    }
+
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .policy-section p {
+      font-size: 1rem;
+      color: var(--slate-600);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .policy-section ul {
+      list-style: none;
+      margin: 14px 0 18px 0;
+    }
+
+    .policy-section ul li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+      color: var(--slate-700);
+      line-height: 1.6;
+    }
+
+    .policy-section ul li::before {
+      content: "•";
+      color: var(--primary-600);
+      font-weight: 800;
+      font-size: 1.4rem;
+      position: absolute;
+      left: 6px;
+      top: -2px;
+    }
+
+    .highlight-card {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin: 20px 0;
+      color: var(--primary-900);
+      font-size: 0.98rem;
+    }
+
+    .highlight-card strong {
+      color: var(--primary-800);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--slate-900);
+      color: var(--slate-400);
+      padding: 60px 0 30px 0;
+      font-size: 0.92rem;
+      border-top: 1px solid var(--slate-800);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    .footer-links h5 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--slate-800);
+      font-size: 0.86rem;
+    }
+
+    /* RESPONSIVE */
+    @keyframes navSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .navbar { padding: 10px 0; }
+      .mobile-menu-toggle { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px 24px 24px 24px;
+        border-bottom: 2px solid var(--primary-600);
+        box-shadow: var(--shadow-lg);
+        display: none;
+        z-index: 1001;
+      }
+
+      .nav-links.active {
+        display: flex;
+        animation: navSlideDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid var(--slate-100);
+      }
+      .nav-links li:last-child {
+        border-bottom: none;
+      }
+      .nav-links a {
+        display: block;
+        padding: 13px 4px;
+        font-size: 1.02rem;
+      }
+      .nav-links a.active::after {
+        display: none;
+      }
+      .nav-cta-btn {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 14px;
+        padding: 13px 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding-left: 16px; padding-right: 16px; }
+      .nav-logo { height: 38px; }
+      .nav-logo-title { font-size: 1.08rem; }
+      .nav-logo-tagline { font-size: 0.54rem; letter-spacing: 0.8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo-link">
+        <img src="images/logo-icon.svg" alt="MarryWithDignity Logo" class="nav-logo">
+        <div class="nav-logo-brand">
+          <span class="nav-logo-title">Marry<span class="text-gold">With</span>Dignity</span>
+          <span class="nav-logo-tagline">Marriage Assistance Charity</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span>☰</span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Mission</a></li>
+        <li><a href="donate.html">Sponsor a Bride</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-lang-item">
+          <div class="lang-selector-wrapper"></div>
+        </li>
+        <li><a href="donate.html" class="nav-cta-btn">Donate Zakat →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-tag">🛡️ TRUST &amp; DATA SECURITY</div>
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-subtitle">Our sacred commitment to donor confidentiality and the absolute dignity &amp; privacy of orphan and impoverished families across Pakistan.</p>
+    </div>
+  </header>
+
+  <!-- MAIN POLICY CONTENT -->
+  <main class="container">
+    <div class="policy-container">
+      
+      <div class="policy-section">
+        <h2>1. Introduction &amp; Core Philosophy</h2>
+        <p>
+          At <strong>MarryWithDignity</strong> ("MarryWithDignity", "we", "our", or "us"), we hold data privacy, financial integrity, and human dignity as core Islamic values. This Privacy Policy governs the collection, use, and safeguarding of information provided by donors, partners, and applicants.
+        </p>
+        <p>
+          We operate on a strict <strong>"Dignity First"</strong> charter: while we provide transparent field receipts and wholesale vendor invoices to our donors, we <em>never</em> compromise the identity, dignity, or modesty of the brides and families we support.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2>2. Beneficiary Privacy &amp; Zero Public Exposure Policy</h2>
+        <div class="highlight-card">
+          <strong>Sad-Faisad Izzat-e-Nafs (Zero Exploitative Media):</strong> We maintain a strict policy of never photographing or video-recording vulnerable brides or their families for social media promotion.
+        </div>
+        <p>Under our operational charter:</p>
+        <ul>
+          <li>All beneficiaries are identified solely by anonymized Case IDs (e.g. <code>DW-KHI-104</code>) in public audits.</li>
+          <li>CNIC numbers and family residential addresses collected during our female verification visits are stored in encrypted databases accessible only to the verification committee.</li>
+          <li>Physical handover (Tamleek) is conducted privately inside homes or designated distribution centers without public fanfare or degrading ceremonies.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>3. Donor Information Collection &amp; Use</h2>
+        <p>When you make a donation or contact us, we may collect the following details:</p>
+        <ul>
+          <li><strong>Contact Information:</strong> Name, email address, phone number (for WhatsApp receipt confirmation and tax acknowledgments).</li>
+          <li><strong>Donation Details:</strong> Package tier chosen, sponsorship amount, currency (PKR, USD, GBP, CAD, AUD), and donation category (Zakat, Sadaqah Jariyah, General Support).</li>
+          <li><strong>Payment Information:</strong> For bank and wallet transfers, transaction reference IDs or deposit slips sent via WhatsApp. <em>Note: For card payments processed via LaunchGood or Stripe, your full credit card number is never stored on our servers.</em></li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>4. How We Use Donor Data</h2>
+        <p>Your information is used strictly for the following purposes:</p>
+        <ul>
+          <li>Issuing official donation receipts and tracking Zakat allocation.</li>
+          <li>Providing case updates and vendor procurement logs matching your Case ID.</li>
+          <li>Responding to your inquiries and support messages.</li>
+          <li>Complying with legal, tax, and Islamic charity audit obligations.</li>
+        </ul>
+        <p><strong>We will NEVER sell, rent, or trade your personal data to third-party marketing companies.</strong></p>
+      </div>
+
+      <div class="policy-section">
+        <h2>5. Financial Transparency &amp; Open Receipts</h2>
+        <p>
+          To maintain 100% financial transparency without violating privacy, we upload itemized wholesale vendor receipts (e.g., invoices for cookware sets, sewing machines, bedding, and ration packs) labeled with Case IDs. Donors can independently verify market pricing and procurement without exposing recipient faces or home addresses.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2>6. Data Security &amp; Encryption</h2>
+        <p>
+          We implement rigorous technical and administrative security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. All online communications are protected with SSL/TLS 256-bit encryption.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2>7. Contact Our Privacy Officer</h2>
+        <p>
+          If you have any questions about this Privacy Policy, your personal data, or our verification practices, please contact us:
+        </p>
+        <ul>
+          <li><strong>Email:</strong> privacy@marrywithdignity.org / contact@marrywithdignity.org</li>
+          <li><strong>WhatsApp Support:</strong> +92 344 2001535 / +92 300 1801535</li>
+          <li><strong>Address:</strong> MarryWithDignity, Lahore / Karachi, Pakistan</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--slate-200); font-size: 0.88rem; color: var(--slate-500); text-align: center;">
+        Last Updated: September 2026 • MarryWithDignity
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4 style="color: var(--white); font-size: 1.25rem; font-weight: 800;">💍 MarryWithDignity</h4>
+          <p>
+            Dedicated to providing essential household kits to impoverished and orphan brides across Pakistan with full field transparency and absolute dignity.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Mission</a></li>
+            <li><a href="donate.html">Sponsor a Bride</a></li>
+            <li><a href="stories.html">Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Trust &amp; Legal</h5>
+          <ul>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Transparency Charter</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 MarryWithDignity. 100% Tax-Receiptable &amp; Zakat/Sadaqah Eligible.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isActive = navLinks.classList.toggle('active');
+          mobileMenuBtn.innerHTML = isActive ? '<span>✕</span>' : '<span>☰</span>';
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+          }
+        });
+      }
+    });
+  </script>
+  <script src="assets/language.js"></script>
+  <script src="assets/rareui.js"></script>
+</body>
+</html>

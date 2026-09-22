@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="vGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="vGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="vGoldLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Center Emblem (Scaled in 500x500) -->
+  <g transform="translate(100, 20) scale(0.60)">
+    <!-- Top Sparkles -->
+    <path d="M 256 30 Q 256 65 230 75 Q 256 85 256 120 Q 256 85 282 75 Q 256 65 256 30 Z" fill="url(#vGold)"/>
+    <path d="M 195 65 Q 195 82 182 88 Q 195 94 195 110 Q 195 94 208 88 Q 195 82 195 65 Z" fill="url(#vGold)" opacity="0.8"/>
+    <path d="M 317 65 Q 317 82 304 88 Q 317 94 317 110 Q 317 94 330 88 Q 317 82 317 65 Z" fill="url(#vGold)" opacity="0.8"/>
+
+    <!-- Rings -->
+    <ellipse cx="205" cy="205" rx="68" ry="68" fill="none" stroke="url(#vGold)" stroke-width="20" stroke-linecap="round"/>
+    <ellipse cx="307" cy="205" rx="68" ry="68" fill="none" stroke="url(#vGold)" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 158 175 A 68 68 0 0 1 205 137" fill="none" stroke="url(#vGoldLight)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 354 175 A 68 68 0 0 0 307 137" fill="none" stroke="url(#vGoldLight)" stroke-width="7" stroke-linecap="round"/>
+    <!-- Heart in Center -->
+    <path d="M 256 235 C 256 235, 230 210, 230 194 C 230 182, 241 176, 256 190 C 271 176, 282 182, 282 194 C 282 210, 256 235, 256 235 Z" fill="url(#vGold)"/>
+
+    <!-- Hands -->
+    <g fill="url(#vGreen)">
+      <path d="M 85 220 C 85 198, 106 198, 108 220 C 114 260, 138 325, 180 372 C 208 404, 244 426, 256 432 C 246 448, 230 450, 212 440 C 126 398, 74 318, 65 250 C 62 230, 85 220, 85 220 Z"/>
+      <path d="M 118 206 C 118 190, 136 190, 138 208 C 144 246, 165 300, 201 346 C 187 326, 172 286, 164 246 C 162 230, 140 230, 138 246 C 133 280, 147 320, 165 352 C 138 312, 122 258, 118 206 Z"/>
+      <path d="M 427 220 C 427 198, 406 198, 404 220 C 398 260, 374 325, 332 372 C 304 404, 268 426, 256 432 C 266 448, 282 450, 300 440 C 386 398, 438 318, 447 250 C 450 230, 427 220, 427 220 Z"/>
+      <path d="M 394 206 C 394 190, 376 190, 374 208 C 368 246, 347 300, 311 346 C 325 326, 340 286, 348 246 C 350 230, 372 230, 374 246 C 379 280, 365 320, 347 352 C 374 312, 390 258, 394 206 Z"/>
+    </g>
+  </g>
+
+  <!-- Typography -->
+  <g text-anchor="middle" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+    <!-- Main Title -->
+    <text x="250" y="360" font-size="38" font-weight="800" fill="#064E3B" letter-spacing="-0.5px">
+      Marry<tspan fill="#D97706">With</tspan>Dignity
+    </text>
+    
+    <!-- Subtitle / Tagline -->
+    <text x="250" y="396" font-size="14.5" font-weight="700" fill="#047857" letter-spacing="4px">
+      MARRIAGE ASSISTANCE CHARITY
+    </text>
+
+    <!-- Badge Line -->
+    <rect x="150" y="420" width="200" height="2.5" rx="1" fill="url(#vGold)" opacity="0.6"/>
+    
+    <!-- Secondary Note -->
+    <text x="250" y="445" font-size="13" font-weight="600" fill="#D97706" letter-spacing="2px">
+      100% ZAKAT &amp; SADAQAH ELIGIBLE
+    </text>
+  </g>
+</svg>

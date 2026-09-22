@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="50%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="ogGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="30%" stop-color="#FBBF24"/>
+      <stop offset="70%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  <rect width="1160" height="590" x="20" y="20" rx="30" fill="none" stroke="url(#ogGold)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Center Emblem -->
+  <g transform="translate(600, 210) translate(-90, -90) scale(0.35)">
+    <!-- Top Sparkles -->
+    <path d="M 256 50 Q 256 80 236 88 Q 256 96 256 126 Q 256 96 276 88 Q 256 80 256 50 Z" fill="url(#ogGold)"/>
+    <path d="M 205 80 Q 205 95 194 100 Q 205 105 205 120 Q 205 105 216 100 Q 205 95 205 80 Z" fill="url(#ogGold)" opacity="0.85"/>
+    <path d="M 307 80 Q 307 95 296 100 Q 307 105 307 120 Q 307 105 318 100 Q 307 95 307 80 Z" fill="url(#ogGold)" opacity="0.85"/>
+
+    <!-- Rings -->
+    <ellipse cx="214" cy="195" rx="60" ry="60" fill="none" stroke="url(#ogGold)" stroke-width="19" stroke-linecap="round"/>
+    <ellipse cx="298" cy="195" rx="60" ry="60" fill="none" stroke="url(#ogGold)" stroke-width="19" stroke-linecap="round"/>
+    <!-- Heart -->
+    <path d="M 256 222 C 256 222, 235 200, 235 186 C 235 176, 244 170, 256 182 C 268 170, 277 176, 277 186 C 277 200, 256 222, 256 222 Z" fill="url(#ogGold)"/>
+
+    <!-- Hands -->
+    <g fill="#FFFFFF">
+      <path d="M 102 210 C 102 192, 120 192, 122 210 C 127 245, 148 302, 184 344 C 208 372, 240 392, 256 400 C 248 412, 234 414, 218 406 C 142 370, 95 298, 86 238 C 84 220, 102 210, 102 210 Z"/>
+      <path d="M 130 198 C 130 184, 146 184, 148 200 C 153 234, 172 282, 204 322 C 192 304, 178 268, 172 232 C 170 218, 150 218, 148 232 C 144 262, 156 298, 172 328 C 148 292, 134 244, 130 198 Z"/>
+      <path d="M 410 210 C 410 192, 392 192, 390 210 C 385 245, 364 302, 328 344 C 304 372, 272 392, 256 400 C 264 412, 278 414, 294 406 C 370 370, 417 298, 426 238 C 428 220, 410 210, 410 210 Z"/>
+      <path d="M 382 198 C 382 184, 366 184, 364 200 C 359 234, 340 282, 308 322 C 320 304, 334 268, 340 232 C 342 218, 362 218, 364 232 C 368 262, 356 298, 340 328 C 364 292, 378 244, 382 198 Z"/>
+    </g>
+  </g>
+
+  <!-- Typography -->
+  <g text-anchor="middle" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+    <text x="600" y="380" font-size="58" font-weight="800" fill="#FFFFFF" letter-spacing="-1px">
+      Marry<tspan fill="#FBBF24">With</tspan>Dignity
+    </text>
+    <text x="600" y="430" font-size="20" font-weight="700" fill="#A7F3D0" letter-spacing="6px">
+      SPONSOR A BRIDE • 100% ZAKAT &amp; SADAQAH
+    </text>
+    <text x="600" y="480" font-size="16" font-weight="500" fill="#E2E8F0" letter-spacing="1px" opacity="0.9">
+      Transparent Marriage Assistance for Impoverished &amp; Orphan Daughters in Pakistan
+    </text>
+  </g>
+</svg>

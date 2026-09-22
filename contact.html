@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - MarryWithDignity</title>
+  <meta name="description" content="Contact MarryWithDignity. Case submissions, donor inquiries, verification status, and WhatsApp support in Pakistan.">
+  <link rel="canonical" href="https://marrywithdignity.org/contact.html">
+
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#065f46">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/rareui.css">
+  <link rel="stylesheet" href="assets/language.css">
+  
+  <style>
+    :root {
+      --primary-900: #064e3b;
+      --primary-800: #065f46;
+      --primary-700: #047857;
+      --primary-600: #059669;
+      --primary-500: #10b981;
+      --primary-100: #d1fae5;
+      --primary-50: #ecfdf5;
+      
+      --accent-gold: #f59e0b;
+      --accent-gold-dark: #b45309;
+      
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      
+      --whatsapp-green: #25d366;
+
+      --shadow-sm: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 6px 20px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.12);
+      --shadow-primary: 0 8px 25px -4px rgba(4, 120, 87, 0.28);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--slate-700);
+      background-color: var(--slate-50);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition-fast);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .section-padding { padding: 80px 0; }
+    .bg-white { background-color: var(--white); }
+    .bg-light { background-color: var(--slate-50); }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+      z-index: 1000;
+      padding: 14px 0;
+      width: 100%;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 2px 5px rgba(6, 78, 59, 0.12));
+    }
+
+    .nav-logo-link:hover .nav-logo {
+      transform: scale(1.06);
+    }
+
+    .nav-logo-brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.15;
+    }
+
+    .nav-logo-title {
+      font-size: 1.30rem;
+      font-weight: 800;
+      color: var(--primary-900);
+      letter-spacing: -0.35px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-logo-title .text-gold {
+      color: var(--accent-gold-dark, #b45309);
+    }
+
+    .nav-logo-tagline {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--primary-700);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--slate-700);
+      padding: 6px 2px;
+      position: relative;
+      white-space: nowrap;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-700);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary-600);
+      border-radius: 2px;
+    }
+
+    .nav-cta-btn {
+      background: var(--primary-700);
+      color: var(--white) !important;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 14px rgba(4, 120, 87, 0.28);
+      transition: all var(--transition-normal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .nav-cta-btn:hover {
+      background: var(--primary-800);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(4, 120, 87, 0.38);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-800);
+      font-size: 1.35rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-menu-toggle:hover, .mobile-menu-toggle:focus {
+      background: var(--primary-50);
+      border-color: var(--primary-200);
+      color: var(--primary-700);
+    }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: radial-gradient(100% 100% at 50% 0%, #ecfdf5 0%, #f8fafc 100%);
+      padding: 70px 0 55px 0;
+      text-align: center;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .page-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      color: var(--primary-700);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--slate-900);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .page-subtitle {
+      color: var(--slate-600);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      max-width: 780px;
+      margin: 0 auto 24px auto;
+      line-height: 1.65;
+    }
+
+    /* CONTACT GRID */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-card p {
+      font-size: 0.98rem;
+      color: var(--slate-600);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--slate-800);
+      margin-bottom: 8px;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-300);
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-size: 0.98rem;
+      outline: none;
+      transition: all var(--transition-fast);
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--primary-600);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--primary-700);
+      color: var(--white);
+      border: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 15px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      box-shadow: var(--shadow-primary);
+      transition: all var(--transition-normal);
+    }
+
+    .btn-submit:hover {
+      background: var(--primary-800);
+      transform: translateY(-2px);
+    }
+
+    /* INFO CARDS (RIGHT COLUMN) */
+    .info-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .info-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary-700);
+    }
+
+    .info-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .info-card p {
+      font-size: 0.95rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
+
+    .whatsapp-direct-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--whatsapp-green);
+      color: var(--white) !important;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      margin-top: 10px;
+      transition: all var(--transition-fast);
+    }
+
+    .whatsapp-direct-btn:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--slate-900);
+      color: var(--slate-400);
+      padding: 60px 0 30px 0;
+      font-size: 0.92rem;
+      border-top: 1px solid var(--slate-800);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    .footer-links h5 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--slate-800);
+      font-size: 0.86rem;
+    }
+
+    /* RESPONSIVE */
+    @keyframes navSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .navbar { padding: 10px 0; }
+      .mobile-menu-toggle { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px 24px 24px 24px;
+        border-bottom: 2px solid var(--primary-600);
+        box-shadow: var(--shadow-lg);
+        display: none;
+        z-index: 1001;
+      }
+
+      .nav-links.active {
+        display: flex;
+        animation: navSlideDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid var(--slate-100);
+      }
+      .nav-links li:last-child {
+        border-bottom: none;
+      }
+      .nav-links a {
+        display: block;
+        padding: 13px 4px;
+        font-size: 1.02rem;
+      }
+      .nav-links a.active::after {
+        display: none;
+      }
+      .nav-cta-btn {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 14px;
+        padding: 13px 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding-left: 16px; padding-right: 16px; }
+      .nav-logo { height: 38px; }
+      .nav-logo-title { font-size: 1.08rem; }
+      .nav-logo-tagline { font-size: 0.54rem; letter-spacing: 0.8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo-link">
+        <img src="images/logo-icon.svg" alt="MarryWithDignity Logo" class="nav-logo">
+        <div class="nav-logo-brand">
+          <span class="nav-logo-title">Marry<span class="text-gold">With</span>Dignity</span>
+          <span class="nav-logo-tagline">Marriage Assistance Charity</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span>☰</span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Mission</a></li>
+        <li><a href="donate.html">Sponsor a Bride</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li class="nav-lang-item">
+          <div class="lang-selector-wrapper"></div>
+        </li>
+        <li><a href="donate.html" class="nav-cta-btn">Donate Zakat →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-tag">💬 DIRECT SUPPORT &amp; INQUIRIES</div>
+      <h1 class="page-title">Get in Touch with MarryWithDignity</h1>
+      <p class="page-subtitle">
+        Have questions regarding case verification, Zakat eligibility, wedding kit sponsorships, or need to submit a deserving case? We are here to assist.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT SECTION -->
+  <main class="container section-padding">
+    <div class="contact-grid">
+
+      <!-- LEFT: INQUIRY FORM -->
+      <div class="contact-form-card">
+        <h3>Send Us a Message</h3>
+        <p>Fill in your details below and our coordination team will respond within 24 hours.</p>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" name="name" required placeholder="e.g. Tariq Mahmood" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" name="email" required placeholder="name@example.com" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp Number</label>
+            <input type="tel" name="phone" placeholder="+92 3XX XXXXXXX" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Inquiry Type</label>
+            <select name="subject" class="form-select">
+              <option value="donation_inquiry">Donation &amp; Sponsorship Inquiry</option>
+              <option value="case_submission">Submit a Deserving Orphan Case</option>
+              <option value="zakat_verification">Zakat &amp; Tamleek Audit Questions</option>
+              <option value="other">General Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Message *</label>
+            <textarea name="message" rows="4" required placeholder="Write your message or case details here..." class="form-textarea"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Send Message 🚀
+          </button>
+        </form>
+      </div>
+
+      <!-- RIGHT: DIRECT CONTACT CHANNELS -->
+      <div class="info-stack">
+
+        <!-- CARD 1: WHATSAPP -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-card-icon">📱</div>
+            <h4>WhatsApp Donor Support</h4>
+          </div>
+          <p>
+            Instant verification support, case status tracking, and deposit slip receipt confirmation.
+          </p>
+          <div style="font-weight: 800; font-size: 1.1rem; color: var(--primary-700); margin: 6px 0;">
+            +92 344 2001535 / +92 300 1801535
+          </div>
+          <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20have%20an%20inquiry%20regarding%20MarryWithDignity." target="_blank" rel="noopener noreferrer" class="whatsapp-direct-btn">
+            Chat on WhatsApp →
+          </a>
+        </div>
+
+        <!-- CARD 2: CASE SUBMISSIONS -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-card-icon">📋</div>
+            <h4>Submitting a Deserving Case?</h4>
+          </div>
+          <p>
+            Local community leaders, Imams, and family representatives can submit orphan or destitute cases. Our female field audit team will arrange a confidential home visit.
+          </p>
+          <div style="font-size: 0.88rem; color: var(--primary-800); font-weight: 700; margin-top: 8px;">
+            Required: CNIC copies of guardian &amp; bride, Death certificate of father (for orphans).
+          </div>
+        </div>
+
+        <!-- CARD 3: OPERATING REGIONS -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-card-icon">📍</div>
+            <h4>Field Operations &amp; Hubs</h4>
+          </div>
+          <p>
+            <strong>Central Hub:</strong> Lahore, Punjab<br>
+            <strong>Southern Hub:</strong> Karachi, Sindh<br>
+            <strong>Regional Teams:</strong> Faisalabad, Multan, Rawalpindi
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4 style="color: var(--white); font-size: 1.25rem; font-weight: 800;">💍 MarryWithDignity</h4>
+          <p>
+            Dedicated to providing essential household kits to impoverished and orphan brides across Pakistan with full field transparency and absolute dignity.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Mission</a></li>
+            <li><a href="donate.html">Sponsor a Bride</a></li>
+            <li><a href="stories.html">Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Trust &amp; Legal</h5>
+          <ul>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Transparency Charter</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 MarryWithDignity. 100% Tax-Receiptable &amp; Zakat/Sadaqah Eligible.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isActive = navLinks.classList.toggle('active');
+          mobileMenuBtn.innerHTML = isActive ? '<span>✕</span>' : '<span>☰</span>';
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+          }
+        });
+      }
+    });
+  </script>
+  <script src="assets/language.js"></script>
+  <script src="assets/rareui.js"></script>
+</body>
+</html>
