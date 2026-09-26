@@ -887,7 +887,11 @@
       color: var(--slate-900);
     }
 
-    .custom-donate-card.highlight-inject {
+    .custom-donate-card.highlight-inject,
+    .payment-container-box.highlight-inject,
+    .zakat-calc-card.highlight-inject,
+    #payment-methods.highlight-inject,
+    #zakat-calculator.highlight-inject {
       animation: injectCardGlow 2s ease-in-out;
     }
 
@@ -1955,6 +1959,750 @@
       .preset-btn { padding: 8px 16px; font-size: 0.88rem; }
       .whatsapp-btn { width: 100%; font-size: 0.98rem; padding: 14px 20px; }
     }
+
+    /* ========================================================
+       HERO & INVENTORY SHOWCASE STYLES (ANIMATED SLIDESHOW)
+       ======================================================== */
+    .hero-showcase-box {
+      max-width: 960px;
+      margin: 0 auto 36px auto;
+      background: var(--white);
+      border: 1px solid var(--primary-200);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(16, 185, 129, 0.12);
+      transition: all var(--transition-normal);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-showcase-box:hover {
+      border-color: var(--primary-400);
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.18);
+    }
+    .hero-showcase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .hero-showcase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: var(--primary-800);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid #a7f3d0;
+      transition: all 0.3s ease;
+    }
+    .hero-toggle-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .hero-toggle-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .hero-toggle-btn.active {
+      background: var(--primary-600, #10b981);
+      color: #ffffff;
+      border-color: var(--primary-700, #059669);
+      box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+    }
+
+    /* Progress bar */
+    .hero-slideshow-progress-wrap {
+      width: 100%;
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-slideshow-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #10b981, #059669, #d97706);
+      border-radius: 4px;
+      transition: width 0.05s linear;
+    }
+
+    /* Viewport for full size animated slides */
+    .hero-slideshow-viewport {
+      position: relative;
+      width: 100%;
+      height: 460px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #0f172a;
+      cursor: pointer;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero-slideshow-viewport {
+        height: 300px;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-slideshow-viewport {
+        height: 240px;
+      }
+    }
+
+    /* Slide elements with zoom & fade animation */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.05);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    .hero-slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 3.8s ease-out;
+    }
+    .hero-slide.active .hero-slide-img {
+      transform: scale(1.03);
+    }
+
+    .hero-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.3) 55%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 24px 28px;
+      color: #ffffff;
+      gap: 16px;
+    }
+
+    .hero-slide-info {
+      text-align: left;
+      max-width: 75%;
+    }
+    .hero-slide-chip {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.95);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .hero-slide-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      line-height: 1.3;
+    }
+    .hero-slide-desc {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin: 0;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /* Floating Navigation Arrows */
+    .hero-slide-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      color: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      font-size: 1.25rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+    .hero-slide-arrow:hover {
+      background: #10b981;
+      color: #ffffff;
+      border-color: #10b981;
+      transform: translateY(-50%) scale(1.12);
+    }
+    .arrow-prev {
+      left: 16px;
+    }
+    .arrow-next {
+      right: 16px;
+    }
+
+    /* Slide Navigation Pills / Dots */
+    .hero-slideshow-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .hero-nav-pill:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+    .hero-nav-pill.active {
+      background: #ecfdf5;
+      border-color: #10b981;
+      color: #047857;
+      box-shadow: 0 3px 10px rgba(16, 185, 129, 0.18);
+    }
+    .pill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #94a3b8;
+      transition: all 0.25s ease;
+    }
+    .hero-nav-pill.active .pill-dot {
+      background: #10b981;
+      transform: scale(1.35);
+    }
+
+    .hero-showcase-img-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-height: 440px;
+      background: #f1f5f9;
+    }
+    .hero-showcase-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition-normal);
+    }
+    .hero-showcase-box:hover .hero-showcase-img {
+      transform: scale(1.02);
+    }
+    .hero-showcase-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.45) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0.9;
+      transition: opacity var(--transition-fast);
+    }
+    .hero-showcase-box:hover .hero-showcase-overlay {
+      opacity: 1;
+    }
+    .zoom-btn {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--slate-900);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-sm);
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .zoom-btn:hover {
+      background: #ffffff;
+      transform: scale(1.05);
+    }
+    .hero-showcase-caption {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+      padding: 0 4px;
+    }
+
+    /* INVENTORY DEDICATED SECTION STYLES */
+    .inventory-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .inventory-image-card {
+      cursor: pointer;
+    }
+    .inventory-img-container {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+    }
+    .inventory-main-img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition-normal);
+    }
+    .inventory-image-card:hover .inventory-main-img {
+      transform: scale(1.03);
+    }
+    .inventory-badge-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(16, 185, 129, 0.95);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(4px);
+    }
+    .inventory-hover-hint {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(15, 23, 42, 0.82);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(4px);
+    }
+    .inventory-info-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .inventory-pillar-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--accent-gold-light);
+      color: var(--accent-gold-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.03em;
+    }
+    .inventory-heading {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.25;
+    }
+    .inventory-lead {
+      color: var(--slate-600);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .inventory-items-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .inventory-item-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .inventory-item-box .item-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .inventory-item-box strong {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--slate-800);
+      margin-bottom: 2px;
+    }
+    .inventory-item-box p {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      line-height: 1.4;
+      margin: 0;
+    }
+    .inventory-cta-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    @media (max-width: 900px) {
+      .inventory-card-grid {
+        grid-template-columns: 1fr;
+      }
+      .inventory-items-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-dual-grid, .hero-triple-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .betiyan-banner-grid, .campaign-banners-grid {
+        grid-template-columns: 1fr !important;
+        padding: 20px !important;
+      }
+    }
+
+    /* LIGHTBOX MODAL STYLES */
+    .image-lightbox-card {
+      max-width: 860px;
+      width: 95%;
+      padding: 24px;
+      text-align: center;
+    }
+    .image-lightbox-header {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .image-lightbox-badge {
+      display: inline-block;
+      background: #ecfdf5;
+      color: var(--primary-800);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 6px;
+    }
+    .image-lightbox-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin: 0;
+    }
+    .image-lightbox-body {
+      background: #0f172a;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-lightbox-img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+    .image-lightbox-caption {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      text-align: center;
+    }
+
+    /* ========================================================
+       FRONT PAGE AUTO-POPUP DONATION MODAL (EXACT MOCKUP DESIGN)
+       ======================================================== */
+    .auto-donate-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .auto-donate-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .auto-donate-card-box {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 30px;
+      max-width: 440px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25);
+      transform: scale(0.85) translateY(30px);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
+      box-sizing: border-box;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .auto-donate-modal-overlay.active .auto-donate-card-box {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .auto-donate-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #f1f5f9;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      color: #64748b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .auto-donate-close-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      transform: rotate(90deg);
+    }
+
+    .auto-donate-header-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .auto-donate-header-sub {
+      font-size: 0.95rem;
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .auto-donate-select-wrapper {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .auto-donate-select {
+      width: 100%;
+      height: 52px;
+      padding: 0 40px 0 16px;
+      border-radius: 12px;
+      border: 1.5px solid #d1d5db;
+      background: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e293b;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .auto-donate-select:focus {
+      border-color: #ea1d24;
+      box-shadow: 0 0 0 3px rgba(234, 29, 36, 0.15);
+    }
+
+    .auto-donate-select-arrow {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .auto-donate-amount-label {
+      font-size: 0.95rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .auto-donate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .auto-donate-opt-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 8px;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .auto-donate-opt-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .auto-donate-opt-card.active {
+      border-color: #ea1d24;
+      border-width: 2px;
+      color: #0f172a;
+      box-shadow: 0 4px 14px rgba(234, 29, 36, 0.12);
+      background: #ffffff;
+    }
+
+    .auto-donate-submit-btn {
+      width: 100%;
+      height: 52px;
+      background: #ea1d24;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(234, 29, 36, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .auto-donate-submit-btn:hover {
+      background: #d6131a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(234, 29, 36, 0.45);
+    }
+
+    .auto-donate-floating-trigger {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1500;
+      background: #ea1d24;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      box-shadow: 0 8px 25px rgba(234, 29, 36, 0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: autoDonatePulseBtn 3s infinite;
+    }
+
+    @keyframes autoDonatePulseBtn {
+      0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(234, 29, 36, 0.4); }
+      50% { transform: scale(1.04); box-shadow: 0 12px 30px rgba(234, 29, 36, 0.6); }
+    }
+
+    .auto-donate-floating-trigger:hover {
+      transform: translateY(-3px) scale(1.06) !important;
+      background: #d6131a;
+    }
+
+    @media (max-width: 480px) {
+      .auto-donate-card-box {
+        padding: 28px 20px;
+      }
+      .auto-donate-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .auto-donate-opt-card {
+        min-height: 52px;
+        padding: 12px 14px;
+      }
+      .auto-donate-header-title {
+        font-size: 1.8rem;
+      }
+      .auto-donate-floating-trigger {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1977,6 +2725,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="#mission">About Mission</a></li>
+        <li><a href="#inventory-showcase">Kit Showcase</a></li>
         <li><a href="#packages">Sponsor a Bride</a></li>
         <li><a href="#zakat-calculator">Zakat Calculator</a></li>
         <li><a href="stories.html">Field Stories</a></li>
@@ -2019,6 +2768,117 @@
           <a href="#zakat-calculator" class="btn-secondary" style="border-color: var(--accent-gold); color: var(--accent-gold-dark);">
             <span>🧮 Marriage Zakat Calculator</span>
           </a>
+        </div>
+
+        <!-- HERO FIELD INVENTORY & CAMPAIGN SHOWCASE (ANIMATED SLIDESHOW) -->
+        <div class="hero-showcase-box" id="heroShowcaseBox">
+          <!-- Top Header & View Toggle -->
+          <div class="hero-showcase-header">
+            <div class="hero-showcase-badge" id="heroShowcaseBadge">
+              📸 <span id="heroBadgeText">Live Operations (1/3) • Procured Marriage Dowry Goods Kit (اصلی گھریلو سامان)</span>
+            </div>
+            <div class="hero-slideshow-toggle-btns" style="display: flex; gap: 6px;">
+              <button type="button" class="hero-toggle-btn active" id="btnModeSlideshow" onclick="setHeroShowcaseMode('slideshow')" title="Animated Full-Width Slideshow">
+                ✨ Animated Slideshow
+              </button>
+              <button type="button" class="hero-toggle-btn" id="btnModeGrid" onclick="setHeroShowcaseMode('grid')" title="View All 3 Side-by-Side">
+                🖼 Grid View
+              </button>
+            </div>
+          </div>
+
+          <!-- Progress Bar for Timer -->
+          <div class="hero-slideshow-progress-wrap" id="heroProgressWrap">
+            <div class="hero-slideshow-progress-bar" id="heroProgressBar"></div>
+          </div>
+
+          <!-- SLIDESHOW CONTAINER (FULL DISPLAY ONE AFTER ANOTHER) -->
+          <div class="hero-slideshow-viewport" id="heroSlideshowViewport">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" data-slide="0" onclick="openImageLightboxModal('images/dowry-kit-items.png', 'Essential Marriage Dowry Goods Kit (اصلی گھریلو سامان)')" title="Click to view high-resolution image">
+              <img src="images/dowry-kit-items.png" alt="Bride Dowry Kit Items Showcase" class="hero-slide-img">
+              <div class="hero-slide-overlay">
+                <div class="hero-slide-info">
+                  <span class="hero-slide-chip">📦 Slide 1 of 3 • Procured Goods</span>
+                  <h3 class="hero-slide-title">Procured Marriage Dowry Kit</h3>
+                  <p class="hero-slide-desc">Brand-new cookware, dinnerware, bedding &amp; essential marriage utilities.</p>
+                </div>
+                <span class="zoom-btn">🔍 View HD Photo</span>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide" data-slide="1" onclick="openImageLightboxModal('images/betiyan-bojh-nahi-hoti.png', 'بیٹیاں بوجھ نہیں ہوتی - Direct Field Dispatch')" title="Click to view high-resolution image">
+              <img src="images/betiyan-bojh-nahi-hoti.png" alt="بیٹیاں بوجھ نہیں ہوتی - Field Transport" class="hero-slide-img">
+              <div class="hero-slide-overlay">
+                <div class="hero-slide-info">
+                  <span class="hero-slide-chip">🚚 Slide 2 of 3 • Field Dispatch</span>
+                  <h3 class="hero-slide-title">Direct Field Vehicle Transport</h3>
+                  <p class="hero-slide-desc">Direct vehicle delivery to deserving families across Pakistan (بیٹیاں بوجھ نہیں ہوتی).</p>
+                </div>
+                <span class="zoom-btn">🔍 View HD Photo</span>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide" data-slide="2" onclick="openImageLightboxModal('images/daughters-waiting-messiah.jpg', 'یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے - Social Awareness Campaign')" title="Click to view high-resolution image">
+              <img src="images/daughters-waiting-messiah.jpg" alt="والدین کی عمر لگ جاتی ہے - Social Campaign Graphic" class="hero-slide-img" style="object-position: top;">
+              <div class="hero-slide-overlay">
+                <div class="hero-slide-info">
+                  <span class="hero-slide-chip">📢 Slide 3 of 3 • Awareness Campaign</span>
+                  <h3 class="hero-slide-title">Social Campaign • Fulfilling Parents' Dream</h3>
+                  <p class="hero-slide-desc">Raising awareness so no deserving daughter waits in despair for wedding support.</p>
+                </div>
+                <span class="zoom-btn">🔍 View HD Photo</span>
+              </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button type="button" class="hero-slide-arrow arrow-prev" onclick="event.stopPropagation(); navigateHeroSlide(-1);" aria-label="Previous Slide">❮</button>
+            <button type="button" class="hero-slide-arrow arrow-next" onclick="event.stopPropagation(); navigateHeroSlide(1);" aria-label="Next Slide">❯</button>
+          </div>
+
+          <!-- GRID VIEW (FALLBACK / ALTERNATE VIEW) -->
+          <div class="hero-triple-grid" id="heroTripleGrid" style="display: none; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px;">
+            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/dowry-kit-items.png', 'Essential Marriage Dowry Goods Kit (اصلی گھریلو سامان)')" title="Click to view high-resolution image" style="cursor: pointer;">
+              <img src="images/dowry-kit-items.png" alt="Bride Dowry Kit Items Showcase" class="hero-showcase-img" style="height: 210px; object-fit: cover;">
+              <div class="hero-showcase-overlay">
+                <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Procured Dowry Kit</span>
+              </div>
+            </div>
+            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/betiyan-bojh-nahi-hoti.png', 'بیٹیاں بوجھ نہیں ہوتی - Direct Field Dispatch')" title="Click to view high-resolution image" style="cursor: pointer;">
+              <img src="images/betiyan-bojh-nahi-hoti.png" alt="بیٹیاں بوجھ نہیں ہوتی - Field Transport" class="hero-showcase-img" style="height: 210px; object-fit: cover;">
+              <div class="hero-showcase-overlay">
+                <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Field Dispatch</span>
+              </div>
+            </div>
+            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/daughters-waiting-messiah.jpg', 'یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے - Social Awareness Campaign')" title="Click to view high-resolution image" style="cursor: pointer;">
+              <img src="images/daughters-waiting-messiah.jpg" alt="والدین کی عمر لگ جاتی ہے - Social Campaign Graphic" class="hero-showcase-img" style="height: 210px; object-fit: cover; object-position: top;">
+              <div class="hero-showcase-overlay">
+                <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Social Campaign</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDESHOW DOTS & TAB INDICATORS -->
+          <div class="hero-slideshow-nav" id="heroSlideshowNav">
+            <button type="button" class="hero-nav-pill active" onclick="goToHeroSlide(0)">
+              <span class="pill-dot"></span>
+              <span class="pill-text">1. 📦 Dowry Kit</span>
+            </button>
+            <button type="button" class="hero-nav-pill" onclick="goToHeroSlide(1)">
+              <span class="pill-dot"></span>
+              <span class="pill-text">2. 🚚 Field Dispatch</span>
+            </button>
+            <button type="button" class="hero-nav-pill" onclick="goToHeroSlide(2)">
+              <span class="pill-dot"></span>
+              <span class="pill-text">3. 📢 Social Campaign</span>
+            </button>
+          </div>
+
+          <p class="hero-showcase-caption">
+            <strong>Actual Field Operations &amp; Mission:</strong> Complete brand-new household kits (cookware, dinnerware, utilities) &amp; direct vehicle dispatch to deserving families so no poor father faces debt and no daughter waits in despair.
+          </p>
         </div>
 
         <!-- 4 HERO STATS (LIVE DYNAMIC METRICS) -->
@@ -2089,8 +2949,149 @@
     </div>
   </section>
 
+  <!-- 2B. REAL FIELD INVENTORY & DOWRY ITEMS SHOWCASE -->
+  <section id="inventory-showcase" class="section-padding bg-white" style="border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">📸 ASLI GHAARELU SAMAAN • LIVE FIELD INVENTORY</div>
+        <h2 class="section-title">Actual Bride Dowry &amp; Household Goods Kit Showcase</h2>
+        <p class="section-subtitle">
+          Take a close look at the genuine quality essential goods provided to deserving brides across Pakistan. Every item is 100% brand-new, durable, and procured with full itemized transparency.
+        </p>
+      </div>
+
+      <div class="inventory-card-grid">
+        <div class="inventory-image-card" onclick="openImageLightboxModal('images/dowry-kit-items.png', 'Complete Wedding Dowry Goods Inventory (گھریلو سامان)')" title="Click to open enlarged view">
+          <div class="inventory-img-container">
+            <img src="images/dowry-kit-items.png" alt="Marriage Assistance Household Dowry Kit Items" class="inventory-main-img">
+            <div class="inventory-badge-tag">✨ Live Procured Inventory</div>
+            <div class="inventory-hover-hint">🔍 Tap to inspect full size</div>
+          </div>
+        </div>
+
+        <div class="inventory-info-card">
+          <div class="inventory-pillar-badge">💍 COMPLETE BRIDE SPONSORSHIP KIT</div>
+          <h3 class="inventory-heading">What Your Sponsorship Provides</h3>
+          <p class="inventory-lead">
+            Poor families often delay their daughters' marriages for years due to inability to afford essential household start-up items. Your donation directly equips their new home with dignity.
+          </p>
+          
+          <div class="inventory-items-grid">
+            <div class="inventory-item-box">
+              <div class="item-icon">🫕</div>
+              <div>
+                <strong>Cookware &amp; Non-Stick Sets</strong>
+                <p>Twister Silver 13-Pc Non-stick cookware, pressure cookers (Melano, Alpha, National) &amp; Super Metro pots.</p>
+              </div>
+            </div>
+
+            <div class="inventory-item-box">
+              <div class="item-icon">🍽️</div>
+              <div>
+                <strong>Melamine &amp; Crockery Sets</strong>
+                <p>Premium floral melamine dinner plates, serving dishes, bowls, cutlery, strainers &amp; graters.</p>
+              </div>
+            </div>
+
+            <div class="inventory-item-box">
+              <div class="item-icon">🫖</div>
+              <div>
+                <strong>Beverage &amp; Storage Utilities</strong>
+                <p>Kenwood electric kettle, Novelty thermos jug &amp; glass set, Kimran spice container racks.</p>
+              </div>
+            </div>
+
+            <div class="inventory-item-box">
+              <div class="item-icon">📦</div>
+              <div>
+                <strong>Storage Boxes &amp; Heavy Items</strong>
+                <p>New Mushq box items, bridal trunk, heavy-duty iron, Singer sewing machine &amp; bedding.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory-cta-bar">
+            <a href="#packages" class="btn-primary">
+              <span>🎁 Sponsor a Bride Kit Now →</span>
+            </a>
+            <a href="#payment-methods" class="btn-secondary">
+              <span>💳 Direct EasyPaisa / JazzCash / Bank</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEDICATED FIELD DISPATCH & SOCIAL AWARENESS CAMPAIGN BANNERS -->
+      <div style="margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px;" class="campaign-banners-grid">
+        
+        <!-- CAMPAIGN CARD 1: BETIYAN BOJH NAHI HOTI -->
+        <div style="background: linear-gradient(135deg, #064e3b 0%, #047857 100%); border-radius: var(--radius-xl); padding: 28px; color: var(--white); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="inventory-image-card" onclick="openImageLightboxModal('images/betiyan-bojh-nahi-hoti.png', 'بیٹیاں بوجھ نہیں ہوتی - Direct Field Delivery &amp; Respect')" title="Click to view high-resolution image">
+            <div class="inventory-img-container" style="border-color: rgba(255, 255, 255, 0.2);">
+              <img src="images/betiyan-bojh-nahi-hoti.png" alt="بیٹیاں بوجھ نہیں ہوتی - Field Transport" class="inventory-main-img" style="height: 280px; object-fit: cover;">
+              <div class="inventory-badge-tag" style="background: rgba(245, 158, 11, 0.95); color: #000;">💚 فیلڈ پیغام • Field Campaign</div>
+              <div class="inventory-hover-hint">🔍 Tap to enlarge</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: inline-block; align-self: flex-start; background: rgba(255, 255, 255, 0.15); color: #fef3c7; font-size: 0.78rem; font-weight: 800; padding: 4px 14px; border-radius: var(--radius-full); border: 1px solid rgba(255, 255, 255, 0.25);">
+              🚚 DIRECT FIELD DISPATCH
+            </div>
+
+            <h3 style="font-size: 1.45rem; font-weight: 800; color: #ffffff; line-height: 1.35; font-family: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', sans-serif;">
+              بیٹیاں بوجھ نہیں ہوتی — Daughters Are Not A Burden
+            </h3>
+
+            <p style="font-size: 0.92rem; color: #d1fae5; line-height: 1.6;">
+              پاکستان بھر میں ہزاروں غریب والدین اپنی بیٹیوں کے جہیز اور شادی کے اخراجات کی وجہ سے مقروض اور پریشان ہیں۔ ہم زکوٰۃ اور صدقات کے ذریعے ان کی بیٹیوں کو مکمل گھریلو سامان 100% عزتِ نفس کے ساتھ فراہم کرتے ہیں۔
+            </p>
+
+            <div style="margin-top: 8px;">
+              <a href="#payment-methods" class="btn-primary" style="background: var(--accent-gold); color: #000; border: none; font-weight: 800; width: 100%; text-align: center; justify-content: center;">
+                <span>🤲 Help a Deserving Father Today →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMPAIGN CARD 2: DAUGHTERS WAITING FOR A MESSIAH -->
+        <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: var(--radius-xl); padding: 28px; color: var(--white); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="inventory-image-card" onclick="openImageLightboxModal('images/daughters-waiting-messiah.jpg', 'یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے - Social Awareness Graphic')" title="Click to view high-resolution image">
+            <div class="inventory-img-container" style="border-color: rgba(255, 255, 255, 0.2);">
+              <img src="images/daughters-waiting-messiah.jpg" alt="والدین کی عمر لگ جاتی ہے - Social Awareness Graphic" class="inventory-main-img" style="height: 280px; object-fit: cover; object-position: top;">
+              <div class="inventory-badge-tag" style="background: rgba(16, 185, 129, 0.95); color: #fff;">🌸 سوشل بیداری • Social Awareness</div>
+              <div class="inventory-hover-hint">🔍 Tap to enlarge</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: inline-block; align-self: flex-start; background: rgba(255, 255, 255, 0.15); color: #a7f3d0; font-size: 0.78rem; font-weight: 800; padding: 4px 14px; border-radius: var(--radius-full); border: 1px solid rgba(255, 255, 255, 0.25);">
+              🤍 BE THE MESSIAH FOR AN ORPHAN BRIDE
+            </div>
+
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #ffffff; line-height: 1.35; font-family: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', sans-serif;">
+              والدین کی عمر لگ جاتی ہے — Wait For A Messiah
+            </h3>
+
+            <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
+              <em>"یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے۔ جو لوگ یہ نہیں کر سکتے ان کی بیٹیاں کسی مسیحا کا انتظار کرتی رہتی ہیں۔"</em> Fulfill a blessed Sunnah and sponsor essential household kits.
+            </p>
+
+            <div style="margin-top: 8px;">
+              <a href="#packages" class="btn-primary" style="background: var(--primary-500); color: #fff; border: none; font-weight: 800; width: 100%; text-align: center; justify-content: center;">
+                <span>🎁 Sponsor a Wedding Kit Now →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- 3. FEATURED BRIDE SPONSORSHIP PACKAGES -->
-  <section id="packages" class="section-padding bg-white">
+  <section id="packages" class="section-padding bg-light">
     <div class="container">
       <div class="section-header">
         <div class="section-tag">🎁 SPONSOR A BRIDE TIERS</div>
@@ -2485,7 +3486,48 @@
         </div>
       </div>
     </div>
-  </section>
+  <!-- AUTO-POPUP ANIMATED DONATION MODAL (EXACT MOCKUP DESIGN) -->
+  <div id="autoDonatePopupModal" class="auto-donate-modal-overlay" onclick="handleAutoDonateBackdrop(event)">
+    <div class="auto-donate-card-box">
+      <button type="button" class="auto-donate-close-btn" onclick="closeAutoDonatePopup()" aria-label="Close modal">✕</button>
+      
+      <h2 class="auto-donate-header-title">Donate</h2>
+      <p class="auto-donate-header-sub">Please select the Project to Donate</p>
+
+      <div class="auto-donate-select-wrapper">
+        <select id="autoDonateProject" class="auto-donate-select" onchange="handleAutoDonateProjectChange(this)">
+          <option value="Sponsor a Bride">Sponsor a Bride (Full Package)</option>
+          <option value="Bridal Jaheez Essentials">Bridal Jaheez Essentials</option>
+          <option value="Orphan Marriage Aid">Orphan Marriage Aid</option>
+          <option value="Marriage Zakat Fund">Marriage Zakat Fund</option>
+          <option value="General Sadaqah Fund">General Sadaqah Fund</option>
+        </select>
+        <div class="auto-donate-select-arrow">▼</div>
+      </div>
+
+      <div class="auto-donate-amount-label">Choose Amount</div>
+
+      <div class="auto-donate-grid">
+        <div class="auto-donate-opt-card active" onclick="selectAutoDonateOption(this, 'Donate for Bride', 'Rs 25,000')">
+          Donate for<br>Bride
+        </div>
+        <div class="auto-donate-opt-card" onclick="selectAutoDonateOption(this, 'Zakat', 'Rs 50,000')">
+          Zakat
+        </div>
+        <div class="auto-donate-opt-card" onclick="selectAutoDonateOption(this, 'Sadaqah', 'Rs 15,000')">
+          Sadaqah
+        </div>
+      </div>
+
+      <button type="button" class="auto-donate-submit-btn" onclick="submitAutoDonatePopup()">Donate Now</button>
+    </div>
+  </div>
+
+  <!-- FLOATING QUICK DONATE BUTTON -->
+  <button type="button" class="auto-donate-floating-trigger" onclick="openAutoDonatePopup()" aria-label="Quick Donate">
+    <span>❤️</span>
+    <span>Donate Now</span>
+  </button>
 
   <!-- MODAL: UPLOAD DONATION RECEIPT & DETAILS -->
   <div id="receiptUploadModal" class="modal-overlay" onclick="handleReceiptModalBackdrop(event)">
@@ -2887,6 +3929,23 @@
     </div>
   </div>
 
+  <!-- MODAL: HIGH-RES IMAGE LIGHTBOX SHOWCASE -->
+  <div id="imageLightboxModal" class="modal-overlay" onclick="handleImageLightboxBackdrop(event)">
+    <div class="modal-card image-lightbox-card">
+      <button type="button" class="modal-close" onclick="closeImageLightboxModal()" aria-label="Close modal">✕</button>
+      <div class="image-lightbox-header">
+        <span class="image-lightbox-badge" id="imageLightboxBadge">📸 Real Field Inventory Showcase</span>
+        <h3 class="image-lightbox-title" id="imageLightboxTitle">Essential Marriage Dowry Kit Items</h3>
+      </div>
+      <div class="image-lightbox-body">
+        <img id="imageLightboxImg" src="images/dowry-kit-items.png" alt="Enlarged Dowry Kit Inventory" class="image-lightbox-img">
+      </div>
+      <p class="image-lightbox-caption" id="imageLightboxCaption">
+        100% authentic field inventory procured for deserving orphan &amp; poor brides in Pakistan under strict Tamleek ownership.
+      </p>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -3246,6 +4305,35 @@
     }
 
     // ==========================================
+    // IMAGE LIGHTBOX SHOWCASE LOGIC
+    // ==========================================
+    function openImageLightboxModal(imgSrc, titleText) {
+      const modal = document.getElementById('imageLightboxModal');
+      const img = document.getElementById('imageLightboxImg');
+      const title = document.getElementById('imageLightboxTitle');
+      if (imgSrc && img) img.src = imgSrc;
+      if (titleText && title) title.textContent = titleText;
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeImageLightboxModal() {
+      const modal = document.getElementById('imageLightboxModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleImageLightboxBackdrop(e) {
+      if (e.target.id === 'imageLightboxModal') {
+        closeImageLightboxModal();
+      }
+    }
+
+    // ==========================================
     // ZAKAT CALCULATOR LOGIC
     // ==========================================
     let currentZakatCurrency = 'USD';
@@ -3380,15 +4468,10 @@
         setTimeout(() => customCard.classList.remove('highlight-inject'), 2200);
       }
 
-      // 8. Smooth scroll directly to the payment methods section
-      const paymentSection = document.getElementById('payment-methods');
-      if (paymentSection) {
-        const navOffset = 65;
-        const targetTop = paymentSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
-        window.scrollTo({
-          top: targetTop,
-          behavior: 'smooth'
-        });
+      // 8. Smooth scroll directly to the payment methods card
+      const payBox = document.querySelector('.payment-container-box') || document.getElementById('payment-methods');
+      if (payBox && typeof scrollToCard === 'function') {
+        scrollToCard(payBox);
       }
     }
 
@@ -3608,17 +4691,315 @@
       closeReceiptModal();
     }
 
+    // ========================================================
+    // AUTO POPUP DONATION MODAL LOGIC (HER 2 YA 34 SECOND)
+    // ========================================================
+    let autoDonateTimer = null;
+    let autoDonateInterval = null;
+    let autoDonateDismissedSession = false;
+
+    function openAutoDonatePopup() {
+      const modal = document.getElementById('autoDonatePopupModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeAutoDonatePopup() {
+      const modal = document.getElementById('autoDonatePopupModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        autoDonateDismissedSession = true;
+      }
+    }
+
+    function handleAutoDonateBackdrop(e) {
+      if (e.target.id === 'autoDonatePopupModal') {
+        closeAutoDonatePopup();
+      }
+    }
+
+    function selectAutoDonateOption(el, causeName, amountStr) {
+      document.querySelectorAll('.auto-donate-opt-card').forEach(card => card.classList.remove('active'));
+      el.classList.add('active');
+
+      const projectSelect = document.getElementById('autoDonateProject');
+      if (projectSelect) {
+        if (causeName === 'Zakat') {
+          projectSelect.value = 'Marriage Zakat Fund';
+        } else if (causeName === 'Sadaqah') {
+          projectSelect.value = 'General Sadaqah Fund';
+        } else if (causeName === 'Donate for Bride') {
+          projectSelect.value = 'Sponsor a Bride';
+        }
+      }
+
+      // Immediately navigate directly to Direct Mobile Wallet & Bank Transfer section
+      submitAutoDonatePopup();
+    }
+
+    function handleAutoDonateProjectChange(selectEl) {
+      const val = selectEl ? selectEl.value : '';
+      const cards = document.querySelectorAll('.auto-donate-opt-card');
+      cards.forEach(c => c.classList.remove('active'));
+
+      if (val.includes('Zakat')) {
+        const zakatCard = Array.from(cards).find(c => c.innerText.includes('Zakat'));
+        if (zakatCard) zakatCard.classList.add('active');
+      } else if (val.includes('Sadaqah')) {
+        const sadaqahCard = Array.from(cards).find(c => c.innerText.includes('Sadaqah'));
+        if (sadaqahCard) sadaqahCard.classList.add('active');
+      } else {
+        const brideCard = Array.from(cards).find(c => c.innerText.includes('Bride'));
+        if (brideCard) brideCard.classList.add('active');
+      }
+    }
+
+    function submitAutoDonatePopup() {
+      const projectSelect = document.getElementById('autoDonateProject');
+      const selectedProject = projectSelect ? projectSelect.value : 'Sponsor a Bride';
+      const activeOpt = document.querySelector('.auto-donate-opt-card.active');
+      const causeText = activeOpt ? activeOpt.innerText.replace('\n', ' ').trim() : 'Donate for Bride';
+
+      closeAutoDonatePopup();
+
+      // Pre-fill fields in receipt modal if user submits receipt later
+      const receiptCause = document.getElementById('receiptCause');
+      if (receiptCause) {
+        if (causeText.includes('Zakat') || selectedProject.includes('Zakat')) {
+          receiptCause.value = '100% Zakat on Marriage';
+        } else if (causeText.includes('Sadaqah') || selectedProject.includes('Sadaqah')) {
+          receiptCause.value = 'General Sadaqah / Marriage Fund';
+        } else {
+          receiptCause.value = 'Complete Bride Sponsorship';
+        }
+      }
+
+      // Sync custom donation type radio button on main page
+      if (causeText.includes('Zakat') || selectedProject.includes('Zakat')) {
+        const zakatRadio = document.querySelector('input[name="donation_type_custom"][value="Zakat"]');
+        if (zakatRadio) {
+          zakatRadio.checked = true;
+          if (typeof updateCustomDonateBtn === 'function') updateCustomDonateBtn();
+        }
+      } else if (causeText.includes('Sadaqah') || selectedProject.includes('Sadaqah')) {
+        const sadaqahRadio = document.querySelector('input[name="donation_type_custom"][value="Sadaqah"]');
+        if (sadaqahRadio) {
+          sadaqahRadio.checked = true;
+          if (typeof updateCustomDonateBtn === 'function') updateCustomDonateBtn();
+        }
+      }
+
+      // Highlight the main donation card on page
+      const customCard = document.querySelector('.custom-donate-card');
+      if (customCard) {
+        customCard.classList.add('highlight-inject');
+        setTimeout(() => customCard.classList.remove('highlight-inject'), 2200);
+      }
+
+      // Smooth scroll target routing:
+      // 1. Zakat -> Marriage Aid Zakat Calculator (.zakat-calc-card)
+      // 2. Donate for Bride -> Contribute Any Custom Amount (.custom-donate-card)
+      // 3. Sadaqah / Other -> Direct Mobile Wallet & Bank Transfer (.payment-container-box)
+      const isZakat = causeText.includes('Zakat') || selectedProject.includes('Zakat');
+      const isBride = causeText.includes('Bride') || selectedProject.includes('Bride') || selectedProject.includes('Sponsor') || selectedProject.includes('Jaheez');
+
+      let targetCard = null;
+      if (isZakat) {
+        targetCard = document.querySelector('.zakat-calc-card') || document.getElementById('zakat-calculator');
+      } else if (isBride) {
+        targetCard = document.querySelector('.custom-donate-card');
+      } else {
+        targetCard = document.querySelector('.payment-container-box') || document.getElementById('payment-methods');
+      }
+
+      if (targetCard) {
+        scrollToCard(targetCard);
+      }
+    }
+
+    // Helper function to scroll directly to a card and frame it in full view
+    function scrollToCard(cardEl) {
+      if (!cardEl) return;
+      const navOffset = 70;
+      const rect = cardEl.getBoundingClientRect();
+      const cardTopAbsolute = rect.top + window.pageYOffset;
+      const availableHeight = window.innerHeight - navOffset;
+
+      let targetTop = cardTopAbsolute - navOffset;
+
+      // If card height is smaller than available viewport height, center it vertically in view!
+      if (rect.height > 0 && rect.height < availableHeight) {
+        const gap = (availableHeight - rect.height) / 2;
+        targetTop = cardTopAbsolute - navOffset - gap;
+      }
+
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+      });
+
+      cardEl.classList.add('highlight-inject');
+      setTimeout(() => cardEl.classList.remove('highlight-inject'), 2500);
+    }
+
+    // Auto-open on page load: initial popup after 2.5s, periodic check every 34s
+    document.addEventListener('DOMContentLoaded', function() {
+      autoDonateTimer = setTimeout(function() {
+        if (!autoDonateDismissedSession) {
+          openAutoDonatePopup();
+        }
+      }, 2500);
+
+      autoDonateInterval = setInterval(function() {
+        const modal = document.getElementById('autoDonatePopupModal');
+        if (modal && !modal.classList.contains('active') && !autoDonateDismissedSession) {
+          openAutoDonatePopup();
+        }
+      }, 34000);
+    });
+
     // Close modals on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeQrModal();
         if (typeof closeCardModal === 'function') closeCardModal();
         if (typeof closeReceiptModal === 'function') closeReceiptModal();
+        if (typeof closeAutoDonatePopup === 'function') closeAutoDonatePopup();
       }
     });
 
     // MOBILE NAVIGATION TOGGLE
+    /* ========================================================
+       HERO SHOWCASE SLIDESHOW AUTOMATION
+       ======================================================== */
+    let heroCurrentSlide = 0;
+    let heroSlideInterval = null;
+    let heroProgressInterval = null;
+    const HERO_SLIDE_DURATION = 3800; // 3.8s per slide
+    let heroProgressStep = 0;
+    let isHeroPaused = false;
+
+    function initHeroSlideshow() {
+      const viewport = document.getElementById('heroSlideshowViewport');
+      if (!viewport) return;
+
+      startHeroTimer();
+
+      // Pause on hover
+      const box = document.getElementById('heroShowcaseBox');
+      if (box) {
+        box.addEventListener('mouseenter', () => { isHeroPaused = true; });
+        box.addEventListener('mouseleave', () => { isHeroPaused = false; });
+      }
+
+      // Touch swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      viewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 40) {
+          if (diff < 0) {
+            navigateHeroSlide(1); // Swipe left -> next slide
+          } else {
+            navigateHeroSlide(-1); // Swipe right -> prev slide
+          }
+        }
+      }, { passive: true });
+    }
+
+    function startHeroTimer() {
+      clearInterval(heroSlideInterval);
+      clearInterval(heroProgressInterval);
+      heroProgressStep = 0;
+      
+      const bar = document.getElementById('heroProgressBar');
+      if (bar) bar.style.width = '0%';
+
+      const stepMs = 50;
+      const totalSteps = HERO_SLIDE_DURATION / stepMs;
+
+      heroProgressInterval = setInterval(() => {
+        if (isHeroPaused) return;
+        heroProgressStep++;
+        const pct = Math.min(100, (heroProgressStep / totalSteps) * 100);
+        if (bar) bar.style.width = pct + '%';
+
+        if (heroProgressStep >= totalSteps) {
+          navigateHeroSlide(1);
+        }
+      }, stepMs);
+    }
+
+    function goToHeroSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const pills = document.querySelectorAll('.hero-nav-pill');
+      if (!slides.length) return;
+
+      slides.forEach(s => s.classList.remove('active'));
+      pills.forEach(p => p.classList.remove('active'));
+
+      heroCurrentSlide = (index + slides.length) % slides.length;
+
+      slides[heroCurrentSlide].classList.add('active');
+      if (pills[heroCurrentSlide]) pills[heroCurrentSlide].classList.add('active');
+
+      // Update badge title dynamically
+      const badgeText = document.getElementById('heroBadgeText');
+      if (badgeText) {
+        const titles = [
+          'Procured Marriage Dowry Goods Kit (اصلی گھریلو سامان)',
+          'Direct Field Dispatch & Vehicle Transport (بیٹیاں بوجھ نہیں ہوتی)',
+          'Social Awareness Campaign (والدین کی عمر لگ جاتی ہے)'
+        ];
+        badgeText.textContent = `Live Operations (${heroCurrentSlide + 1}/3) • ${titles[heroCurrentSlide]}`;
+      }
+
+      // Reset timer
+      startHeroTimer();
+    }
+
+    function navigateHeroSlide(direction) {
+      goToHeroSlide(heroCurrentSlide + direction);
+    }
+
+    function setHeroShowcaseMode(mode) {
+      const viewport = document.getElementById('heroSlideshowViewport');
+      const grid = document.getElementById('heroTripleGrid');
+      const progressWrap = document.getElementById('heroProgressWrap');
+      const nav = document.getElementById('heroSlideshowNav');
+      const btnSlideshow = document.getElementById('btnModeSlideshow');
+      const btnGrid = document.getElementById('btnModeGrid');
+
+      if (mode === 'grid') {
+        if (viewport) viewport.style.display = 'none';
+        if (nav) nav.style.display = 'none';
+        if (progressWrap) progressWrap.style.display = 'none';
+        if (grid) grid.style.display = 'grid';
+        if (btnSlideshow) btnSlideshow.classList.remove('active');
+        if (btnGrid) btnGrid.classList.add('active');
+        clearInterval(heroProgressInterval);
+      } else {
+        if (viewport) viewport.style.display = 'block';
+        if (nav) nav.style.display = 'flex';
+        if (progressWrap) progressWrap.style.display = 'block';
+        if (grid) grid.style.display = 'none';
+        if (btnGrid) btnGrid.classList.remove('active');
+        if (btnSlideshow) btnSlideshow.classList.add('active');
+        goToHeroSlide(heroCurrentSlide);
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
+      initHeroSlideshow();
+
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
       const navLinks = document.getElementById('navLinks');
 
