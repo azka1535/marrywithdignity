@@ -7,7 +7,7 @@
   <meta name="description" content="Empower underprivileged and orphan brides with dignity. Sponsor essential wedding and household packages through verified Zakat and Sadaqah donations.">
   <meta name="keywords" content="MarryWithDignity, sponsor a bride, marriage assistance charity, zakat for marriage, nikah charity, orphan bride donation, jaheez package charity pakistan, zakat calculator marriage aid">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://azka1535.github.io/marrywithdignity/">
+  <link rel="canonical" href="https://marrywithdignity.vercel.app/">
 
   <!-- Favicon & Brand Icons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -20,17 +20,17 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://azka1535.github.io/marrywithdignity/">
+  <meta property="og:url" content="https://marrywithdignity.vercel.app/">
   <meta property="og:title" content="Marry With Dignity | Sponsor Wedding Essentials for Deserving Brides">
   <meta property="og:description" content="Empower underprivileged and orphan brides with dignity. Sponsor essential wedding and household packages through verified Zakat and Sadaqah donations.">
-  <meta property="og:image" content="https://azka1535.github.io/marrywithdignity/images/og-image.png">
+  <meta property="og:image" content="https://marrywithdignity.vercel.app/images/og-image.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://azka1535.github.io/marrywithdignity/">
+  <meta property="twitter:url" content="https://marrywithdignity.vercel.app/">
   <meta property="twitter:title" content="Marry With Dignity | Sponsor Wedding Essentials for Deserving Brides">
   <meta property="twitter:description" content="Empower underprivileged and orphan brides with dignity. Sponsor essential wedding and household packages through verified Zakat and Sadaqah donations.">
-  <meta property="twitter:image" content="https://azka1535.github.io/marrywithdignity/images/og-image.png">
+  <meta property="twitter:image" content="https://marrywithdignity.vercel.app/images/og-image.png">
 
   <!-- Schema.org Non-Profit Charity JSON-LD -->
   <script type="application/ld+json">
@@ -39,8 +39,8 @@
     "@type": "NGO",
     "name": "MarryWithDignity",
     "alternateName": "Marry With Dignity Charity Trust",
-    "url": "https://azka1535.github.io/marrywithdignity/",
-    "logo": "https://azka1535.github.io/marrywithdignity/images/logo.png",
+    "url": "https://marrywithdignity.vercel.app/",
+    "logo": "https://marrywithdignity.vercel.app/images/logo.png",
     "description": "Non-profit charity providing 100% Zakat-eligible marriage assistance, bride sponsorship, and household essentials for underprivileged orphan daughters in Pakistan.",
     "areaServed": "Pakistan",
     "knowsAbout": ["Zakat on Marriage", "Sponsor a Bride", "Nikah Charity", "Marriage Assistance Grants"],
@@ -295,6 +295,48 @@
       padding: 6px 14px;
       border-radius: var(--radius-full);
       border: 1.5px solid var(--slate-200);
+    }
+
+    @media (max-width: 991px) {
+      .top-brand-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+      .top-brand-trust-badges {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .top-brand-header-strip {
+        padding: 10px 0;
+      }
+      .top-brand-logo-link {
+        gap: 10px;
+        align-items: center;
+      }
+      .top-brand-logo-img {
+        height: 42px;
+      }
+      .top-brand-title {
+        font-size: 1.35rem;
+      }
+      .top-brand-subtitle {
+        font-size: 0.62rem;
+        letter-spacing: 0.8px;
+        line-height: 1.25;
+      }
+      .top-brand-trust-badges {
+        gap: 6px;
+      }
+      .top-trust-item {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+      }
     }
 
     /* ========================================================
@@ -4152,6 +4194,88 @@
     .donor-select-card:hover .donor-card-action .arrow {
       transform: translateX(5px);
     }
+
+    /* FLOATING WHATSAPP SUPPORT FAB */
+    .floating-wa-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1600;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+    }
+    .floating-wa-fab:hover {
+      transform: scale(1.08) translateY(-2px);
+      background: #20ba5a;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55);
+      color: #ffffff;
+    }
+    .floating-wa-tooltip {
+      position: absolute;
+      right: 68px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    }
+    .floating-wa-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 6px 0 6px 6px;
+      border-style: solid;
+      border-color: transparent transparent transparent #0f172a;
+    }
+    .floating-wa-fab:hover .floating-wa-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(-4px);
+    }
+
+    .auto-donate-floating-trigger {
+      right: 94px !important;
+    }
+
+    @media (max-width: 480px) {
+      .floating-wa-fab {
+        bottom: 76px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+      }
+      .floating-wa-fab svg {
+        width: 24px;
+        height: 24px;
+      }
+      .auto-donate-floating-trigger {
+        bottom: 76px !important;
+        right: 76px !important;
+      }
+      .floating-wa-tooltip {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -4948,7 +5072,7 @@
             Enter your assets above to compute your exact Zakat and see your bride sponsorship impact.
           </p>
           <a href="#payment-section" id="zakatDonateDirectBtn" class="btn-primary zakat-donate-btn" onclick="donateCalculatedZakat(event)">
-            <span>Donate This Zakat Amount Now →</span>
+            <span>Donate This Zakat Amount →</span>
           </a>
         </div>
       </div>
@@ -5020,6 +5144,7 @@
                     <option value="Full Marriage Kit ($600)">Full Marriage Kit ($600)</option>
                     <option value="Complete Bride Sponsorship ($800)">Complete Bride Sponsorship ($800)</option>
                     <option value="Deluxe Package ($1000)">Deluxe Package ($1000)</option>
+                    <option value="Marriage Zakat Fund">Marriage Zakat Fund (100% Zakat)</option>
                     <option value="100% Zakat on Marriage">100% Zakat on Marriage</option>
                     <option value="General Sadaqah / Marriage Fund">General Sadaqah Fund</option>
                   </select>
@@ -5181,11 +5306,11 @@
               </svg>
               <span>Upload Transfer Receipt</span>
             </button>
-            <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20have%20sent%20a%20local%20donation%20for%20MarryWithDignity.%20Here%20is%20my%20payment%20proof." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20have%20transferred%20a%20donation%20for%20MarryWithDignity.%20Here%20is%20the%20receipt." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
               </svg>
-              <span>Send Receipt on WhatsApp</span>
+              <span>Send Payment Screenshot on WhatsApp</span>
             </a>
           </div>
         </div>
@@ -5700,8 +5825,11 @@
               <div class="checkout-input-group">
                 <label>Donation Purpose *</label>
                 <select class="checkout-input" id="cardCauseSelect">
-                  <option value="Essential Household Start-Up Kit">Essential Household Start-Up Kit</option>
-                  <option value="Complete Bride Sponsorship">Complete Bride Sponsorship</option>
+                  <option value="Essential Household Start-Up Kit ($50)">Essential Household Start-Up Kit ($50)</option>
+                  <option value="Full Marriage Kit ($600)">Full Marriage Kit ($600)</option>
+                  <option value="Complete Bride Sponsorship ($800)">Complete Bride Sponsorship ($800)</option>
+                  <option value="Deluxe Package ($1000)">Deluxe Package ($1000)</option>
+                  <option value="Marriage Zakat Fund">Marriage Zakat Fund (100% Zakat)</option>
                   <option value="100% Zakat on Marriage">100% Zakat on Marriage</option>
                   <option value="General Sadaqah / Marriage Fund">General Sadaqah Fund</option>
                 </select>
@@ -6026,6 +6154,24 @@
   <script>
     let currentCurrency = 'USD';
 
+    function scrollToPaymentSection(e) {
+      if (e && typeof e.preventDefault === 'function') e.preventDefault();
+      const targetSection = document.getElementById('payment-methods') || document.getElementById('payment-section') || document.querySelector('.payment-container-box');
+      if (targetSection) {
+        const navOffset = 80;
+        const elementPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+
+        targetSection.classList.add('highlight-inject');
+        setTimeout(() => targetSection.classList.remove('highlight-inject'), 2200);
+      }
+    }
+
     function switchPaymentTab(tab) {
       const intlTab = document.getElementById('payTabIntl');
       const localTab = document.getElementById('payTabLocal');
@@ -6053,11 +6199,13 @@
 
       if (curr === 'PKR') {
         switchPaymentTab('local');
+        switchMainPaymentTab('pak');
       } else {
         switchPaymentTab('intl');
+        switchMainPaymentTab('intl');
       }
 
-      const currencySymbols = { USD: '$', GBP: '£', CAD: '$', AUD: '$', PKR: 'Rs. ' };
+      const currencySymbols = { USD: '$', GBP: '£', CAD: 'CA$', AUD: 'A$', PKR: 'Rs. ' };
       
       // Update package prices
       document.querySelectorAll('.pkg-price').forEach(priceEl => {
@@ -6066,7 +6214,7 @@
           if (curr === 'PKR') {
             priceEl.innerHTML = `Rs. ${amount}`;
           } else {
-            priceEl.innerHTML = `${currencySymbols[curr]}${amount}`;
+            priceEl.innerHTML = `${currencySymbols[curr] || '$'}${amount}`;
           }
         }
       });
@@ -6088,8 +6236,47 @@
           if (curr === 'PKR') {
             btn.textContent = `Donate ${name} (Rs. ${amount})`;
           } else {
-            btn.textContent = `Donate ${name} (${currencySymbols[curr]}${amount})`;
+            btn.textContent = `Donate ${name} (${currencySymbols[curr] || '$'}${amount})`;
           }
+        }
+      });
+
+      // Dynamic quick-select preset mapping
+      const presetMap = {
+        USD: [25, 50, 100, 250],
+        GBP: [20, 40, 80, 200],
+        CAD: [35, 70, 140, 350],
+        AUD: [40, 75, 150, 375],
+        PKR: [7000, 14000, 28000, 70000]
+      };
+      const presetFormatMap = {
+        USD: ['$25', '$50', '$100', '$250'],
+        GBP: ['£20', '£40', '£80', '£200'],
+        CAD: ['CA$35', 'CA$70', 'CA$140', 'CA$350'],
+        AUD: ['A$40', 'A$75', 'A$150', 'A$375'],
+        PKR: ['Rs. 7k', 'Rs. 14k', 'Rs. 28k', 'Rs. 70k']
+      };
+
+      const vals = presetMap[curr] || presetMap.USD;
+      const formats = presetFormatMap[curr] || presetFormatMap.USD;
+
+      // Update custom donation preset buttons
+      const customPresets = document.querySelectorAll('.custom-presets .preset-btn');
+      customPresets.forEach((btn, i) => {
+        if (vals[i] !== undefined) {
+          btn.textContent = formats[i];
+          btn.setAttribute('data-amt', vals[i]);
+          btn.onclick = function() { selectPresetAmount(vals[i], this); };
+        }
+      });
+
+      // Update checkout amount grid pills
+      const checkoutPills = document.querySelectorAll('.checkout-amount-grid .checkout-amount-btn');
+      checkoutPills.forEach((btn, i) => {
+        if (vals[i] !== undefined) {
+          btn.textContent = formats[i];
+          btn.setAttribute('data-amt', vals[i]);
+          btn.onclick = function() { setInlineAmount(vals[i], this); };
         }
       });
 
@@ -6101,10 +6288,25 @@
         if (el) el.textContent = currencySymbols[curr] || '$';
       });
 
-      updateCustomDonateBtn();
-      calculateZakat();
-    }
+      // Set default input amount if matching standard preset
+      const customInput = document.getElementById('customAmountInput');
+      if (customInput && (!customInput.value || customInput.value === '50' || customInput.value === '14000')) {
+        customInput.value = vals[1];
+      }
+      const inlineInput = document.getElementById('inlineCardAmountInput');
+      if (inlineInput && (!inlineInput.value || inlineInput.value === '50' || inlineInput.value === '14000')) {
+        inlineInput.value = vals[1];
+      }
+      const cardInput = document.getElementById('cardAmountInput');
+      if (cardInput && (!cardInput.value || cardInput.value === '50' || cardInput.value === '14000')) {
+        cardInput.value = vals[1];
+      }
 
+      updateCustomDonateBtn();
+      updateInlineBtnText();
+      updateCardBtnText();
+      if (typeof calculateZakat === 'function') calculateZakat();
+    }
 
     function selectPresetAmount(amt, btnEl) {
       const input = document.getElementById('customAmountInput');
@@ -6125,10 +6327,10 @@
       const selectedTypeEl = document.querySelector('input[name="donation_type_custom"]:checked');
       const typeLabel = selectedTypeEl ? selectedTypeEl.value : 'Donation';
 
-      const currencySymbols = { USD: '$', GBP: '£', CAD: '$', AUD: '$', PKR: 'Rs. ' };
+      const currencySymbols = { USD: '$', GBP: '£', CAD: 'CA$', AUD: 'A$', PKR: 'Rs. ' };
       const sym = currencySymbols[currentCurrency] || '$';
       const num = input && input.value ? Number(input.value) : 0;
-      const formatted = num > 0 ? num.toLocaleString() : '0';
+      const formatted = num > 0 ? (currentCurrency === 'PKR' ? num.toLocaleString('en-US') : num.toLocaleString()) : '0';
       
       if (currentCurrency === 'PKR') {
         btn.innerHTML = `<span>Donate ${typeLabel} (Rs. ${formatted}) →</span>`;
@@ -6168,13 +6370,15 @@
     function showCopiedFeedback(btnElement) {
       if (!btnElement) return;
       const originalText = btnElement.innerHTML;
-      btnElement.innerHTML = '✓ Copied!';
+      btnElement.innerHTML = 'Copied! ✓';
       btnElement.style.background = '#047857';
       btnElement.style.color = '#ffffff';
+      btnElement.style.borderColor = '#047857';
       setTimeout(() => {
         btnElement.innerHTML = originalText;
         btnElement.style.background = '';
         btnElement.style.color = '';
+        btnElement.style.borderColor = '';
       }, 2000);
     }
 
@@ -6182,7 +6386,6 @@
       const item = btn.parentElement;
       const isActive = item.classList.contains('active');
       
-      // Close all other items
       document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
       
       if (!isActive) {
@@ -6225,7 +6428,7 @@
       if (!input || !submitBtn) return;
       const amt = parseFloat(input.value) || 0;
       const curr = typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD';
-      const currencySymbols = { USD: '$', GBP: '£', CAD: '$', AUD: '$', PKR: 'Rs. ' };
+      const currencySymbols = { USD: '$', GBP: '£', CAD: 'CA$', AUD: 'A$', PKR: 'Rs. ' };
       const sym = currencySymbols[curr] || '$';
 
       if (curr === 'PKR') {
@@ -6240,7 +6443,7 @@
     // ========================================================
     function selectDonationAndScroll(options = {}) {
       const currency = options.currency || (typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD');
-      const currencySymbols = { USD: '$', GBP: '£', CAD: '$', AUD: '$', PKR: 'Rs. ' };
+      const currencySymbols = { USD: '$', GBP: '£', CAD: 'CA$', AUD: 'A$', PKR: 'Rs. ' };
 
       let rawAmt = options.amount;
       if (typeof rawAmt === 'string') {
@@ -6290,7 +6493,7 @@
         }
 
         if (!optionMatched) {
-          if (causeText.includes('Zakat')) causeSelect.value = '100% Zakat on Marriage';
+          if (causeText.includes('Zakat')) causeSelect.value = 'Marriage Zakat Fund';
           else if (causeText.includes('Sadaqah') || causeText.includes('General')) causeSelect.value = 'General Sadaqah / Marriage Fund';
           else if (causeText.includes('600')) causeSelect.value = 'Full Marriage Kit ($600)';
           else if (causeText.includes('1000')) causeSelect.value = 'Deluxe Package ($1000)';
@@ -6323,7 +6526,14 @@
       const cardAmountInput = document.getElementById('cardAmountInput');
       if (cardAmountInput) cardAmountInput.value = amount;
       const cardCauseSelect = document.getElementById('cardCauseSelect');
-      if (cardCauseSelect && options.cause) cardCauseSelect.value = options.cause;
+      if (cardCauseSelect && options.cause) {
+        for (let i = 0; i < cardCauseSelect.options.length; i++) {
+          if (cardCauseSelect.options[i].value === options.cause || cardCauseSelect.options[i].text.includes(options.cause)) {
+            cardCauseSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
 
       const receiptAmount = document.getElementById('receiptAmount');
       if (receiptAmount) receiptAmount.value = amount;
@@ -6332,20 +6542,7 @@
       const receiptCurrency = document.getElementById('receiptCurrency');
       if (receiptCurrency) receiptCurrency.value = currency;
 
-      const targetSection = document.getElementById('payment-section') || document.getElementById('payment-methods') || document.querySelector('.payment-container-box');
-      if (targetSection) {
-        const navOffset = 90;
-        const elementPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - navOffset;
-
-        window.scrollTo({
-          top: Math.max(0, offsetPosition),
-          behavior: 'smooth'
-        });
-
-        targetSection.classList.add('highlight-inject');
-        setTimeout(() => targetSection.classList.remove('highlight-inject'), 2200);
-      }
+      scrollToPaymentSection();
     }
 
     function handlePackageButtonClick(e, btn) {
@@ -6381,7 +6578,7 @@
       const selectedTypeEl = document.querySelector('input[name="donation_type_custom"]:checked');
       const typeVal = selectedTypeEl ? selectedTypeEl.value : 'Zakat';
 
-      let causeName = '100% Zakat on Marriage';
+      let causeName = 'Marriage Zakat Fund';
       if (typeVal === 'Sadaqah' || typeVal === 'General Support' || typeVal === 'General') {
         causeName = 'General Sadaqah / Marriage Fund';
       }
@@ -6413,10 +6610,43 @@
 
       selectDonationAndScroll({
         amount: zakat,
-        cause: '100% Zakat on Marriage',
+        cause: 'Marriage Zakat Fund',
         type: 'Zakat',
         currency: currentZakatCurrency || (typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD')
       });
+    }
+
+    function validateCardCheckoutForm(cardNum, expiry, cvc, email) {
+      const cleanCard = (cardNum || '').replace(/\D/g, '');
+      if (cleanCard.length < 15 || cleanCard.length > 19) {
+        alert('Please enter a valid 16-digit card number.');
+        return false;
+      }
+
+      const expiryParts = (expiry || '').split('/');
+      if (expiryParts.length !== 2) {
+        alert('Please enter expiry date in MM/YY format (e.g. 12/28).');
+        return false;
+      }
+      const month = parseInt(expiryParts[0], 10);
+      if (isNaN(month) || month < 1 || month > 12) {
+        alert('Please enter a valid expiry month (01-12).');
+        return false;
+      }
+
+      const cleanCvc = (cvc || '').replace(/\D/g, '');
+      if (cleanCvc.length < 3 || cleanCvc.length > 4) {
+        alert('Please enter a valid 3 or 4 digit CVC security code.');
+        return false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email || '')) {
+        alert('Please enter a valid email address to receive your instant digital receipt.');
+        return false;
+      }
+
+      return true;
     }
 
     function processInlineCardCheckout(e) {
@@ -6426,21 +6656,36 @@
       const emailInput = document.getElementById('inlineCardEmailInput');
       const nameInput = document.getElementById('inlineCardNameInput');
       const causeSelect = document.getElementById('inlineCardCauseSelect');
+      const cardNumInput = document.getElementById('inlineCardNumberInput');
+      const expiryInput = document.getElementById('inlineCardExpiryInput');
+      const cvcInput = document.getElementById('inlineCardCvcInput');
 
       const amount = parseFloat(amountInput?.value) || 50;
-      const email = emailInput?.value || 'donor@example.com';
+      const email = emailInput?.value || '';
       const name = nameInput?.value || 'Valued Donor';
       const cause = causeSelect?.options[causeSelect.selectedIndex]?.text || 'Essential Household Start-Up Kit';
+      const cardNum = cardNumInput?.value || '';
+      const expiry = expiryInput?.value || '';
+      const cvc = cvcInput?.value || '';
+
+      if (!validateCardCheckoutForm(cardNum, expiry, cvc, email)) {
+        return;
+      }
+
+      const curr = typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD';
+      const currencySymbols = { USD: '$', GBP: '£', CAD: 'CA$', AUD: 'A$', PKR: 'Rs. ' };
+      const sym = currencySymbols[curr] || '$';
+      const formattedAmt = curr === 'PKR' ? `Rs. ${amount.toLocaleString('en-US')}` : `${sym}${amount.toFixed(2)} ${curr}`;
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>⏳ Processing 256-Bit SSL Payment...</span>`;
+        submitBtn.innerHTML = `<span>⏳ Encrypting &amp; Processing 256-Bit SSL Payment...</span>`;
       }
 
       setTimeout(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = `<span>🔒 Pay $${amount.toFixed(2)} & Get Instant Receipt →</span>`;
+          updateInlineBtnText();
         }
 
         openCardModal();
@@ -6458,7 +6703,7 @@
         const successCause = document.getElementById('successCauseDisplay');
         const successEmail = document.getElementById('successEmailDisplay');
 
-        if (successAmt) successAmt.textContent = `$${amount.toFixed(2)} USD`;
+        if (successAmt) successAmt.textContent = formattedAmt;
         if (successReceipt) successReceipt.textContent = `DN-2026-${Math.floor(1000 + Math.random() * 9000)}`;
         if (successCause) successCause.textContent = cause;
         if (successEmail) successEmail.textContent = email;
@@ -6523,7 +6768,11 @@
       const submitBtn = document.getElementById('cardPaySubmitBtn');
       if (!input || !submitBtn) return;
       const amt = parseFloat(input.value) || 0;
-      submitBtn.innerHTML = `<span>🔒 Pay $${amt.toFixed(2)} Securely</span>`;
+      const curr = typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD';
+      const currencySymbols = { USD: '$', GBP: '£', CAD: 'CA$', AUD: 'A$', PKR: 'Rs. ' };
+      const sym = currencySymbols[curr] || '$';
+      const formattedAmt = curr === 'PKR' ? `Rs. ${amt.toLocaleString('en-US')}` : `${sym}${amt.toFixed(2)}`;
+      submitBtn.innerHTML = `<span>🔒 Pay ${formattedAmt} Securely</span>`;
     }
 
     function formatCardNumber(input) {
@@ -6556,20 +6805,35 @@
       const amountInput = document.getElementById('cardAmountInput');
       const emailInput = document.getElementById('cardEmailInput');
       const causeSelect = document.getElementById('cardCauseSelect');
+      const cardNumInput = document.getElementById('cardNumberInput');
+      const expiryInput = document.getElementById('cardExpiryInput');
+      const cvcInput = document.getElementById('cardCvcInput');
 
       const amount = parseFloat(amountInput?.value) || 50;
-      const email = emailInput?.value || 'donor@example.com';
+      const email = emailInput?.value || '';
       const cause = causeSelect?.options[causeSelect.selectedIndex]?.text || 'Essential Household Start-Up Kit';
+      const cardNum = cardNumInput?.value || '';
+      const expiry = expiryInput?.value || '';
+      const cvc = cvcInput?.value || '';
+
+      if (!validateCardCheckoutForm(cardNum, expiry, cvc, email)) {
+        return;
+      }
+
+      const curr = typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD';
+      const currencySymbols = { USD: '$', GBP: '£', CAD: 'CA$', AUD: 'A$', PKR: 'Rs. ' };
+      const sym = currencySymbols[curr] || '$';
+      const formattedAmt = curr === 'PKR' ? `Rs. ${amount.toLocaleString('en-US')}` : `${sym}${amount.toFixed(2)} ${curr}`;
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>⏳ Processing 256-Bit SSL Payment...</span>`;
+        submitBtn.innerHTML = `<span>⏳ Encrypting &amp; Processing 256-Bit SSL Payment...</span>`;
       }
 
       setTimeout(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = `<span>🔒 Pay $${amount.toFixed(2)} Securely</span>`;
+          updateCardBtnText();
         }
 
         const tabCard = document.getElementById('tabContentCard');
@@ -6586,7 +6850,7 @@
         const successCause = document.getElementById('successCauseDisplay');
         const successEmail = document.getElementById('successEmailDisplay');
 
-        if (successAmt) successAmt.textContent = `$${amount.toFixed(2)} USD`;
+        if (successAmt) successAmt.textContent = formattedAmt;
         if (successReceipt) successReceipt.textContent = `DN-2026-${Math.floor(1000 + Math.random() * 9000)}`;
         if (successCause) successCause.textContent = cause;
         if (successEmail) successEmail.textContent = email;
@@ -7546,6 +7810,14 @@
       <span>💳 Sponsor a Bride</span>
     </a>
   </div>
+
+  <!-- FLOATING WHATSAPP SUPPORT FAB -->
+  <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20have%20a%20question%20regarding%20MarryWithDignity%20sponsorship." target="_blank" rel="noopener noreferrer" class="floating-wa-fab" aria-label="Contact Field Support & Verify Cases">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
+    </svg>
+    <span class="floating-wa-tooltip">Contact Field Support &amp; Verify Cases</span>
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/supabase-client.js"></script>
