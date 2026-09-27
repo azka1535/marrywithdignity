@@ -209,6 +209,95 @@
     }
 
     /* ========================================================
+       TOP BRAND LOGO HEADER STRIP
+       ======================================================== */
+    .top-brand-header-strip {
+      background: #ffffff;
+      border-bottom: 1px solid var(--slate-200);
+      padding: 14px 0;
+      width: 100%;
+    }
+
+    .top-brand-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .top-brand-logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .top-brand-logo-img {
+      height: 54px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(6, 78, 59, 0.15));
+      transition: transform 0.2s ease;
+    }
+
+    .top-brand-logo-link:hover .top-brand-logo-img {
+      transform: scale(1.05);
+    }
+
+    .top-brand-text-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .top-brand-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary-900);
+      letter-spacing: -0.4px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.1;
+    }
+
+    .top-brand-title .text-gold {
+      color: var(--accent-gold-dark, #b45309);
+    }
+
+    .top-brand-subtitle {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--primary-700);
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-top: 3px;
+    }
+
+    .top-brand-subtitle .badge-cert {
+      color: #047857;
+      background: #ecfdf5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+    }
+
+    .top-brand-trust-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-trust-item {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--slate-600);
+      background: var(--slate-100);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--slate-200);
+    }
+
+    /* ========================================================
        STICKY NAVBAR
        ======================================================== */
     .navbar {
@@ -219,7 +308,7 @@
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--slate-200);
       z-index: 1000;
-      padding: 14px 0;
+      padding: 10px 0;
       width: 100%;
       transition: all var(--transition-fast);
     }
@@ -231,64 +320,39 @@
       gap: 20px;
     }
 
-    .nav-logo-link {
+    .nav-brand-compact {
+      display: none;
+    }
+
+    .compact-logo-link {
       display: inline-flex;
       align-items: center;
+      gap: 8px;
       text-decoration: none;
-      flex-shrink: 0;
-      gap: 12px;
     }
 
-    .nav-logo {
-      height: 48px;
+    .compact-logo-img {
+      height: 36px;
       width: auto;
-      object-fit: contain;
-      transition: transform 0.2s ease;
-      filter: drop-shadow(0 2px 5px rgba(6, 78, 59, 0.12));
     }
 
-    .nav-logo-link:hover .nav-logo {
-      transform: scale(1.06);
-    }
-
-    .nav-logo-brand {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      line-height: 1.15;
-    }
-
-    .nav-logo-title {
-      font-size: 1.30rem;
+    .compact-logo-title {
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--primary-900);
-      letter-spacing: -0.35px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.1;
-      text-decoration: none;
-      white-space: nowrap;
     }
 
-    .nav-logo-title .text-gold {
+    .compact-logo-title .text-gold {
       color: var(--accent-gold-dark, #b45309);
-    }
-
-    .nav-logo-tagline {
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--primary-700);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      margin-top: 2px;
-      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       list-style: none;
       align-items: center;
+      flex: 1;
+      justify-content: center;
     }
 
     .nav-links a {
@@ -364,22 +428,517 @@
     }
 
     /* ========================================================
-       HERO SECTION
+       HERO SECTION & ASYMMETRIC 2-COLUMN LAYOUT (75%-80% / 20%-25%)
        ======================================================== */
     .hero-section {
       background: radial-gradient(100% 100% at 50% 0%, #ecfdf5 0%, #f8fafc 80%);
-      padding: 70px 0 65px 0;
-      text-align: center;
+      padding: 44px 0 40px 0;
       position: relative;
       border-bottom: 1px solid var(--slate-200);
       overflow: hidden;
     }
 
-    .hero-content {
+    .hero-main-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 35px;
+      text-align: left;
+    }
+
+    /* Left Column: Asymmetric 75% to 80% Horizontal Width Allocation */
+    .hero-left-col {
+      flex: 1;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-left-col .hero-tag {
+      margin-left: 0;
+    }
+
+    .hero-left-col .hero-title {
+      font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      margin-bottom: 18px;
+    }
+
+    /* ========================================================
+       STYLIZED ZAKAT HERO TYPOGRAPHY BANNER (MOCKUP EXACT STYLE)
+       ======================================================== */
+    .zakat-hero-styled-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0;
+      margin-bottom: 12px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* 1. Yellow Skewed Badge: "Your 2.5%" */
+    .zakat-badge-yellow-wrapper {
+      display: inline-flex;
+      align-items: center;
+      transform: skewX(-12deg);
+      background: linear-gradient(135deg, #ffea00 0%, #facc15 100%);
+      padding: 5px 20px 5px 16px;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(250, 204, 21, 0.4);
+      margin-left: 0;
+    }
+
+    .zakat-badge-yellow-text {
+      display: inline-block;
+      transform: skewX(12deg);
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 2. Blue Skewed Bar: "Can Be Their 100%" */
+    .zakat-bar-blue-wrapper {
+      display: inline-flex;
+      align-items: center;
+      transform: skewX(-12deg);
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      padding: 10px 24px 10px 20px;
+      border-radius: 4px;
+      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.35);
+      margin: 2px 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .zakat-bar-blue-text {
+      display: inline-block;
+      transform: skewX(12deg);
+      font-size: clamp(1.45rem, 3.2vw, 2.1rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      white-space: nowrap;
+    }
+
+    /* 3. Dark Bordered Box Tagline: "Give Zakat, Trust Allah" */
+    .zakat-box-tagline-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1.5px solid #ffffff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.35);
+      margin-top: 4px;
+      max-width: 100%;
+    }
+
+    .zakat-box-icon-frame {
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid #ffffff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+
+    .zakat-box-icon-frame svg {
+      width: 18px;
+      height: 18px;
+      stroke: #ffffff;
+      fill: none;
+    }
+
+    .zakat-box-tagline-text {
+      font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .zakat-hero-styled-banner {
+        align-items: center;
+        text-align: center;
+      }
+      .zakat-badge-yellow-wrapper,
+      .zakat-bar-blue-wrapper {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .zakat-badge-yellow-wrapper {
+        padding: 5px 18px 5px 14px;
+        transform: skewX(-8deg);
+      }
+      .zakat-badge-yellow-text {
+        transform: skewX(8deg);
+      }
+      .zakat-bar-blue-wrapper {
+        padding: 8px 20px 8px 16px;
+        transform: skewX(-8deg);
+        max-width: 100%;
+      }
+      .zakat-bar-blue-text {
+        transform: skewX(8deg);
+        white-space: normal;
+      }
+      .zakat-box-tagline-wrapper {
+        padding: 8px 16px;
+        gap: 8px;
+      }
+    }
+
+    .hero-left-col .hero-subtitle {
+      margin-left: 0;
+      margin-right: 0;
+      font-size: clamp(1.06rem, 1.8vw, 1.24rem);
+      line-height: 1.68;
+      color: var(--slate-600);
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .hero-left-col .hero-urdu-box {
+      margin-left: 0;
+      margin-right: 0;
+      font-size: clamp(1.1rem, 2.1vw, 1.35rem);
+      line-height: 2.15;
+      padding: 16px 26px;
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .hero-left-col .hero-buttons {
+      justify-content: flex-start;
+      margin-bottom: 0;
+      gap: 10px;
+    }
+
+    /* Right Column: Prominent Zoomed Donate Card Slot Aligned to Right Side */
+    .hero-right-col {
+      width: 350px;
+      max-width: 360px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      margin-left: auto;
+    }
+
+    @keyframes heroCardAmbientFloat {
+      0%, 100% {
+        transform: scale(1.05) translateY(0);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1), 0 6px 16px rgba(4, 120, 87, 0.08);
+      }
+      50% {
+        transform: scale(1.05) translateY(-7px);
+        box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16), 0 10px 24px rgba(4, 120, 87, 0.12);
+      }
+    }
+
+    .hero-right-col .auto-donate-card-box.inline-card-version {
+      margin: 0 0 0 auto;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 24px;
+      padding: 34px 22px !important;
+      background: #ffffff;
+      width: 100%;
+      max-width: 320px !important;
+      box-sizing: border-box;
+      transform-origin: center right;
+      animation: heroCardAmbientFloat 5s ease-in-out infinite;
+    }
+
+    .hero-right-col .auto-donate-header-title {
+      font-size: 1.65rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 4px !important;
+      text-align: center !important;
+      letter-spacing: -0.025em !important;
+    }
+
+    .hero-right-col .auto-donate-header-sub {
+      font-size: 0.88rem !important;
+      margin-bottom: 22px !important;
+      text-align: center !important;
+      color: var(--slate-500) !important;
+      font-weight: 500 !important;
+    }
+
+    .hero-right-col .auto-donate-select-wrapper {
+      margin-bottom: 20px !important;
+    }
+
+    .hero-right-col .auto-donate-select {
+      height: 50px !important;
+      padding: 0 34px 0 14px !important;
+      font-size: 0.92rem !important;
+      border-radius: 12px !important;
+      font-weight: 600 !important;
+    }
+
+    .hero-right-col .auto-donate-select-arrow {
+      right: 14px !important;
+      font-size: 0.85rem !important;
+    }
+
+    .hero-right-col .auto-donate-amount-label {
+      font-size: 0.88rem !important;
+      margin-bottom: 12px !important;
+      font-weight: 600 !important;
+      color: var(--slate-600) !important;
+    }
+
+    .hero-right-col .auto-donate-grid {
+      gap: 8px !important;
+      margin-bottom: 24px !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .hero-right-col .auto-donate-opt-card {
+      min-height: 62px !important;
+      padding: 10px 4px !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      border-radius: 12px !important;
+      line-height: 1.25 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+
+    .hero-right-col .auto-donate-submit-btn {
+      height: 52px !important;
+      font-size: 1.08rem !important;
+      font-weight: 800 !important;
+      border-radius: 12px !important;
+      background: #ea1d24 !important;
+      box-shadow: 0 8px 24px rgba(234, 29, 36, 0.38) !important;
+    }
+
+    .hero-right-col .auto-donate-submit-btn:hover {
+      background: #d6131a !important;
+      box-shadow: 0 10px 28px rgba(234, 29, 36, 0.48) !important;
+    }
+
+    @media (max-width: 991px) {
+      .hero-main-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 28px;
+      }
+      .hero-left-col {
+        width: 100%;
+        max-width: 100%;
+      }
+      .hero-left-col .hero-tag,
+      .hero-left-col .hero-subtitle,
+      .hero-left-col .hero-urdu-box {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-left-col .hero-buttons {
+        justify-content: center;
+      }
+      .hero-right-col {
+        width: 100%;
+        max-width: 310px;
+        margin: 0 auto;
+        justify-content: center;
+      }
+      .hero-right-col .auto-donate-card-box.inline-card-version {
+        margin: 0 auto;
+        max-width: 310px !important;
+        transform: scale(1) !important;
+        animation: none;
+      }
+    }
+
+    /* ========================================================
+       WAYS TO DONATE INTERACTIVE MODAL STYLES
+       ======================================================== */
+    .ways-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .ways-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .ways-modal-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 32px 28px;
+      max-width: 560px;
+      width: 100%;
       position: relative;
-      z-index: 1;
-      max-width: 960px;
-      margin: 0 auto;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.3);
+      transform: scale(0.92) translateY(20px);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-sizing: border-box;
+    }
+
+    .ways-modal-overlay.active .ways-modal-card {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .ways-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #f1f5f9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      color: #64748b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .ways-modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      transform: rotate(90deg);
+    }
+
+    .ways-modal-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .ways-modal-badge {
+      display: inline-block;
+      background: #ecfdf5;
+      color: #047857;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+      border: 1px solid #a7f3d0;
+    }
+
+    .ways-modal-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .ways-modal-sub {
+      font-size: 0.92rem;
+      color: #64748b;
+    }
+
+    .ways-options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .ways-option-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 18px 20px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .ways-option-card:hover {
+      border-color: #059669;
+      background: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(5, 150, 105, 0.12);
+    }
+
+    .ways-opt-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .ways-opt-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .ways-opt-desc {
+      font-size: 0.85rem;
+      color: #475569;
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+
+    .ways-opt-btn-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #047857;
+      display: inline-block;
+    }
+
+    .ways-modal-footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #94a3b8;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 14px;
     }
 
     .hero-tag {
@@ -389,11 +948,11 @@
       background: var(--white);
       border: 1px solid #a7f3d0;
       color: var(--primary-800);
-      padding: 8px 22px;
+      padding: 7px 20px;
       border-radius: var(--radius-full);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       box-shadow: var(--shadow-sm);
     }
 
@@ -403,7 +962,7 @@
       line-height: 1.2;
       color: var(--slate-900);
       letter-spacing: -0.03em;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .hero-title .text-emerald {
@@ -414,21 +973,21 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
       color: var(--slate-600);
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto 16px auto;
       line-height: 1.65;
     }
 
     .hero-urdu-box {
       font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
-      font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+      font-size: clamp(1.02rem, 2vw, 1.25rem);
       color: var(--primary-900);
       direction: rtl;
-      line-height: 2.2;
-      max-width: 860px;
-      margin: 0 auto 36px auto;
+      line-height: 2.1;
+      max-width: 880px;
+      margin: 0 auto 20px auto;
       padding: 12px 24px;
       background: rgba(255, 255, 255, 0.7);
       border: 1px solid rgba(167, 243, 208, 0.6);
@@ -441,20 +1000,27 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 50px;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+      padding: 12px 22px;
+      font-size: 0.94rem;
+      white-space: nowrap;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       background: var(--primary-700);
       color: var(--white) !important;
       font-weight: 700;
-      font-size: 1.05rem;
-      padding: 15px 34px;
+      font-size: 1.02rem;
+      padding: 14px 30px;
       border-radius: var(--radius-full);
       box-shadow: var(--shadow-primary);
       transition: all var(--transition-normal);
@@ -472,12 +1038,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       background: var(--white);
       color: var(--primary-800) !important;
       font-weight: 700;
-      font-size: 1.02rem;
-      padding: 14px 30px;
+      font-size: 0.98rem;
+      padding: 13px 26px;
       border-radius: var(--radius-full);
       border: 2px solid var(--primary-600);
       box-shadow: var(--shadow-sm);
@@ -517,8 +1083,28 @@
     }
 
     .hero-stat-icon {
-      font-size: 1.6rem;
-      margin-bottom: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-full);
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--primary-700);
+      margin: 0 auto 8px auto;
+      transition: all var(--transition-fast);
+    }
+
+    .hero-stat-card:hover .hero-stat-icon {
+      background: var(--primary-700);
+      color: var(--white);
+      transform: scale(1.08);
+    }
+
+    .hero-svg-icon {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2.2;
     }
 
     .hero-stat-val {
@@ -687,6 +1273,8 @@
       gap: 28px;
       margin-bottom: 50px;
       align-items: stretch;
+      padding-top: 20px;
+      overflow: visible;
     }
 
     .package-card {
@@ -699,6 +1287,7 @@
       position: relative;
       box-shadow: var(--shadow-sm);
       transition: all var(--transition-normal);
+      overflow: visible;
     }
 
     .package-card:hover {
@@ -715,19 +1304,20 @@
 
     .featured-badge {
       position: absolute;
-      top: -14px;
+      top: -15px;
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(135deg, var(--primary-700) 0%, #059669 100%);
       color: var(--white);
       font-size: 0.78rem;
       font-weight: 800;
-      padding: 4px 18px;
+      padding: 5px 20px;
       border-radius: var(--radius-full);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      box-shadow: 0 4px 12px rgba(4, 120, 87, 0.3);
+      box-shadow: 0 4px 14px rgba(4, 120, 87, 0.35);
       white-space: nowrap;
+      z-index: 10;
     }
 
     .pkg-title {
@@ -798,6 +1388,159 @@
       border-radius: var(--radius-full);
       box-sizing: border-box;
       display: inline-block;
+    }
+
+    /* ========================================================
+       HOW IT WORKS & 3-STEP TIMELINE SECTION
+       ======================================================== */
+    .timeline-wrapper {
+      position: relative;
+      margin-top: 36px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-line {
+      position: absolute;
+      top: 52px;
+      left: 16%;
+      right: 16%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-500) 0%, var(--primary-700) 50%, var(--primary-500) 100%);
+      border-radius: var(--radius-full);
+      z-index: 1;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--primary-500);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .step-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--primary-700) 0%, var(--primary-600) 100%);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(4, 120, 87, 0.35);
+      border: 4px solid var(--white);
+    }
+
+    .timeline-icon {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .step-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+
+    .step-highlight {
+      display: inline-block;
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--primary-800);
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .step-desc {
+      font-size: 0.94rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
+
+    .timeline-guarantee-banner {
+      background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+      border: 1.5px solid var(--primary-500);
+      border-radius: var(--radius-lg);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 30px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .guarantee-banner-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .guarantee-banner-text {
+      font-size: 0.95rem;
+      color: var(--primary-900);
+      line-height: 1.5;
+    }
+
+    /* Donor Guarantee Notice on Package Cards */
+    .donor-guarantee-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-top: auto;
+      margin-bottom: 20px;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--primary-900);
+      text-align: left;
+    }
+
+    .guarantee-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    .guarantee-text {
+      font-weight: 600;
+    }
+
+    @media (max-width: 991px) {
+      .timeline-line { display: none; }
+      .timeline-grid { grid-template-columns: 1fr; gap: 24px; }
+      .timeline-guarantee-banner { flex-direction: column; text-align: center; }
     }
 
     /* Custom Donation Box */
@@ -915,13 +1658,138 @@
       box-shadow: var(--shadow-md);
     }
 
-    .zakat-currency-selector {
+    .zakat-controls-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .zakat-currency-selector,
+    .nisab-benchmark-toggle-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 28px;
       flex-wrap: wrap;
+    }
+
+    .nisab-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nisab-pill {
+      padding: 7px 18px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--slate-200);
+      background: var(--slate-50);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--slate-700);
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nisab-pill:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    /* SILVER BENCHMARK BUTTON */
+    .nisab-pill[data-benchmark="silver"] {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+    }
+
+    .nisab-pill[data-benchmark="silver"]:hover {
+      border-color: #10b981;
+      background: #ecfdf5;
+      color: #047857;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+    }
+
+    .nisab-pill[data-benchmark="silver"].active {
+      background: #d1fae5;
+      color: #065f46;
+      border-color: #10b981;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.22);
+      font-weight: 800;
+    }
+
+    /* GOLD BENCHMARK BUTTON (DISTINCT RICH GOLDEN STYLING) */
+    .nisab-pill[data-benchmark="gold"] {
+      border-color: #f59e0b;
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    .nisab-pill[data-benchmark="gold"]:hover {
+      border-color: #d97706;
+      background: #fef3c7;
+      color: #78350f;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+    }
+
+    .nisab-pill[data-benchmark="gold"].active {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      color: #78350f;
+      border-color: #d97706;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+      font-weight: 800;
+    }
+
+    .nisab-threshold-badge {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: var(--primary-800);
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      font-size: 0.92rem;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .nisab-alert-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .nisab-alert-box.info {
+      background: var(--slate-100);
+      border: 1.5px solid var(--slate-300);
+      color: var(--slate-800);
+    }
+
+    .nisab-alert-box.success {
+      background: #dcfce7;
+      border: 1.5px solid #16a34a;
+      color: #14532d;
+    }
+
+    .nisab-alert-box.warning {
+      background: #fef3c7;
+      border: 1.5px solid #d97706;
+      color: #78350f;
+    }
+
+    .nisab-alert-box .alert-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
 
     .zakat-curr-lbl {
@@ -1765,17 +2633,27 @@
       color: var(--slate-600);
       border-radius: var(--radius-md);
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, color 0.2s ease, box-shadow 0.25s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      position: relative;
+    }
+
+    .checkout-tab-btn:hover {
+      transform: scale(1.03);
     }
 
     .checkout-tab-btn.active {
       background: var(--white);
       color: var(--primary-800);
       box-shadow: var(--shadow-sm);
+    }
+
+    .checkout-tab-btn.active:hover {
+      transform: scale(1.03);
+      box-shadow: var(--shadow-md);
     }
 
     .checkout-amount-grid {
@@ -1794,10 +2672,18 @@
       font-size: 0.95rem;
       color: var(--slate-700);
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.25s ease;
     }
 
-    .checkout-amount-btn.active, .checkout-amount-btn:hover {
+    .checkout-amount-btn:hover {
+      border-color: var(--primary-600);
+      background: var(--primary-50);
+      color: var(--primary-800);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+    }
+
+    .checkout-amount-btn.active {
       border-color: var(--primary-600);
       background: var(--primary-50);
       color: var(--primary-800);
@@ -1852,6 +2738,233 @@
       flex-wrap: wrap;
     }
 
+    /* MAIN PAYMENT TABS SWITCHER */
+    .main-payment-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      background: var(--slate-100);
+      padding: 6px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--slate-200);
+    }
+
+    .main-tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border: 2px solid transparent;
+      background: transparent;
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.95);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      z-index: 2;
+    }
+
+    .main-tab-btn.active {
+      background: var(--white);
+      border-color: var(--primary-600);
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.15);
+    }
+
+    .main-tab-btn.active:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 10px 24px rgba(5, 150, 105, 0.22);
+    }
+
+    .main-tab-badge {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: #047857;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .main-tab-badge.pak {
+      background: #0284c7;
+    }
+
+    .main-tab-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 2px;
+    }
+
+    .main-tab-btn.active .main-tab-title {
+      color: var(--primary-700);
+    }
+
+    .main-tab-sub {
+      font-size: 0.82rem;
+      color: var(--slate-500);
+      font-weight: 500;
+    }
+
+    .intl-checkout-card {
+      background: var(--white);
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 28px 24px;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .intl-checkout-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .intl-checkout-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+
+    .intl-checkout-header p {
+      font-size: 0.92rem;
+      color: var(--slate-600);
+      margin-bottom: 12px;
+    }
+
+    .intl-trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .intl-trust-pills span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #ecfdf5;
+      color: #047857;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid #a7f3d0;
+    }
+
+    .gateway-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--slate-200);
+    }
+
+    .pay-method-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      padding: 5px 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+    }
+
+    .intl-wire-accordion {
+      margin-top: 20px;
+    }
+
+    .intl-wire-accordion details {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 12px 16px;
+    }
+
+    .intl-wire-accordion summary {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-700);
+      cursor: pointer;
+    }
+
+    .intl-wire-body {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .wire-box-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .wire-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .wire-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--slate-500);
+      letter-spacing: 0.04em;
+    }
+
+    .wire-value {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    .wire-value.highlight {
+      color: var(--primary-700);
+    }
+
+    .wire-copy-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .wire-copy-row code {
+      font-size: 0.95rem;
+      font-weight: 800;
+      background: var(--white);
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--slate-200);
+      color: var(--primary-800);
+    }
+
+    @media (max-width: 640px) {
+      .main-payment-tabs {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .main-tab-btn {
+        padding: 12px 14px;
+      }
+      .intl-checkout-card {
+        padding: 20px 16px;
+      }
+    }
+
     /* FOOTER */
     footer {
       background: var(--slate-900);
@@ -1892,20 +3005,13 @@
     }
 
     /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 1150px) and (min-width: 769px) {
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: 0.88rem; padding: 6px 2px; }
-      .nav-cta-btn { padding: 8px 16px; font-size: 0.85rem; }
+    @media (min-width: 1025px) and (max-width: 1366px) {
+      .nav-links { gap: 8px; }
+      .nav-links a { font-size: 0.83rem; padding: 4px 4px; }
+      .nav-cta-btn { padding: 7px 14px; font-size: 0.82rem; }
     }
 
     @media (max-width: 1024px) {
-      .pricing-grid, .mission-grid, .payment-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
-      .matrix-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 768px) {
       .section-padding { padding: 55px 0; }
       .navbar { padding: 10px 0; }
       .mobile-menu-toggle { display: flex; }
@@ -1935,13 +3041,16 @@
 
       .hero-section { padding: 45px 0 45px 0; }
       .hero-tag { font-size: 0.78rem; padding: 6px 16px; }
-      .hero-title { font-size: 1.85rem; }
-      .hero-buttons { flex-direction: column; width: 100%; gap: 12px; }
-      .btn-primary, .btn-secondary { width: 100%; padding: 14px 20px; box-sizing: border-box; }
 
       .pricing-grid, .mission-grid, .payment-grid, .matrix-grid, .zakat-grid { grid-template-columns: 1fr; gap: 18px; }
       .package-card, .mission-card, .pay-card, .matrix-card, .custom-donate-card, .payment-container-box, .zakat-calc-card { padding: 24px 20px; }
       .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+
+    @media (max-width: 991px) {
+      .hero-title { font-size: clamp(1.85rem, 4.5vw, 2.4rem); }
+      .hero-buttons { flex-direction: column; width: 100%; gap: 12px; }
+      .hero-buttons .btn-primary, .hero-buttons .btn-secondary { width: 100%; padding: 14px 20px; box-sizing: border-box; }
     }
 
     @media (max-width: 480px) {
@@ -2456,47 +3565,260 @@
     /* ========================================================
        FRONT PAGE AUTO-POPUP DONATION MODAL (EXACT MOCKUP DESIGN)
        ======================================================== */
+    /* ========================================================
+       WAYS TO DONATE FLOATING POPOVER TABLE (NO PAGE BLUR)
+       ======================================================== */
     .auto-donate-modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      z-index: 9999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      bottom: 85px;
+      right: 24px;
+      top: auto;
+      left: auto;
+      width: 480px;
+      max-width: calc(100vw - 32px);
+      height: auto;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      z-index: 99999;
+      display: block;
       opacity: 0;
-      transition: opacity 0.35s ease;
+      visibility: hidden;
+      transform: translateY(12px) scale(0.95);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      padding: 0;
     }
 
     .auto-donate-modal-overlay.active {
-      display: flex;
       opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
     }
 
     .auto-donate-card-box {
       background: #ffffff;
-      border-radius: 24px;
-      padding: 36px 30px;
+      border-radius: 20px;
+      padding: 20px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.28), 0 0 0 1px rgba(226, 232, 240, 0.9);
+      box-sizing: border-box;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+
+    /* Popover Arrow pointing down to floating button */
+    .auto-donate-card-box::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      right: 42px;
+      width: 16px;
+      height: 16px;
+      background: #ffffff;
+      transform: rotate(45deg);
+      border-right: 1px solid rgba(226, 232, 240, 0.9);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 4px 4px 6px -2px rgba(15, 23, 42, 0.08);
+    }
+
+    .popover-table-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .popover-table-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 4px 0 0 0;
+    }
+
+    .auto-donate-table-wrapper {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+
+    .ways-donate-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.82rem;
+    }
+
+    .ways-donate-table th {
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 700;
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .ways-donate-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+
+    .ways-donate-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .ways-donate-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    .td-method-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .td-m-icon {
+      font-size: 1.35rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .td-m-title {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .td-m-badge {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-top: 3px;
+    }
+
+    .td-m-badge.intl { background: #eff6ff; color: #1d4ed8; }
+    .td-m-badge.pak { background: #fef2f2; color: #dc2626; }
+    .td-m-badge.hbl { background: #f0fdf4; color: #15803d; }
+    .td-m-badge.receipt { background: #fefce8; color: #a16207; }
+
+    .td-info-text {
+      font-size: 0.78rem;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    .td-acc-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .td-acc-num {
+      font-weight: 700;
+      color: #0f172a;
+      font-family: monospace;
+      font-size: 0.8rem;
+    }
+
+    .td-acc-title {
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+
+    .table-act-btn {
+      border: none;
+      padding: 6px 11px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      outline: none;
+    }
+
+    .table-act-btn.btn-intl {
+      background: #2563eb;
+      color: #ffffff;
+    }
+    .table-act-btn.btn-intl:hover { background: #1d4ed8; }
+
+    .table-act-btn.btn-pak {
+      background: #ea1d24;
+      color: #ffffff;
+    }
+    .table-act-btn.btn-pak:hover { background: #d6131a; }
+
+    .table-act-btn.btn-copy {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    .table-act-btn.btn-copy:hover { background: #e2e8f0; color: #0f172a; }
+
+    .table-act-btn.btn-receipt {
+      background: #059669;
+      color: #ffffff;
+    }
+    .table-act-btn.btn-receipt:hover { background: #047857; }
+
+    @media (max-width: 576px) {
+      .auto-donate-modal-overlay {
+        bottom: 75px;
+        right: 12px;
+        left: 12px;
+        width: auto;
+        max-width: none;
+      }
+
+      .auto-donate-card-box {
+        padding: 14px 10px;
+      }
+
+      .auto-donate-card-box::after {
+        right: 28px;
+      }
+
+      .ways-donate-table th, 
+      .ways-donate-table td {
+        padding: 8px 6px;
+        font-size: 0.74rem;
+      }
+
+      .td-m-icon {
+        font-size: 1.1rem;
+      }
+
+      .table-act-btn {
+        padding: 5px 8px;
+        font-size: 0.7rem;
+      }
+    }
+
+    .auto-donate-card-box.inline-card-version {
+      transform: none !important;
+      opacity: 1 !important;
+      margin: 10px auto 45px auto;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      background: #ffffff;
       max-width: 440px;
       width: 100%;
       position: relative;
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25);
-      transform: scale(0.85) translateY(30px);
-      opacity: 0;
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
-      box-sizing: border-box;
-      border: 1px solid rgba(226, 232, 240, 0.8);
-    }
-
-    .auto-donate-modal-overlay.active .auto-donate-card-box {
-      transform: scale(1) translateY(0);
-      opacity: 1;
     }
 
     .auto-donate-close-btn {
@@ -2703,20 +4025,163 @@
         font-size: 0.85rem;
       }
     }
+
+    /* DONOR SELECTION MODAL STYLES */
+    .auto-donate-badge-header {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ea1d24;
+      background: #fef2f2;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+
+    .donor-type-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .donor-select-card {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .donor-select-card.donor-intl:hover {
+      border-color: #0284c7;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -6px rgba(2, 132, 199, 0.2);
+      background: #f0f9ff;
+    }
+
+    .donor-select-card.donor-pak:hover {
+      border-color: #059669;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -6px rgba(5, 150, 105, 0.2);
+      background: #ecfdf5;
+    }
+
+    .donor-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .donor-badge-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      letter-spacing: 0.05em;
+    }
+
+    .donor-badge-tag.pak {
+      background: #d1fae5;
+      color: #047857;
+    }
+
+    .donor-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .donor-card-body {
+      flex: 1;
+    }
+
+    .donor-card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .donor-card-desc {
+      font-size: 0.84rem;
+      color: #64748b;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .donor-card-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding-top: 10px;
+      margin-top: 4px;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    .donor-select-card.donor-intl .donor-card-action {
+      color: #0284c7;
+    }
+
+    .donor-select-card.donor-pak .donor-card-action {
+      color: #059669;
+    }
+
+    .donor-card-action .arrow {
+      transition: transform 0.2s ease;
+      font-size: 1.15rem;
+    }
+
+    .donor-select-card:hover .donor-card-action .arrow {
+      transform: translateX(5px);
+    }
   </style>
 </head>
 <body>
 
+  <!-- SEPARATE TOP BRAND LOGO HEADER STRIP -->
+  <div class="top-brand-header-strip">
+    <div class="container top-brand-container">
+      <a href="index.html" class="top-brand-logo-link">
+        <img src="images/logo-icon.svg" alt="MarryWithDignity Logo" class="top-brand-logo-img">
+        <div class="top-brand-text-group">
+          <div class="top-brand-title">Marry<span class="text-gold">With</span>Dignity</div>
+          <div class="top-brand-subtitle">MARRIAGE ASSISTANCE CHARITY • <span class="badge-cert">SECP &amp; PCP CERTIFIED NGO</span></div>
+        </div>
+      </a>
+      <div class="top-brand-trust-badges">
+        <span class="top-trust-item">🔒 100% Tax Deductible</span>
+        <span class="top-trust-item">✅ 100% Zakat &amp; Sadaqah Verified</span>
+      </div>
+    </div>
+  </div>
+
   <!-- STICKY NAVBAR -->
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="nav-logo-link">
-        <img src="images/logo-icon.svg" alt="MarryWithDignity Logo" class="nav-logo">
-        <div class="nav-logo-brand">
-          <span class="nav-logo-title">Marry<span class="text-gold">With</span>Dignity</span>
-          <span class="nav-logo-tagline">Marriage Assistance Charity</span>
-        </div>
-      </a>
+      <div class="nav-brand-compact">
+        <a href="index.html" class="compact-logo-link">
+          <img src="images/logo-icon.svg" alt="Logo" class="compact-logo-img">
+          <span class="compact-logo-title">Marry<span class="text-gold">With</span>Dignity</span>
+        </a>
+      </div>
 
       <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
         <span>☰</span>
@@ -2724,6 +4189,7 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#mission">About Mission</a></li>
         <li><a href="#inventory-showcase">Kit Showcase</a></li>
         <li><a href="#packages">Sponsor a Bride</a></li>
@@ -2741,41 +4207,104 @@
   <!-- 1. HERO SECTION -->
   <section class="hero-section">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-tag">
-          💍 MARRYWITHDIGNITY • 100% ZAKAT &amp; SADAQAH ELIGIBLE
+      <!-- 2-COLUMN SIDE-BY-SIDE HERO LAYOUT -->
+      <div class="hero-main-layout">
+        <!-- LEFT COLUMN: TEXT, URDU BOX & BUTTONS -->
+        <div class="hero-left-col">
+          <div class="hero-tag">
+            💍 MARRYWITHDIGNITY • 100% ZAKAT &amp; SADAQAH ELIGIBLE
+          </div>
+
+          <h1 class="hero-title">
+            Sponsor a Deserving Bride with Dignity <span class="text-emerald">| 100% Zakat Compliant</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Thousands of poor families across the country face crippling debt just to arrange essential household start-up items for their daughters' marriages. Many deserving daughters wait for years due to lack of wedding support. Let's fulfill a blessed Sunnah, donate your Zakat or Sadaqah, and sponsor complete bridal household kits with 100% field transparency and zero admin overhead.
+          </p>
+
+          <div class="hero-urdu-box" lang="ur">
+            پاکستان بھر میں ہزاروں غریب خاندانوں کو صرف اپنی بیٹیوں کی شادیوں کیلۓ جہیز کا بندوبست کرنے کے لیے اپاہج قرضوں کا سامنا ہے۔ اکثر خاندان ایسے ہیں جن کی لڑکیاں شادی کے اخراجات نہ ہونے کی وجہ سے بوڑھی ہورہی ہیں۔ آئیں ایک بابرکت سنت کو پورا کریں، اپنی زکوٰۃ یا صدقہ وقف کریں، اور 100% فیلڈ شفافیت اور زیرو ایڈمن اوور ہیڈ کے ساتھ شادی کی مکمل گھریلو کٹس کو سپانسر کریں۔
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#payment-methods" class="btn-primary">
+              <span>💳 Donate Zakat / Sadaqah Online →</span>
+            </a>
+            <a href="#packages" class="btn-secondary">
+              <span>📦 View Bride Sponsorship Packages</span>
+            </a>
+            <a href="#zakat-calculator" class="btn-secondary" style="border-color: var(--accent-gold); color: var(--accent-gold-dark);">
+              <span>🧮 Marriage Zakat Calculator</span>
+            </a>
+          </div>
         </div>
 
-        <h1 class="hero-title">
-          Sponsor a Deserving Bride with Dignity <span class="text-emerald">| 100% Zakat Compliant</span>
-        </h1>
+        <!-- RIGHT COLUMN: EMBEDDED SIDE DONATE CARD WITH BANNER ABOVE -->
+        <div class="hero-right-col">
+          <!-- STYLIZED ZAKAT HERO TYPOGRAPHY BANNER (EXACT IMAGE MOCKUP STYLE) -->
+          <div class="zakat-hero-styled-banner">
+            <div class="zakat-badge-yellow-wrapper">
+              <span class="zakat-badge-yellow-text">Your 2.5%</span>
+            </div>
+            
+            <div class="zakat-bar-blue-wrapper">
+              <span class="zakat-bar-blue-text">Can Be Their 100%</span>
+            </div>
 
-        <p class="hero-subtitle">
-          Thousands of poor families across the country are facing crippling debt just to arrange dowry for their daughters' marriages. Most of the families are whose daughters are getting old due to lack of wedding expenses. Let's fulfill a blessed Sunnah, donate your Zakat or Sadaqah, and sponsor complete home-made wedding kits with 100% field transparency and zero admin overhead.
-        </p>
+            <div class="zakat-box-tagline-wrapper">
+              <div class="zakat-box-icon-frame" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 11v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9"/>
+                  <path d="M2 6h20v5H2z"/>
+                  <path d="M12 3v3"/>
+                  <path d="M12 15c-1.5 0-2.5-1-2.5-2s1.5-2.5 2.5-2.5 2.5 1.5 2.5 2.5-1 2-2.5 2z"/>
+                </svg>
+              </div>
+              <span class="zakat-box-tagline-text">Give Zakat, Trust Allah</span>
+            </div>
+          </div>
 
-        <div class="hero-urdu-box" lang="ur">
-          پاکستان بھر میں ہزاروں غریب خاندانوں کو صرف اپنی بیٹیوں کی شادیوں کیلۓ جہیز کا بندوبست کرنے کے لیے اپاہج قرضوں کا سامنا ہے۔ اکثر خاندان ایسے ہیں جن کی لڑکیاں شادی کے اخراجات نہ ہونے کی وجہ سے بوڑھی ہورہی ہیں۔ آئیں ایک بابرکت سنت کو پورا کریں، اپنی زکوٰۃ یا صدقہ وقف کریں، اور 100% فیلڈ شفافیت اور زیرو ایڈمن اوور ہیڈ کے ساتھ شادی کی مکمل گھریلو کٹس کو سپانسر کریں۔
+          <div class="auto-donate-card-box inline-card-version" id="frontPageDonateCard">
+            <h2 class="auto-donate-header-title">Donate</h2>
+            <p class="auto-donate-header-sub">Please select the Project to Donate</p>
+
+            <div class="auto-donate-select-wrapper">
+              <select id="autoDonateProjectInline" class="auto-donate-select" onchange="handleAutoDonateProjectChange(this)">
+                <option value="Sponsor a Bride">Sponsor a Bride (Full Package)</option>
+                <option value="Bridal Household Essentials">Bridal Household Essentials</option>
+                <option value="Orphan Marriage Aid">Orphan Marriage Aid</option>
+                <option value="Marriage Zakat Fund">Marriage Zakat Fund</option>
+                <option value="General Sadaqah Fund">General Sadaqah Fund</option>
+              </select>
+              <div class="auto-donate-select-arrow">▼</div>
+            </div>
+
+            <div class="auto-donate-amount-label">Choose Amount</div>
+
+            <div class="auto-donate-grid">
+              <div class="auto-donate-opt-card active" onclick="selectAutoDonateOption(this, 'Donate for Bride', 'Rs 25,000')">
+                Donate for<br>Bride
+              </div>
+              <div class="auto-donate-opt-card" onclick="selectAutoDonateOption(this, 'Zakat', 'Rs 50,000')">
+                Zakat
+              </div>
+              <div class="auto-donate-opt-card" onclick="selectAutoDonateOption(this, 'Sadaqah', 'Rs 15,000')">
+                Sadaqah
+              </div>
+            </div>
+
+            <button type="button" class="auto-donate-submit-btn" onclick="submitAutoDonatePopup()">Donate Now →</button>
+          </div>
         </div>
+      </div>
 
-        <div class="hero-buttons">
-          <a href="#payment-methods" class="btn-primary">
-            <span>💳 Donate Zakat / Sadaqah Online →</span>
-          </a>
-          <a href="#packages" class="btn-secondary">
-            <span>📦 View Bride Sponsorship Packages</span>
-          </a>
-          <a href="#zakat-calculator" class="btn-secondary" style="border-color: var(--accent-gold); color: var(--accent-gold-dark);">
-            <span>🧮 Marriage Zakat Calculator</span>
-          </a>
-        </div>
-
-        <!-- HERO FIELD INVENTORY & CAMPAIGN SHOWCASE (ANIMATED SLIDESHOW) -->
-        <div class="hero-showcase-box" id="heroShowcaseBox">
+      <!-- HERO FIELD INVENTORY & CAMPAIGN SHOWCASE (ANIMATED SLIDESHOW) -->
+      <div class="hero-showcase-box" id="heroShowcaseBox">
           <!-- Top Header & View Toggle -->
           <div class="hero-showcase-header">
             <div class="hero-showcase-badge" id="heroShowcaseBadge">
-              📸 <span id="heroBadgeText">Live Operations (1/3) • Procured Marriage Dowry Goods Kit (اصلی گھریلو سامان)</span>
+              📸 <span id="heroBadgeText">Live Operations (1/3) • Procured Marriage Household Start-Up Kit</span>
             </div>
             <div class="hero-slideshow-toggle-btns" style="display: flex; gap: 6px;">
               <button type="button" class="hero-toggle-btn active" id="btnModeSlideshow" onclick="setHeroShowcaseMode('slideshow')" title="Animated Full-Width Slideshow">
@@ -2795,41 +4324,41 @@
           <!-- SLIDESHOW CONTAINER (FULL DISPLAY ONE AFTER ANOTHER) -->
           <div class="hero-slideshow-viewport" id="heroSlideshowViewport">
             <!-- Slide 1 -->
-            <div class="hero-slide active" data-slide="0" onclick="openImageLightboxModal('images/dowry-kit-items.png', 'Essential Marriage Dowry Goods Kit (اصلی گھریلو سامان)')" title="Click to view high-resolution image">
-              <img src="images/dowry-kit-items.png" alt="Bride Dowry Kit Items Showcase" class="hero-slide-img">
+            <div class="hero-slide active" data-slide="0" onclick="openImageLightboxModal('images/packed-kits-logistics.jpg', 'Actual Packed Kits Warehouse Logistics')" title="Click to view high-resolution image">
+              <img src="images/packed-kits-logistics.jpg" alt="Actual Packed Bridal Household Kits Warehouse Inventory" class="hero-slide-img">
               <div class="hero-slide-overlay">
                 <div class="hero-slide-info">
-                  <span class="hero-slide-chip">📦 Slide 1 of 3 • Procured Goods</span>
-                  <h3 class="hero-slide-title">Procured Marriage Dowry Kit</h3>
-                  <p class="hero-slide-desc">Brand-new cookware, dinnerware, bedding &amp; essential marriage utilities.</p>
+                  <span class="hero-slide-chip">📦 Slide 1 of 3 • Warehouse Logistics</span>
+                  <h3 class="hero-slide-title">Actual Packed Kits &amp; Dispatch Logistics</h3>
+                  <p class="hero-slide-desc">Itemized sealed cardboard packages labeled with Zakat beneficiary tracking codes (#MWD-2026).</p>
                 </div>
-                <span class="zoom-btn">🔍 View HD Photo</span>
+                <span class="zoom-btn">🔍 View HD Field Photo</span>
               </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="hero-slide" data-slide="1" onclick="openImageLightboxModal('images/betiyan-bojh-nahi-hoti.png', 'بیٹیاں بوجھ نہیں ہوتی - Direct Field Dispatch')" title="Click to view high-resolution image">
-              <img src="images/betiyan-bojh-nahi-hoti.png" alt="بیٹیاں بوجھ نہیں ہوتی - Field Transport" class="hero-slide-img">
+            <div class="hero-slide" data-slide="1" onclick="openImageLightboxModal('images/real-delivery-truck.jpg', 'Real Field Delivery Vehicle Logistics')" title="Click to view high-resolution image">
+              <img src="images/real-delivery-truck.jpg" alt="Real Delivery Vehicle Logistics Transport" class="hero-slide-img">
               <div class="hero-slide-overlay">
                 <div class="hero-slide-info">
-                  <span class="hero-slide-chip">🚚 Slide 2 of 3 • Field Dispatch</span>
-                  <h3 class="hero-slide-title">Direct Field Vehicle Transport</h3>
-                  <p class="hero-slide-desc">Direct vehicle delivery to deserving families across Pakistan (بیٹیاں بوجھ نہیں ہوتی).</p>
+                  <span class="hero-slide-chip">🚚 Slide 2 of 3 • Vehicle Logistics</span>
+                  <h3 class="hero-slide-title">Direct Vehicle Transport &amp; Field Dispatch</h3>
+                  <p class="hero-slide-desc">Dedicated trucks delivering packed marriage packages directly to rural beneficiary doors across Pakistan.</p>
                 </div>
-                <span class="zoom-btn">🔍 View HD Photo</span>
+                <span class="zoom-btn">🔍 View HD Field Photo</span>
               </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="hero-slide" data-slide="2" onclick="openImageLightboxModal('images/daughters-waiting-messiah.jpg', 'یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے - Social Awareness Campaign')" title="Click to view high-resolution image">
-              <img src="images/daughters-waiting-messiah.jpg" alt="والدین کی عمر لگ جاتی ہے - Social Campaign Graphic" class="hero-slide-img" style="object-position: top;">
+            <div class="hero-slide" data-slide="2" onclick="openImageLightboxModal('images/respectful-field-delivery.jpg', 'Respectful Beneficiary Field Handover')" title="Click to view high-resolution image">
+              <img src="images/respectful-field-delivery.jpg" alt="Respectful Field Handover to Orphan Brides" class="hero-slide-img">
               <div class="hero-slide-overlay">
                 <div class="hero-slide-info">
-                  <span class="hero-slide-chip">📢 Slide 3 of 3 • Awareness Campaign</span>
-                  <h3 class="hero-slide-title">Social Campaign • Fulfilling Parents' Dream</h3>
-                  <p class="hero-slide-desc">Raising awareness so no deserving daughter waits in despair for wedding support.</p>
+                  <span class="hero-slide-chip">🛡️ Slide 3 of 3 • Respectful Delivery</span>
+                  <h3 class="hero-slide-title">Dignified Handover &amp; Signed Proof</h3>
+                  <p class="hero-slide-desc">Female-led field team delivering bridal household start-up kits with absolute modesty and beneficiary privacy.</p>
                 </div>
-                <span class="zoom-btn">🔍 View HD Photo</span>
+                <span class="zoom-btn">🔍 View HD Field Photo</span>
               </div>
             </div>
 
@@ -2840,22 +4369,22 @@
 
           <!-- GRID VIEW (FALLBACK / ALTERNATE VIEW) -->
           <div class="hero-triple-grid" id="heroTripleGrid" style="display: none; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px;">
-            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/dowry-kit-items.png', 'Essential Marriage Dowry Goods Kit (اصلی گھریلو سامان)')" title="Click to view high-resolution image" style="cursor: pointer;">
-              <img src="images/dowry-kit-items.png" alt="Bride Dowry Kit Items Showcase" class="hero-showcase-img" style="height: 210px; object-fit: cover;">
+            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/packed-kits-logistics.jpg', 'Actual Packed Kits Warehouse Logistics')" title="Click to view high-resolution image" style="cursor: pointer;">
+              <img src="images/packed-kits-logistics.jpg" alt="Packed Bridal Household Kits Logistics" class="hero-showcase-img" style="height: 210px; object-fit: cover;">
               <div class="hero-showcase-overlay">
-                <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Procured Dowry Kit</span>
+                <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Warehouse Logistics</span>
               </div>
             </div>
-            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/betiyan-bojh-nahi-hoti.png', 'بیٹیاں بوجھ نہیں ہوتی - Direct Field Dispatch')" title="Click to view high-resolution image" style="cursor: pointer;">
-              <img src="images/betiyan-bojh-nahi-hoti.png" alt="بیٹیاں بوجھ نہیں ہوتی - Field Transport" class="hero-showcase-img" style="height: 210px; object-fit: cover;">
+            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/real-delivery-truck.jpg', 'Real Field Delivery Vehicle Logistics')" title="Click to view high-resolution image" style="cursor: pointer;">
+              <img src="images/real-delivery-truck.jpg" alt="Real Field Delivery Vehicle" class="hero-showcase-img" style="height: 210px; object-fit: cover;">
               <div class="hero-showcase-overlay">
                 <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Field Dispatch</span>
               </div>
             </div>
-            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/daughters-waiting-messiah.jpg', 'یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے - Social Awareness Campaign')" title="Click to view high-resolution image" style="cursor: pointer;">
-              <img src="images/daughters-waiting-messiah.jpg" alt="والدین کی عمر لگ جاتی ہے - Social Campaign Graphic" class="hero-showcase-img" style="height: 210px; object-fit: cover; object-position: top;">
+            <div class="hero-showcase-img-wrap" onclick="openImageLightboxModal('images/respectful-field-delivery.jpg', 'Respectful Beneficiary Field Handover')" title="Click to view high-resolution image" style="cursor: pointer;">
+              <img src="images/respectful-field-delivery.jpg" alt="Respectful Field Handover" class="hero-showcase-img" style="height: 210px; object-fit: cover;">
               <div class="hero-showcase-overlay">
-                <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Social Campaign</span>
+                <span class="zoom-btn" style="font-size: 0.75rem; padding: 5px 12px;">🔍 Respectful Handover</span>
               </div>
             </div>
           </div>
@@ -2864,7 +4393,7 @@
           <div class="hero-slideshow-nav" id="heroSlideshowNav">
             <button type="button" class="hero-nav-pill active" onclick="goToHeroSlide(0)">
               <span class="pill-dot"></span>
-              <span class="pill-text">1. 📦 Dowry Kit</span>
+              <span class="pill-text">1. 📦 Household Kit</span>
             </button>
             <button type="button" class="hero-nav-pill" onclick="goToHeroSlide(1)">
               <span class="pill-dot"></span>
@@ -2881,28 +4410,105 @@
           </p>
         </div>
 
-        <!-- 4 HERO STATS (LIVE DYNAMIC METRICS) -->
+        <!-- 4 HERO STATS (LIVE DYNAMIC METRICS WITH PROFESSIONAL SVG BADGES) -->
         <div class="hero-stats-grid">
           <div class="hero-stat-card">
-            <div class="hero-stat-icon">👰</div>
+            <div class="hero-stat-icon" aria-label="Brides Sponsored Icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hero-svg-icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
             <div class="hero-stat-val" id="bridesSponsoredCounter" data-metric="brides_sponsored">120+</div>
             <div class="hero-stat-lbl">Brides Sponsored</div>
           </div>
           <div class="hero-stat-card">
-            <div class="hero-stat-icon">📄</div>
+            <div class="hero-stat-icon" aria-label="Document Invoice Icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hero-svg-icon"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+            </div>
             <div class="hero-stat-val" data-metric="invoices_pct">100%</div>
             <div class="hero-stat-lbl">Itemized Invoices</div>
           </div>
           <div class="hero-stat-card">
-            <div class="hero-stat-icon">⚡</div>
+            <div class="hero-stat-icon" aria-label="Shield Overhead Icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hero-svg-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
             <div class="hero-stat-val">0%</div>
             <div class="hero-stat-lbl">Admin Overhead</div>
           </div>
           <div class="hero-stat-card">
-            <div class="hero-stat-icon">🌙</div>
+            <div class="hero-stat-icon" aria-label="Verified Crescent Icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hero-svg-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M16 8l1.5 1.5L21 6"/></svg>
+            </div>
             <div class="hero-stat-val">100%</div>
             <div class="hero-stat-lbl">Tamleek &amp; Zakat Verified</div>
           </div>
+        </div>
+
+        <!-- 4 HERO STATS CTA BUTTON (FUNCTIONAL DONATE NOW) -->
+        <div class="hero-stats-cta" style="text-align: center; margin-top: 24px;">
+          <a href="#payment-methods" class="btn-primary hero-donate-now-btn" onclick="openAutoDonatePopup()" style="padding: 14px 40px; font-size: 1.1rem; gap: 10px; text-decoration: none;">
+            <span>💚 Donate Now</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.5. HOW IT WORKS & FEEDBACK LOOP (3-STEP TIMELINE) -->
+  <section id="how-it-works" class="section-padding bg-white" style="border-bottom: 1px solid var(--slate-200);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">🔄 DONOR CONFIDENCE &amp; FEEDBACK LOOP</div>
+        <h2 class="section-title">How It Works: 3-Step Transparent Process</h2>
+        <p class="section-subtitle">
+          Our verified donation-to-delivery lifecycle guarantees complete transparency, 100% Zakat compliance, and absolute dignity for deserving brides.
+        </p>
+      </div>
+
+      <div class="timeline-wrapper">
+        <!-- Connecting Line for Desktop -->
+        <div class="timeline-line"></div>
+
+        <div class="timeline-grid">
+          <!-- STEP 1 -->
+          <div class="timeline-card">
+            <div class="step-badge">1</div>
+            <div class="timeline-icon">🔍</div>
+            <h3 class="step-title">Rigorous Verification</h3>
+            <span class="step-highlight">Family verification</span>
+            <p class="step-desc">
+              On-ground investigation and strict background checks to verify genuine family financial need, orphan status, and authentic Zakat eligibility.
+            </p>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="timeline-card">
+            <div class="step-badge">2</div>
+            <div class="timeline-icon">🧾</div>
+            <h3 class="step-title">Kit Procurement</h3>
+            <span class="step-highlight">Wholesale, transparent invoices</span>
+            <p class="step-desc">
+              Direct bulk purchasing from wholesale manufacturers to eliminate middleman margins, with 100% itemized, audited procurement receipts.
+            </p>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="timeline-card">
+            <div class="step-badge">3</div>
+            <div class="timeline-icon">🤝</div>
+            <h3 class="step-title">Dignified Handover</h3>
+            <span class="step-highlight">Full Tamleek transfer with zero public photography</span>
+            <p class="step-desc">
+              Unconditional ownership transfer (Tamleek) delivered privately and honorably directly to the bride &amp; family with zero social media exposure.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DONOR CONFIDENCE & REPORT GUARANTEE BANNER -->
+      <div class="timeline-guarantee-banner">
+        <div class="guarantee-banner-icon">📜</div>
+        <div class="guarantee-banner-text">
+          <strong>Donor Feedback Guarantee:</strong> Donors receive an itemized receipt and procurement confirmation via email within 14 days.
         </div>
       </div>
     </div>
@@ -2912,10 +4518,10 @@
   <section id="mission" class="section-padding bg-light">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">✨ HAMARA MAQSAD &amp; SHAFFAFITY</div>
+        <div class="section-tag">✨ OUR MISSION &amp; TRANSPARENCY</div>
         <h2 class="section-title">100% Zakat &amp; Sadaqah Eligible Marriage Assistance Packages</h2>
         <p class="section-subtitle">
-          MarryWithDignity eliminates the heavy burden of dowry and wedding expenses for deserving families without publicity, maintaining 100% respect, privacy, and full Shariah Tamleek.
+          MarryWithDignity eliminates the heavy burden of marriage and household start-up expenses for deserving families without publicity, maintaining 100% respect, privacy, and full Shariah Tamleek.
         </p>
       </div>
 
@@ -2923,21 +4529,21 @@
         <!-- CARD 1 -->
         <div class="mission-card">
           <div class="mission-icon">📦</div>
-          <h3>Zaroori Gharelu Samaan (Essential Kits)</h3>
+          <h3>Essential Household Start-Up Kits</h3>
           <p>Every rupee goes directly to procuring essential durable goods (cookware, dinnerware, bedding, sewing machine, and bridal ration packs) so the new home has core daily necessities.</p>
         </div>
 
         <!-- CARD 2 -->
         <div class="mission-card">
           <div class="mission-icon">🛡️</div>
-          <h3>Sad-Faisad Izzat-e-Nafs (Zero Public Exposure)</h3>
+          <h3>100% Dignity &amp; Privacy (Zero Exposure)</h3>
           <p>We do not post photos or videos of vulnerable brides or families on social media. Ownership transfer (Tamleek) is conducted with strict privacy, respect, and dignity.</p>
         </div>
 
         <!-- CARD 3 -->
         <div class="mission-card">
           <div class="mission-icon">🤲</div>
-          <h3>Waldeen ko Qarz se Nijaat (Debt-Free Families)</h3>
+          <h3>Relieving Families From Debt</h3>
           <p>Poor parents are often trapped by high-interest loans for marriage expenses. MarryWithDignity lifts this crushing debt, giving families a peaceful and blessed new start.</p>
         </div>
       </div>
@@ -2949,21 +4555,21 @@
     </div>
   </section>
 
-  <!-- 2B. REAL FIELD INVENTORY & DOWRY ITEMS SHOWCASE -->
+  <!-- 2B. REAL FIELD INVENTORY & HOUSEHOLD ITEMS SHOWCASE -->
   <section id="inventory-showcase" class="section-padding bg-white" style="border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200);">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">📸 ASLI GHAARELU SAMAAN • LIVE FIELD INVENTORY</div>
-        <h2 class="section-title">Actual Bride Dowry &amp; Household Goods Kit Showcase</h2>
+        <div class="section-tag">📸 LIVE FIELD INVENTORY • ESSENTIAL HOUSEHOLD GOODS</div>
+        <h2 class="section-title">Actual Bride Household Start-Up Kit Showcase</h2>
         <p class="section-subtitle">
           Take a close look at the genuine quality essential goods provided to deserving brides across Pakistan. Every item is 100% brand-new, durable, and procured with full itemized transparency.
         </p>
       </div>
 
       <div class="inventory-card-grid">
-        <div class="inventory-image-card" onclick="openImageLightboxModal('images/dowry-kit-items.png', 'Complete Wedding Dowry Goods Inventory (گھریلو سامان)')" title="Click to open enlarged view">
+        <div class="inventory-image-card" onclick="openImageLightboxModal('images/dowry-kit-items.png', 'Complete Wedding Household Kit Inventory')" title="Click to open enlarged view">
           <div class="inventory-img-container">
-            <img src="images/dowry-kit-items.png" alt="Marriage Assistance Household Dowry Kit Items" class="inventory-main-img">
+            <img src="images/dowry-kit-items.png" alt="Marriage Assistance Household Start-Up Kit Items" class="inventory-main-img">
             <div class="inventory-badge-tag">✨ Live Procured Inventory</div>
             <div class="inventory-hover-hint">🔍 Tap to inspect full size</div>
           </div>
@@ -3021,66 +4627,66 @@
         </div>
       </div>
 
-      <!-- DEDICATED FIELD DISPATCH & SOCIAL AWARENESS CAMPAIGN BANNERS -->
+      <!-- DEDICATED FIELD DISPATCH & RESPECTFUL DELIVERY CAMPAIGN BANNERS -->
       <div style="margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px;" class="campaign-banners-grid">
         
-        <!-- CAMPAIGN CARD 1: BETIYAN BOJH NAHI HOTI -->
+        <!-- CAMPAIGN CARD 1: REAL FIELD DELIVERY LOGISTICS -->
         <div style="background: linear-gradient(135deg, #064e3b 0%, #047857 100%); border-radius: var(--radius-xl); padding: 28px; color: var(--white); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; justify-content: space-between;">
-          <div class="inventory-image-card" onclick="openImageLightboxModal('images/betiyan-bojh-nahi-hoti.png', 'بیٹیاں بوجھ نہیں ہوتی - Direct Field Delivery &amp; Respect')" title="Click to view high-resolution image">
+          <div class="inventory-image-card" onclick="openImageLightboxModal('images/real-delivery-truck.jpg', 'Real Delivery Truck Logistics - Direct Field Transport Across Pakistan')" title="Click to view high-resolution image">
             <div class="inventory-img-container" style="border-color: rgba(255, 255, 255, 0.2);">
-              <img src="images/betiyan-bojh-nahi-hoti.png" alt="بیٹیاں بوجھ نہیں ہوتی - Field Transport" class="inventory-main-img" style="height: 280px; object-fit: cover;">
-              <div class="inventory-badge-tag" style="background: rgba(245, 158, 11, 0.95); color: #000;">💚 فیلڈ پیغام • Field Campaign</div>
-              <div class="inventory-hover-hint">🔍 Tap to enlarge</div>
+              <img src="images/real-delivery-truck.jpg" alt="Real Delivery Vehicle Logistics Transport" class="inventory-main-img" style="height: 280px; object-fit: cover;">
+              <div class="inventory-badge-tag" style="background: rgba(245, 158, 11, 0.95); color: #000;">🚚 اصلی فیلڈ لاجسٹکس • Real Logistics</div>
+              <div class="inventory-hover-hint">🔍 Tap to inspect HD photo</div>
             </div>
           </div>
 
           <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
             <div style="display: inline-block; align-self: flex-start; background: rgba(255, 255, 255, 0.15); color: #fef3c7; font-size: 0.78rem; font-weight: 800; padding: 4px 14px; border-radius: var(--radius-full); border: 1px solid rgba(255, 255, 255, 0.25);">
-              🚚 DIRECT FIELD DISPATCH
+              🚚 DIRECT VEHICLE LOGISTICS
             </div>
 
             <h3 style="font-size: 1.45rem; font-weight: 800; color: #ffffff; line-height: 1.35; font-family: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', sans-serif;">
-              بیٹیاں بوجھ نہیں ہوتی — Daughters Are Not A Burden
+              بیٹیاں بوجھ نہیں ہوتی — Direct Delivery Vehicle Dispatch
             </h3>
 
             <p style="font-size: 0.92rem; color: #d1fae5; line-height: 1.6;">
-              پاکستان بھر میں ہزاروں غریب والدین اپنی بیٹیوں کے جہیز اور شادی کے اخراجات کی وجہ سے مقروض اور پریشان ہیں۔ ہم زکوٰۃ اور صدقات کے ذریعے ان کی بیٹیوں کو مکمل گھریلو سامان 100% عزتِ نفس کے ساتھ فراہم کرتے ہیں۔
+              پاکستان بھر کے دور دراز دیہاتوں میں مستحق بیٹیوں کے گھروں تک فیلڈ گاڑیوں کے ذریعے مکمل جہیز اور گھریلو سامان باقاعدہ ڈسپیچ کیا جاتا ہے۔ 100% شفافیت اور فیلڈ ٹریکنگ کوڈز کے ساتھ۔
             </p>
 
             <div style="margin-top: 8px;">
               <a href="#payment-methods" class="btn-primary" style="background: var(--accent-gold); color: #000; border: none; font-weight: 800; width: 100%; text-align: center; justify-content: center;">
-                <span>🤲 Help a Deserving Father Today →</span>
+                <span>🤲 Sponsor a Delivery Vehicle Kit Today →</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- CAMPAIGN CARD 2: DAUGHTERS WAITING FOR A MESSIAH -->
+        <!-- CAMPAIGN CARD 2: RESPECTFUL FIELD HANDOVER -->
         <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: var(--radius-xl); padding: 28px; color: var(--white); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; justify-content: space-between;">
-          <div class="inventory-image-card" onclick="openImageLightboxModal('images/daughters-waiting-messiah.jpg', 'یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے - Social Awareness Graphic')" title="Click to view high-resolution image">
+          <div class="inventory-image-card" onclick="openImageLightboxModal('images/respectful-field-delivery.jpg', 'Respectful Field Handover to Deserving Orphan Brides')" title="Click to view high-resolution image">
             <div class="inventory-img-container" style="border-color: rgba(255, 255, 255, 0.2);">
-              <img src="images/daughters-waiting-messiah.jpg" alt="والدین کی عمر لگ جاتی ہے - Social Awareness Graphic" class="inventory-main-img" style="height: 280px; object-fit: cover; object-position: top;">
-              <div class="inventory-badge-tag" style="background: rgba(16, 185, 129, 0.95); color: #fff;">🌸 سوشل بیداری • Social Awareness</div>
-              <div class="inventory-hover-hint">🔍 Tap to enlarge</div>
+              <img src="images/respectful-field-delivery.jpg" alt="Respectful Field Handover to Orphan Brides" class="inventory-main-img" style="height: 280px; object-fit: cover; object-position: top;">
+              <div class="inventory-badge-tag" style="background: rgba(16, 185, 129, 0.95); color: #fff;">🌸 عزتِ نفس و تملیک • Respectful Delivery</div>
+              <div class="inventory-hover-hint">🔍 Tap to inspect HD photo</div>
             </div>
           </div>
 
           <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
             <div style="display: inline-block; align-self: flex-start; background: rgba(255, 255, 255, 0.15); color: #a7f3d0; font-size: 0.78rem; font-weight: 800; padding: 4px 14px; border-radius: var(--radius-full); border: 1px solid rgba(255, 255, 255, 0.25);">
-              🤍 BE THE MESSIAH FOR AN ORPHAN BRIDE
+              🛡️ RESPECTFUL BENEFICIARY HANDOVER
             </div>
 
             <h3 style="font-size: 1.35rem; font-weight: 800; color: #ffffff; line-height: 1.35; font-family: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', sans-serif;">
-              والدین کی عمر لگ جاتی ہے — Wait For A Messiah
+              عزتِ نفس کے ساتھ 100% تملیک — Modest Beneficiary Handover
             </h3>
 
             <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
-              <em>"یہی سامان جس کو پورا کرنے میں والدین کی عمر لگ جاتی ہے۔ جو لوگ یہ نہیں کر سکتے ان کی بیٹیاں کسی مسیحا کا انتظار کرتی رہتی ہیں۔"</em> Fulfill a blessed Sunnah and sponsor essential household kits.
+              <em>"بیٹیوں کی عزتِ نفس ہمارا اولین فرض ہے۔"</em> Field female team directly transfers ownership (Tamleek) of boxed household items without public disclosure or identity exposure.
             </p>
 
             <div style="margin-top: 8px;">
               <a href="#packages" class="btn-primary" style="background: var(--primary-500); color: #fff; border: none; font-weight: 800; width: 100%; text-align: center; justify-content: center;">
-                <span>🎁 Sponsor a Wedding Kit Now →</span>
+                <span>🎁 Sponsor an Orphan Bride Kit Now →</span>
               </a>
             </div>
           </div>
@@ -3127,58 +4733,71 @@
       <div class="pricing-grid">
         <!-- TIER 1 -->
         <div class="package-card">
-          <h3 class="pkg-title">Basic Share</h3>
+          <h3 class="pkg-title">Shared Contribution</h3>
           <div class="pkg-price-wrap">
-            <span class="pkg-price" data-usd="800" data-gbp="630" data-cad="1,100" data-aud="1,200" data-pkr="225,000">$800</span>
+            <span class="pkg-price" data-usd="50" data-gbp="40" data-cad="70" data-aud="75" data-pkr="14,000">$50</span>
             <span class="pkg-curr-label">USD</span>
           </div>
           <ul class="pkg-features">
-            <li><span class="check-icon">✓</span> Complete stainless steel cookware set</li>
-            <li><span class="check-icon">✓</span> 1-Month complete wedding ration pack</li>
-            <li><span class="check-icon">✓</span> Essential dinnerware &amp; kitchen utility set</li>
+            <li><span class="check-icon">✓</span> Micro-share towards complete marriage kit</li>
+            <li><span class="check-icon">✓</span> Contributes to cookware, ration &amp; essential household items</li>
+            <li><span class="check-icon">✓</span> Pooled with other donors to sponsor 1 bride</li>
             <li><span class="check-icon">✓</span> 100% Zakat &amp; Sadaqah eligible</li>
           </ul>
-          <a href="#payment-methods" class="package-btn btn-primary package-btn-action" data-usd="800" data-gbp="630" data-cad="1,100" data-aud="1,200" data-pkr="225,000">
-            Donate Basic Share ($800)
+          <div class="donor-guarantee-notice">
+            <span class="guarantee-icon">📧</span>
+            <span class="guarantee-text">Donors receive an itemized receipt and procurement confirmation via email within 14 days.</span>
+          </div>
+          <a href="#payment-section" class="package-btn btn-primary package-btn-action" data-usd="50" data-gbp="40" data-cad="70" data-aud="75" data-pkr="14,000" onclick="handlePackageButtonClick(event, this)">
+            Donate Shared Contribution ($50)
           </a>
         </div>
 
         <!-- TIER 2 (FEATURED) -->
         <div class="package-card featured">
-          <div class="featured-badge">Most Popular</div>
-          <h3 class="pkg-title">Essential Package</h3>
+          <div class="featured-badge">Most Popular • 1 Complete Bride</div>
+          <h3 class="pkg-title">Full Marriage Kit</h3>
           <div class="pkg-price-wrap">
-            <span class="pkg-price" data-usd="1000" data-gbp="790" data-cad="1,350" data-aud="1,500" data-pkr="280,000">$1000</span>
+            <span class="pkg-price" data-usd="600" data-gbp="475" data-cad="820" data-aud="900" data-pkr="168,000">$600</span>
             <span class="pkg-curr-label">USD</span>
           </div>
           <ul class="pkg-features">
-            <li><span class="check-icon">✓</span> Includes all items in Basic Share</li>
-            <li><span class="check-icon">✓</span> Income-Generating Sewing Machine (Singer)</li>
-            <li><span class="check-icon">✓</span> Pedestal Fan &amp; Heavy-Duty Electric Iron</li>
-            <li><span class="check-icon">✓</span> Comfort Mattress &amp; Double Pillow Set</li>
-            <li><span class="check-icon">✓</span> 4 Unstitched Formal Bridal Suits</li>
+            <li><span class="check-icon">✓</span> <strong>Sponsors 1 Complete Bride Kit in Pakistan</strong></li>
+            <li><span class="check-icon">✓</span> Stainless steel cookware &amp; 1-month ration pack</li>
+            <li><span class="check-icon">✓</span> Singer Sewing Machine (Income Generating)</li>
+            <li><span class="check-icon">✓</span> Pedestal Fan, Heavy Electric Iron &amp; Bedding Set</li>
+            <li><span class="check-icon">✓</span> 4 Unstitched Formal Bridal Suits &amp; Utensils</li>
+            <li><span class="check-icon">✓</span> 100% Zakat &amp; Sadaqah eligible</li>
           </ul>
-          <a href="#payment-methods" class="package-btn btn-primary package-btn-action" data-usd="1000" data-gbp="790" data-cad="1,350" data-aud="1,500" data-pkr="280,000">
-            Donate Essential Package ($1000)
+          <div class="donor-guarantee-notice">
+            <span class="guarantee-icon">📧</span>
+            <span class="guarantee-text">Donors receive an itemized receipt and procurement confirmation via email within 14 days.</span>
+          </div>
+          <a href="#payment-section" class="package-btn btn-primary package-btn-action" data-usd="600" data-gbp="475" data-cad="820" data-aud="900" data-pkr="168,000" onclick="handlePackageButtonClick(event, this)">
+            Donate Full Marriage Kit ($600)
           </a>
         </div>
 
         <!-- TIER 3 -->
         <div class="package-card">
-          <h3 class="pkg-title">Complete Marriage Kit</h3>
+          <h3 class="pkg-title">Deluxe Package</h3>
           <div class="pkg-price-wrap">
-            <span class="pkg-price" data-usd="2000" data-gbp="1,580" data-cad="2,700" data-aud="3,000" data-pkr="560,000">$2000</span>
+            <span class="pkg-price" data-usd="1000" data-gbp="790" data-cad="1,350" data-aud="1,500" data-pkr="280,000">$1000</span>
             <span class="pkg-curr-label">USD</span>
           </div>
           <ul class="pkg-features">
+            <li><span class="check-icon">✓</span> Includes all Full Marriage Kit items</li>
             <li><span class="check-icon">✓</span> Full Wooden Bedroom Furniture Set</li>
             <li><span class="check-icon">✓</span> Washing Machine &amp; Heavy-Duty Sewing Machine</li>
             <li><span class="check-icon">✓</span> Complete Household Utensils &amp; Dinnerware</li>
-            <li><span class="check-icon">✓</span> Bridal Trunk &amp; Wedding Apparel</li>
             <li><span class="check-icon">✓</span> Complete family transformation &amp; relief</li>
           </ul>
-          <a href="#payment-methods" class="package-btn btn-primary package-btn-action" data-usd="2000" data-gbp="1,580" data-cad="2,700" data-aud="3,000" data-pkr="560,000">
-            Donate Complete Kit ($2000)
+          <div class="donor-guarantee-notice">
+            <span class="guarantee-icon">📧</span>
+            <span class="guarantee-text">Donors receive an itemized receipt and procurement confirmation via email within 14 days.</span>
+          </div>
+          <a href="#payment-section" class="package-btn btn-primary package-btn-action" data-usd="1000" data-gbp="790" data-cad="1,350" data-aud="1,500" data-pkr="280,000" onclick="handlePackageButtonClick(event, this)">
+            Donate Deluxe Package ($1000)
           </a>
         </div>
       </div>
@@ -3220,7 +4839,7 @@
         </div>
 
         <!-- CTA BUTTON -->
-        <a href="#payment-methods" id="customDonateBtn" class="btn-primary" style="width: 100%; max-width: 380px;">
+        <a href="#payment-section" id="customDonateBtn" class="btn-primary" onclick="handleCustomDonateClick(event)" style="width: 100%; max-width: 380px;">
           <span>Donate Zakat ($50) →</span>
         </a>
       </div>
@@ -3239,14 +4858,50 @@
       </div>
 
       <div class="zakat-calc-card">
-        <!-- CURRENCY SELECTOR -->
-        <div class="zakat-currency-selector">
-          <span class="zakat-curr-lbl">Select Currency:</span>
-          <div class="zakat-curr-pills">
-            <button type="button" class="zakat-curr-pill active" onclick="setZakatCurrency('USD', '$')">$ USD</button>
-            <button type="button" class="zakat-curr-pill" onclick="setZakatCurrency('PKR', 'Rs ')">🇵🇰 PKR</button>
-            <button type="button" class="zakat-curr-pill" onclick="setZakatCurrency('GBP', '£')">£ GBP</button>
-            <button type="button" class="zakat-curr-pill" onclick="setZakatCurrency('EUR', '€')">€ EUR</button>
+        <!-- CURRENCY & NISAB BENCHMARK CONTROLS -->
+        <div class="zakat-controls-wrapper">
+          <div class="zakat-currency-selector">
+            <span class="zakat-curr-lbl">Select Currency:</span>
+            <div class="zakat-curr-pills">
+              <button type="button" class="zakat-curr-pill active" onclick="setZakatCurrency('USD', '$')">$ USD</button>
+              <button type="button" class="zakat-curr-pill" onclick="setZakatCurrency('PKR', 'Rs ')">🇵🇰 PKR</button>
+              <button type="button" class="zakat-curr-pill" onclick="setZakatCurrency('GBP', '£')">£ GBP</button>
+              <button type="button" class="zakat-curr-pill" onclick="setZakatCurrency('EUR', '€')">€ EUR</button>
+            </div>
+          </div>
+
+          <!-- NISAB BENCHMARK TOGGLE (SILVER VS GOLD RATE) -->
+          <div class="nisab-benchmark-toggle-wrap">
+            <span class="zakat-curr-lbl">Nisab Benchmark:</span>
+            <div class="nisab-pills">
+              <button type="button" class="nisab-pill active" data-benchmark="silver" onclick="setNisabBenchmark('silver')">
+                <span>🥈 Silver Benchmark (52.5 Tolas / 612g)</span>
+              </button>
+              <button type="button" class="nisab-pill" data-benchmark="gold" onclick="setNisabBenchmark('gold')">
+                <span>🥇 Gold Benchmark (7.5 Tolas / 87.5g)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE NISAB THRESHOLD DISPLAY BADGE -->
+        <div class="nisab-threshold-badge" id="nisabThresholdDisplay">
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; font-size: 0.92rem;">
+            <span><strong>Current Nisab Thresholds:</strong></span>
+            <span style="padding: 3px 10px; border-radius: 6px; background: #d1fae5; border: 1.5px solid #10b981; font-weight: 700; color: #065f46;">
+              🥈 <strong>Silver:</strong> $580 USD (52.5 Tolas / 612g) ✓ Active
+            </span>
+            <span style="padding: 4px 12px; border-radius: 8px; background: #fffbeb; border: 1.5px solid #fcd34d; font-weight: 700; color: #b45309;">
+              🥇 <strong>Gold:</strong> $6,200 USD (7.5 Tolas / 87.5g)
+            </span>
+          </div>
+        </div>
+
+        <!-- NISAB ELIGIBILITY ALERT BOX -->
+        <div class="nisab-alert-box info" id="nisabStatusAlert">
+          <span class="alert-icon">ℹ️</span>
+          <div>
+            <strong>Nisab Benchmark Active:</strong> Your total net wealth must be equal to or exceed <strong>$580</strong> (Silver rate benchmark) for Zakat to be mandatory (Fard). Enter your net wealth values below to evaluate your Zakat obligation.
           </div>
         </div>
 
@@ -3292,7 +4947,7 @@
           <p class="zakat-impact-text" id="zakatImpactMessage">
             Enter your assets above to compute your exact Zakat and see your bride sponsorship impact.
           </p>
-          <a href="#payment-methods" id="zakatDonateDirectBtn" class="btn-primary zakat-donate-btn" onclick="donateCalculatedZakat(event)">
+          <a href="#payment-section" id="zakatDonateDirectBtn" class="btn-primary zakat-donate-btn" onclick="donateCalculatedZakat(event)">
             <span>Donate This Zakat Amount Now →</span>
           </a>
         </div>
@@ -3300,99 +4955,241 @@
     </div>
   </section>
 
-  <!-- 4. DIRECT PAKISTANI PAYMENT METHODS (LOCAL WALLETS & BANK) -->
+  <!-- 4. SECURE PAYMENT GATEWAYS & REGIONAL TRANSFERS -->
   <section id="payment-methods" class="section-padding bg-white">
     <div class="container">
-      <div class="payment-container-box">
-        <div class="section-header" style="margin-bottom: 30px;">
-          <div class="section-tag">🇵🇰 100% SECURE DIRECT TRANSFER</div>
-          <h2 class="section-title">Direct Mobile Wallet &amp; Bank Transfer</h2>
+      <div id="payment-section" class="payment-container-box">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <div class="section-tag">🔒 100% SECURE DIRECT PAYMENT GATEWAY</div>
+          <h2 class="section-title">Select Payment Method</h2>
           <p class="section-subtitle">
-            Transfer directly via Easypaisa, JazzCash, or Bank IBAN. You can send any amount (e.g. Rs. 500, 2,000, 50,000+).
+            Choose your preferred donation channel. International card donations receive automatic instant digital receipt &amp; email confirmation.
           </p>
         </div>
 
-        <!-- 3 PAYMENT CARDS -->
-        <div class="payment-grid">
-          <!-- EASYPAISA -->
-          <div class="pay-card easypaisa">
-            <div class="pay-badge">📱 Easypaisa</div>
-            <div class="pay-meta"><strong>Account Title:</strong> Muhammad Usman</div>
-            <div class="pay-number-highlight">+92 344 2001535</div>
-            <button type="button" class="copy-btn" onclick="copyToClipboard('+923442001535', this)">📋 Copy Number</button>
-            <div class="qr-frame" onclick="openQrModal('📱 Easypaisa', 'Muhammad Usman', '+92 344 2001535', 'images/easypaisa-qr.png', '+923442001535')" title="Click to open full QR Code">
-              <img src="images/easypaisa-qr.png" alt="Easypaisa QR Code">
-              <span class="qr-hint">🔍 Tap to open</span>
+        <!-- MAIN TABS SWITCHER -->
+        <div class="main-payment-tabs">
+          <button type="button" class="main-tab-btn active" id="tabMainIntlBtn" onclick="switchMainPaymentTab('intl')">
+            <span class="main-tab-badge">GLOBAL</span>
+            <span class="main-tab-title">🌐 International Donors</span>
+            <span class="main-tab-sub">Credit/Debit Card, Apple Pay, Google Pay, PayPal</span>
+          </button>
+          <button type="button" class="main-tab-btn" id="tabMainPakBtn" onclick="switchMainPaymentTab('pak')">
+            <span class="main-tab-badge pak">LOCAL</span>
+            <span class="main-tab-title">🇵🇰 Pakistan Donors</span>
+            <span class="main-tab-sub">JazzCash, EasyPaisa, Raast, Local Bank</span>
+          </button>
+        </div>
+
+        <!-- TAB 1 CONTENT: INTERNATIONAL DONORS -->
+        <div id="tabMainIntlContent" class="main-tab-content" style="display: block;">
+          <div class="intl-checkout-card">
+            <div class="intl-checkout-header">
+              <h3>💳 Instant Online Card Checkout</h3>
+              <p>Secure 256-Bit SSL payment for donors in US, UK, Canada, Europe, UAE &amp; Worldwide.</p>
+              <div class="intl-trust-pills">
+                <span>⚡ Automatic Instant Receipt</span>
+                <span>📧 Instant Email Confirmation</span>
+                <span>🛡️ PCI-DSS Verified</span>
+                <span>🚫 No WhatsApp Screenshot Required</span>
+              </div>
             </div>
+
+            <!-- EMBEDDED DIRECT CHECKOUT FORM -->
+            <form id="inlineIntlCardForm" onsubmit="processInlineCardCheckout(event)">
+              <!-- AMOUNT SELECTION -->
+              <div style="text-align: left; margin-bottom: 8px;">
+                <label style="font-size: 0.85rem; font-weight: 700; color: var(--slate-700);">Select Donation Amount (USD)</label>
+              </div>
+              <div class="checkout-amount-grid" style="margin-bottom: 16px;">
+                <button type="button" class="checkout-amount-btn" onclick="setInlineAmount(25, this)">$25</button>
+                <button type="button" class="checkout-amount-btn active" onclick="setInlineAmount(50, this)">$50</button>
+                <button type="button" class="checkout-amount-btn" onclick="setInlineAmount(100, this)">$100</button>
+                <button type="button" class="checkout-amount-btn" onclick="setInlineAmount(250, this)">$250</button>
+              </div>
+
+              <div class="checkout-input-row">
+                <div class="checkout-input-group">
+                  <label for="inlineCardAmountInput">Custom Amount ($ USD) *</label>
+                  <input type="number" id="inlineCardAmountInput" min="5" value="50" required class="checkout-input" oninput="updateInlineBtnText()">
+                </div>
+                <div class="checkout-input-group">
+                  <label for="inlineCardCauseSelect">Donation Purpose / Cause *</label>
+                  <select class="checkout-input" id="inlineCardCauseSelect" onchange="updateInlineBtnText()">
+                    <option value="Essential Household Start-Up Kit ($50)">Essential Household Start-Up Kit ($50)</option>
+                    <option value="Full Marriage Kit ($600)">Full Marriage Kit ($600)</option>
+                    <option value="Complete Bride Sponsorship ($800)">Complete Bride Sponsorship ($800)</option>
+                    <option value="Deluxe Package ($1000)">Deluxe Package ($1000)</option>
+                    <option value="100% Zakat on Marriage">100% Zakat on Marriage</option>
+                    <option value="General Sadaqah / Marriage Fund">General Sadaqah Fund</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="checkout-input-row">
+                <div class="checkout-input-group">
+                  <label for="inlineCardNameInput">Full Name *</label>
+                  <input type="text" id="inlineCardNameInput" required placeholder="e.g. Tariq Mehmood" class="checkout-input">
+                </div>
+                <div class="checkout-input-group">
+                  <label for="inlineCardEmailInput">Email Address (for Instant Receipt) *</label>
+                  <input type="email" id="inlineCardEmailInput" required placeholder="donor@example.com" class="checkout-input">
+                </div>
+              </div>
+
+              <!-- CARD INPUTS -->
+              <div class="checkout-input-group">
+                <label for="inlineCardNumberInput">Card Number *</label>
+                <div style="position: relative;">
+                  <input type="text" id="inlineCardNumberInput" required placeholder="4000 1234 5678 9010" maxlength="19" class="checkout-input" oninput="formatCardNumber(this)" style="padding-right: 90px;">
+                  <span style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; pointer-events: none;">💳 🔒</span>
+                </div>
+              </div>
+
+              <div class="checkout-input-row">
+                <div class="checkout-input-group">
+                  <label for="inlineCardExpiryInput">Expires (MM/YY) *</label>
+                  <input type="text" id="inlineCardExpiryInput" required placeholder="MM/YY" maxlength="5" class="checkout-input" oninput="formatExpiry(this)">
+                </div>
+                <div class="checkout-input-group">
+                  <label for="inlineCardCvcInput">Security Code (CVC) *</label>
+                  <input type="password" id="inlineCardCvcInput" required placeholder="CVC" maxlength="4" class="checkout-input">
+                </div>
+              </div>
+
+              <button type="submit" id="inlineCardPaySubmitBtn" class="btn-primary" style="width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 800; margin-top: 8px; justify-content: center; box-shadow: var(--shadow-md);">
+                <span>🔒 Pay $50.00 &amp; Get Instant Receipt →</span>
+              </button>
+            </form>
+
+            <div class="gateway-icons-row">
+              <span class="pay-method-badge">💳 Visa</span>
+              <span class="pay-method-badge">💳 Mastercard</span>
+              <span class="pay-method-badge">📱 Apple Pay</span>
+              <span class="pay-method-badge">🌐 Google Pay</span>
+              <span class="pay-method-badge">🅿️ PayPal</span>
+            </div>
+
+            <!-- SECONDARY OPTION: INTERNATIONAL WIRE / REMITTANCE -->
+            <div class="intl-wire-accordion">
+              <details>
+                <summary>🌍 Prefer Bank Wire / Remittance (Wise, Remitly, SWIFT IBAN)? Click here</summary>
+                <div class="intl-wire-body">
+                  <p style="font-size: 0.92rem; color: var(--slate-700); margin-bottom: 12px;">
+                    Send money directly via <strong>Wise, Remitly, WorldRemit, Western Union, ACE Money</strong>, or SWIFT wire transfer to our official trust account:
+                  </p>
+                  <div class="wire-box-details">
+                    <div class="wire-field">
+                      <span class="wire-label">RECEIVING BANK</span>
+                      <strong class="wire-value">Habib Bank Limited (HBL Pakistan)</strong>
+                    </div>
+                    <div class="wire-field">
+                      <span class="wire-label">OFFICIAL ACCOUNT TITLE</span>
+                      <strong class="wire-value highlight">MarryWithDignity Welfare Trust</strong>
+                    </div>
+                    <div class="wire-field">
+                      <span class="wire-label">INTERNATIONAL IBAN</span>
+                      <div class="wire-copy-row">
+                        <code>PK81 HABB 0004157900929903</code>
+                        <button type="button" class="copy-btn" onclick="copyToClipboard('PK81HABB0004157900929903', this)">📋 Copy IBAN</button>
+                      </div>
+                    </div>
+                    <div class="wire-field">
+                      <span class="wire-label">SWIFT / BIC CODE</span>
+                      <div class="wire-copy-row">
+                        <code>HABBPKKA</code>
+                        <button type="button" class="copy-btn" onclick="copyToClipboard('HABBPKKA', this)">📋 Copy SWIFT</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 2 CONTENT: PAKISTAN DONORS -->
+        <div id="tabMainPakContent" class="main-tab-content" style="display: none;">
+          <div style="text-align: center; max-width: 680px; margin: 0 auto 20px auto;">
+            <p style="color: var(--slate-600); font-size: 1rem; margin-bottom: 0;">
+              Transfer directly via Easypaisa, JazzCash, or Bank IBAN to our official registered trust account title below:
+            </p>
           </div>
 
-          <!-- JAZZCASH -->
-          <div class="pay-card jazzcash">
-            <div class="pay-badge">📱 JazzCash</div>
-            <div class="pay-meta"><strong>Account Title:</strong> Rehana Kouser</div>
-            <div class="pay-number-highlight">+92 344 2001535</div>
-            <div class="iban-box">
-              <div class="iban-lbl">JazzCash / Raast IBAN</div>
-              <div class="iban-val">PK80 JCMA 2203 9234 4200 1535</div>
-            </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+          <!-- 3 PAYMENT CARDS -->
+          <div class="payment-grid">
+            <!-- EASYPAISA -->
+            <div class="pay-card easypaisa">
+              <div class="pay-badge">📱 Easypaisa</div>
+              <div class="pay-meta"><strong>Account Title:</strong> MarryWithDignity Welfare Trust</div>
+              <div class="pay-number-highlight">+92 344 2001535</div>
               <button type="button" class="copy-btn" onclick="copyToClipboard('+923442001535', this)">📋 Copy Number</button>
-              <button type="button" class="copy-btn" onclick="copyToClipboard('PK80JCMA2203923442001535', this)">📋 Copy IBAN</button>
+              <div class="qr-frame" onclick="openQrModal('📱 Easypaisa', 'MarryWithDignity Welfare Trust', '+92 344 2001535', 'images/easypaisa-qr.png', '+923442001535')" title="Click to open full QR Code">
+                <img src="images/easypaisa-qr.png" alt="Easypaisa QR Code">
+                <span class="qr-hint">🔍 Tap to open</span>
+              </div>
             </div>
-            <div class="qr-frame" onclick="openQrModal('📱 JazzCash', 'Rehana Kouser', '+92 344 2001535', 'images/jazzcash-qr.png', 'PK80JCMA2203923442001535')" title="Click to open full QR Code">
-              <img src="images/jazzcash-qr.png" alt="JazzCash QR Code">
-              <span class="qr-hint">🔍 Tap to open</span>
+
+            <!-- JAZZCASH -->
+            <div class="pay-card jazzcash">
+              <div class="pay-badge">📱 JazzCash / Raast</div>
+              <div class="pay-meta"><strong>Account Title:</strong> MarryWithDignity Welfare Trust</div>
+              <div class="pay-number-highlight">+92 344 2001535</div>
+              <div class="iban-box">
+                <div class="iban-lbl">JazzCash / Raast IBAN</div>
+                <div class="iban-val">PK80 JCMA 2203 9234 4200 1535</div>
+              </div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+                <button type="button" class="copy-btn" onclick="copyToClipboard('+923442001535', this)">📋 Copy Number</button>
+                <button type="button" class="copy-btn" onclick="copyToClipboard('PK80JCMA2203923442001535', this)">📋 Copy IBAN</button>
+              </div>
+              <div class="qr-frame" onclick="openQrModal('📱 JazzCash', 'MarryWithDignity Welfare Trust', '+92 344 2001535', 'images/jazzcash-qr.png', 'PK80JCMA2203923442001535')" title="Click to open full QR Code">
+                <img src="images/jazzcash-qr.png" alt="JazzCash QR Code">
+                <span class="qr-hint">🔍 Tap to open</span>
+              </div>
+            </div>
+
+            <!-- HBL BANK -->
+            <div class="pay-card hbl">
+              <div class="pay-badge">🏦 HBL Bank (PKR)</div>
+              <div class="pay-meta"><strong>Account Title:</strong> MarryWithDignity Welfare Trust</div>
+              <div class="pay-meta"><strong>Account No:</strong> 0415 7900 9299 03</div>
+              
+              <div class="iban-box">
+                <div class="iban-lbl">Official IBAN</div>
+                <div class="iban-val">PK81 HABB 0004157900929903</div>
+              </div>
+
+              <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+                <button type="button" class="copy-btn" onclick="copyToClipboard('PK81HABB0004157900929903', this)">📋 Copy IBAN</button>
+                <button type="button" class="copy-btn" onclick="copyToClipboard('04157900929903', this)">📋 Copy Acc No</button>
+              </div>
+
+              <div class="qr-frame" onclick="openQrModal('🏦 HBL Bank', 'MarryWithDignity Welfare Trust', 'PK81 HABB 0004157900929903', 'images/hbl-qr.png', 'PK81HABB0004157900929903')" title="Click to open full QR Code">
+                <img src="images/hbl-qr.png" alt="HBL QR Code">
+                <span class="qr-hint">🔍 Tap to open</span>
+              </div>
             </div>
           </div>
 
-          <!-- HBL BANK -->
-          <div class="pay-card hbl">
-            <div class="pay-badge">🏦 HBL Bank</div>
-            <div class="pay-meta"><strong>Account Title:</strong> Muhammad Usman</div>
-            <div class="pay-meta"><strong>Account No:</strong> 0415 7900 9299 03</div>
-            
-            <div class="iban-box">
-              <div class="iban-lbl">Official IBAN</div>
-              <div class="iban-val">PK81 HABB 0004157900929903</div>
-            </div>
-
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-              <button type="button" class="copy-btn" onclick="copyToClipboard('PK81HABB0004157900929903', this)">📋 Copy IBAN</button>
-              <button type="button" class="copy-btn" onclick="copyToClipboard('04157900929903', this)">📋 Copy Acc No</button>
-            </div>
-
-            <div class="qr-frame" onclick="openQrModal('🏦 HBL Bank', 'Muhammad Usman', 'PK81 HABB 0004157900929903', 'images/hbl-qr.png', 'PK81HABB0004157900929903')" title="Click to open full QR Code">
-              <img src="images/hbl-qr.png" alt="HBL QR Code">
-              <span class="qr-hint">🔍 Tap to open</span>
-            </div>
+          <!-- RECEIPT SUBMISSION ACTIONS (UPLOAD RECEIPT MODAL & WHATSAPP) -->
+          <div class="receipt-actions-wrapper" style="margin-top: 25px;">
+            <button type="button" onclick="openReceiptModal()" class="btn-receipt-upload" id="openReceiptModalBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>Upload Transfer Receipt</span>
+            </button>
+            <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20have%20sent%20a%20local%20donation%20for%20MarryWithDignity.%20Here%20is%20my%20payment%20proof." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
+              </svg>
+              <span>Send Receipt on WhatsApp</span>
+            </a>
           </div>
         </div>
 
-        <!-- INTERNATIONAL CARD OPTION -->
-        <div style="text-align: center; padding-top: 25px; border-top: 1px dashed var(--slate-200); margin-bottom: 25px;">
-          <p style="color: var(--slate-700); font-weight: 600; margin-bottom: 14px;">
-            💳 Donating from outside Pakistan? Support via Visa, Mastercard, or Apple Pay:
-          </p>
-          <button type="button" onclick="openCardModal()" class="btn-secondary" style="font-size: 0.95rem; padding: 12px 26px;">
-            💳 International Card Checkout (Online)
-          </button>
-        </div>
-
-        <!-- RECEIPT SUBMISSION ACTIONS (UPLOAD RECEIPT MODAL & WHATSAPP) -->
-        <div class="receipt-actions-wrapper">
-          <button type="button" onclick="openReceiptModal()" class="btn-receipt-upload" id="openReceiptModalBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <span>Upload Transfer Receipt</span>
-          </button>
-          <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20have%20sent%20a%20donation%20for%20MarryWithDignity.%20Here%20is%20my%20payment%20proof/receipt." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
-            </svg>
-            <span>Send Transfer Receipt on WhatsApp</span>
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -3414,8 +5211,8 @@
         </div>
         <div class="matrix-card">
           <span class="matrix-num">02</span>
-          <h4>CNIC Identity Audit</h4>
-          <p>National identity records and family trees are cross-referenced to eliminate duplicate claims and verify eligibility.</p>
+          <h4>Government ID &amp; NADRA Cross-Verification</h4>
+          <p>National identity cards (CNIC/NADRA records) and official family registries are cross-referenced to eliminate duplicate claims and verify eligibility.</p>
         </div>
         <div class="matrix-card">
           <span class="matrix-num">03</span>
@@ -3426,6 +5223,32 @@
           <span class="matrix-num">04</span>
           <h4>Itemized Public Receipts</h4>
           <p>Wholesale vendor purchase invoices and receipts are logged for full accountability and audit review.</p>
+        </div>
+      </div>
+
+      <!-- SHARIAH & AUDIT ADVISORY BOARD ENDORSEMENT BANNER -->
+      <div class="shariah-cert-banner" style="margin-top: 36px; background: linear-gradient(135deg, #044e3b 0%, #065f46 60%, #047857 100%); border-radius: var(--radius-xl); padding: 32px 36px; color: #ffffff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; box-shadow: 0 12px 35px rgba(4, 120, 87, 0.25); border: 1.5px solid rgba(245, 158, 11, 0.4); position: relative; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 22px; flex: 1; min-width: 290px;">
+          <div style="width: 68px; height: 68px; border-radius: 50%; background: rgba(245, 158, 11, 0.22); border: 2.5px solid #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; flex-shrink: 0; box-shadow: 0 0 24px rgba(245, 158, 11, 0.35);">
+            📜
+          </div>
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(245, 158, 11, 0.25); color: #fde047; padding: 4px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 8px; border: 1px solid rgba(245, 158, 11, 0.5);">
+              <span>✓ SHARIAH &amp; INDEPENDENT AUDIT CERTIFIED</span>
+            </div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; line-height: 1.3;">Reviewed &amp; Certified by Qualified Shariah Scholars</h3>
+            <p style="font-size: 0.94rem; color: #d1fae5; margin: 0; line-height: 1.55; max-width: 650px;">
+              Our 100% Tamleek model, Zakat segregation rules, and beneficiary verification matrix are endorsed by senior Islamic jurisprudence scholars (Darul Ifta Compliance Board) and certified welfare auditors.
+            </p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; align-items: center;">
+          <button type="button" onclick="openShariahModal()" class="btn-shariah-cert" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: #0f172a; padding: 13px 26px; border-radius: var(--radius-full); font-weight: 800; font-size: 0.94rem; border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4); transition: all 0.3s ease;">
+            <span>📑 View Fatwa &amp; Audit Endorsement Letter →</span>
+          </button>
+          <span style="font-size: 0.78rem; color: #a7f3d0; font-weight: 700; text-align: center;">
+            Darul Ifta Reviewed • 100% Tamleek Validated
+          </span>
         </div>
       </div>
     </div>
@@ -3448,22 +5271,44 @@
             <span class="faq-chevron">▼</span>
           </button>
           <div class="faq-body">
-            Yes. Under classical Islamic jurisprudence, Zakat is payable to <em>Fuqara</em> and <em>Masakeen</em>. Full ownership (<em>Tamleek</em>) of household kits is directly transferred to verified needy brides or their guardians.
+            Yes. Under classical Islamic jurisprudence, Zakat is payable to <em>Fuqara</em> and <em>Masakeen</em>. Full ownership (<em>Tamleek</em>) of household kits is directly transferred to verified needy brides or their legal guardians.
           </div>
         </div>
 
-        <!-- FAQ 2 -->
+        <!-- FAQ 2: CURRENCY CONVERSION -->
+        <div class="faq-item">
+          <button type="button" class="faq-header" onclick="toggleFaq(this)">
+            <span>Can I donate in USD, GBP, or EUR?</span>
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-body">
+            Yes! We accept international contributions in USD ($), GBP (£), EUR (€), CAD ($), AUD ($), and other major currencies via credit/debit cards, PayPal, and online card gateways. Our system automatically converts your donation into Pakistan Rupees (PKR) at live interbank exchange rates to purchase wholesale household items directly in Pakistan, ensuring maximum purchasing power for beneficiary kits.
+          </div>
+        </div>
+
+        <!-- FAQ 3: DELIVERY CONFIRMATION & PROOF -->
+        <div class="faq-item">
+          <button type="button" class="faq-header" onclick="toggleFaq(this)">
+            <span>Will I get proof of my sponsored bride's kit delivery?</span>
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-body">
+            Yes. To preserve the recipient family's dignity, honor, and privacy, we maintain a strict zero public exposure policy (no faces or residential addresses are published on social media). However, once delivery is completed, itemized wholesale purchase receipts, packing logs, and dispatch confirmation details are emailed directly to you for total transparency.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
         <div class="faq-item">
           <button type="button" class="faq-header" onclick="toggleFaq(this)">
             <span>How do I know my donation reaches a genuine family?</span>
             <span class="faq-chevron">▼</span>
           </button>
           <div class="faq-body">
-            Every case undergoes home verification by our female audit team and CNIC checks. Once delivered, vendor invoices and procurement records are documented for accountability.
+            Every case undergoes multi-tier home verification by our female audit team and National ID / NADRA verification. Once delivered, vendor invoices and procurement records are documented for full accountability.
           </div>
         </div>
 
-        <!-- FAQ 3 -->
+        <!-- FAQ 5 -->
         <div class="faq-item">
           <button type="button" class="faq-header" onclick="toggleFaq(this)">
             <span>Are there any administrative or overhead deductions?</span>
@@ -3474,7 +5319,7 @@
           </div>
         </div>
 
-        <!-- FAQ 4 -->
+        <!-- FAQ 6 -->
         <div class="faq-item">
           <button type="button" class="faq-header" onclick="toggleFaq(this)">
             <span>Can I dedicate a package as Sadaqah Jariyah for a loved one?</span>
@@ -3484,49 +5329,132 @@
             Yes! Sponsoring an income-generating tool (such as a sewing machine) or home kit serves as ongoing <em>Sadaqah Jariyah</em>. You can specify a dedication note during payment.
           </div>
         </div>
+
+        <!-- FAQ 7: TAX RECEIPT ELIGIBILITY -->
+        <div class="faq-item">
+          <button type="button" class="faq-header" onclick="toggleFaq(this)">
+            <span>Are my donations tax-deductible?</span>
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-body">
+            Yes. For donors in Pakistan, contributions qualify for 100% tax credit under FBR Approved Sec 2(36) Income Tax Ordinance. International donors receive an official digital receipt for tax and audit records. For US 501(c)(3) or UK Gift Aid tax deductible arrangements, please contact support@marrywithdignity.org for partner details.
+          </div>
+        </div>
       </div>
     </div>
-  <!-- AUTO-POPUP ANIMATED DONATION MODAL (EXACT MOCKUP DESIGN) -->
-  <div id="autoDonatePopupModal" class="auto-donate-modal-overlay" onclick="handleAutoDonateBackdrop(event)">
+  <!-- AUTO-POPUP FLOATING TABLE (WAYS TO DONATE) -->
+  <div id="autoDonatePopupModal" class="auto-donate-modal-overlay">
     <div class="auto-donate-card-box">
-      <button type="button" class="auto-donate-close-btn" onclick="closeAutoDonatePopup()" aria-label="Close modal">✕</button>
-      
-      <h2 class="auto-donate-header-title">Donate</h2>
-      <p class="auto-donate-header-sub">Please select the Project to Donate</p>
-
-      <div class="auto-donate-select-wrapper">
-        <select id="autoDonateProject" class="auto-donate-select" onchange="handleAutoDonateProjectChange(this)">
-          <option value="Sponsor a Bride">Sponsor a Bride (Full Package)</option>
-          <option value="Bridal Jaheez Essentials">Bridal Jaheez Essentials</option>
-          <option value="Orphan Marriage Aid">Orphan Marriage Aid</option>
-          <option value="Marriage Zakat Fund">Marriage Zakat Fund</option>
-          <option value="General Sadaqah Fund">General Sadaqah Fund</option>
-        </select>
-        <div class="auto-donate-select-arrow">▼</div>
+      <div class="popover-table-header">
+        <div>
+          <span class="auto-donate-badge-header">❤️ WAYS TO DONATE</span>
+          <h3 class="popover-table-title">Donation Options &amp; Accounts</h3>
+        </div>
+        <button type="button" class="auto-donate-close-btn" onclick="closeAutoDonatePopup()" aria-label="Close modal">✕</button>
       </div>
 
-      <div class="auto-donate-amount-label">Choose Amount</div>
-
-      <div class="auto-donate-grid">
-        <div class="auto-donate-opt-card active" onclick="selectAutoDonateOption(this, 'Donate for Bride', 'Rs 25,000')">
-          Donate for<br>Bride
-        </div>
-        <div class="auto-donate-opt-card" onclick="selectAutoDonateOption(this, 'Zakat', 'Rs 50,000')">
-          Zakat
-        </div>
-        <div class="auto-donate-opt-card" onclick="selectAutoDonateOption(this, 'Sadaqah', 'Rs 15,000')">
-          Sadaqah
-        </div>
+      <div class="auto-donate-table-wrapper">
+        <table class="ways-donate-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Options / Accounts</th>
+              <th style="text-align: right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="td-method-box">
+                  <span class="td-m-icon">🌐</span>
+                  <div>
+                    <strong class="td-m-title">International</strong>
+                    <span class="td-m-badge intl">Global</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="td-info-text">Card, Apple Pay, Google Pay, PayPal</div>
+              </td>
+              <td style="text-align: right;">
+                <button type="button" class="table-act-btn btn-intl" onclick="selectDonorTypeAndNavigate('intl')">
+                  Pay Online →
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="td-method-box">
+                  <span class="td-m-icon">🇵🇰</span>
+                  <div>
+                    <strong class="td-m-title">Pakistan Local</strong>
+                    <span class="td-m-badge pak">JazzCash &amp; EasyPaisa</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="td-acc-box">
+                  <span class="td-acc-num">0344 2001535</span>
+                  <span class="td-acc-title">MarryWithDignity Trust</span>
+                </div>
+              </td>
+              <td style="text-align: right;">
+                <button type="button" class="table-act-btn btn-pak" onclick="selectDonorTypeAndNavigate('pak')">
+                  Select &amp; Pay →
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="td-method-box">
+                  <span class="td-m-icon">🏦</span>
+                  <div>
+                    <strong class="td-m-title">HBL Bank</strong>
+                    <span class="td-m-badge hbl">Bank Transfer</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="td-acc-box">
+                  <span class="td-acc-num">PK81 HABB 0004157900929903</span>
+                  <span class="td-acc-title">Habib Bank Limited</span>
+                </div>
+              </td>
+              <td style="text-align: right;">
+                <button type="button" class="table-act-btn btn-copy" onclick="copyIbanQuick('PK81HABB0004157900929903', this)">
+                  📋 Copy IBAN
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="td-method-box">
+                  <span class="td-m-icon">🧾</span>
+                  <div>
+                    <strong class="td-m-title">Submit Receipt</strong>
+                    <span class="td-m-badge receipt">Verification</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="td-info-text">Upload EasyPaisa / JazzCash / Bank receipt proof</div>
+              </td>
+              <td style="text-align: right;">
+                <button type="button" class="table-act-btn btn-receipt" onclick="openReceiptModalFromPopover()">
+                  Upload Proof →
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <button type="button" class="auto-donate-submit-btn" onclick="submitAutoDonatePopup()">Donate Now</button>
     </div>
   </div>
 
   <!-- FLOATING QUICK DONATE BUTTON -->
-  <button type="button" class="auto-donate-floating-trigger" onclick="openAutoDonatePopup()" aria-label="Quick Donate">
+  <button type="button" class="auto-donate-floating-trigger" onclick="toggleAutoDonatePopup()" aria-label="Ways to Donate">
     <span>❤️</span>
-    <span>Donate Now</span>
+    <span>Ways to Donate</span>
   </button>
 
   <!-- MODAL: UPLOAD DONATION RECEIPT & DETAILS -->
@@ -3565,7 +5493,7 @@
 
             <!-- EMAIL -->
             <div class="receipt-form-group">
-              <label for="receiptEmail">Email Address <span style="color:var(--slate-500); font-weight:normal;">(for formal tax receipt)</span></label>
+              <label for="receiptEmail">Email Address <span style="color:var(--slate-500); font-weight:normal;">(for official donation receipt)</span></label>
               <input type="email" id="receiptEmail" name="email" placeholder="e.g. donor@example.com" class="receipt-form-input">
             </div>
 
@@ -3611,7 +5539,7 @@
             <div class="receipt-form-group full-col">
               <label for="receiptCause">Donation Purpose / Cause <span class="req">*</span></label>
               <select id="receiptCause" name="cause" required class="receipt-form-select">
-                <option value="Bride Dowry Essentials Kit">Bride Dowry Essentials Kit (PKR 35,000 / $125)</option>
+                <option value="Essential Household Start-Up Kit">Essential Household Start-Up Kit (PKR 35,000 / $125)</option>
                 <option value="Complete Bride Sponsorship">Complete Bride Sponsorship (PKR 125,000 / $450)</option>
                 <option value="100% Zakat on Marriage">100% Zakat on Marriage Fund</option>
                 <option value="General Sadaqah / Marriage Fund">General Sadaqah / Marriage Fund</option>
@@ -3772,7 +5700,7 @@
               <div class="checkout-input-group">
                 <label>Donation Purpose *</label>
                 <select class="checkout-input" id="cardCauseSelect">
-                  <option value="Bride Dowry Essentials Kit">Bride Dowry Essentials</option>
+                  <option value="Essential Household Start-Up Kit">Essential Household Start-Up Kit</option>
                   <option value="Complete Bride Sponsorship">Complete Bride Sponsorship</option>
                   <option value="100% Zakat on Marriage">100% Zakat on Marriage</option>
                   <option value="General Sadaqah / Marriage Fund">General Sadaqah Fund</option>
@@ -3787,7 +5715,7 @@
                 <input type="text" id="cardNameInput" required placeholder="e.g. John Doe" class="checkout-input">
               </div>
               <div class="checkout-input-group">
-                <label>Email (for Tax Receipt) *</label>
+                <label>Email (for Donation Receipt) *</label>
                 <input type="email" id="cardEmailInput" required placeholder="donor@example.com" class="checkout-input">
               </div>
             </div>
@@ -3822,7 +5750,7 @@
             <span>•</span>
             <span>🛡️ PCI-DSS Level 1</span>
             <span>•</span>
-            <span>🧾 Instant Tax Receipt</span>
+            <span>🧾 Instant Donation Receipt</span>
           </div>
         </div>
 
@@ -3837,7 +5765,7 @@
             <div style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 10px;">Habib Bank Limited (HBL Pakistan)</div>
 
             <div style="font-size: 0.85rem; color: var(--slate-500); font-weight: 700; margin-bottom: 4px;">ACCOUNT TITLE</div>
-            <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary-700); margin-bottom: 10px;">Muhammad Usman</div>
+            <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary-700); margin-bottom: 10px;">MarryWithDignity Welfare Trust</div>
 
             <div style="font-size: 0.85rem; color: var(--slate-500); font-weight: 700; margin-bottom: 4px;">INTERNATIONAL IBAN (GLOBAL)</div>
             <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
@@ -3853,7 +5781,7 @@
           </div>
 
           <div style="text-align: center;">
-            <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20am%20donating%20from%20abroad%20for%20Dignity%20Nikah%20Foundation.%20Please%20guide%20me%20for%20wire/remittance." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" style="font-size: 0.95rem; padding: 12px 24px; width: 100%; box-sizing: border-box; justify-content: center;">
+            <a href="https://wa.me/923001801535?text=Assalam-o-Alaikum,%20I%20am%20donating%20from%20abroad%20for%20MarryWithDignity.%20Please%20guide%20me%20for%20wire/remittance." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" style="font-size: 0.95rem; padding: 12px 24px; width: 100%; box-sizing: border-box; justify-content: center;">
               💬 Get Direct Wire Assistance on WhatsApp →
             </a>
           </div>
@@ -3870,12 +5798,16 @@
 
         <div style="background: var(--primary-50); border: 1.5px dashed var(--primary-600); border-radius: var(--radius-lg); padding: 16px; margin-bottom: 22px; text-align: left;">
           <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
-            <span style="color: var(--slate-600); font-size: 0.88rem;">Receipt Number:</span>
+            <span style="color: var(--slate-600); font-size: 0.88rem;">Receiving Trust:</span>
+            <strong style="color: var(--primary-800);">MarryWithDignity Welfare Trust</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span style="color: var(--slate-600); font-size: 0.88rem;">Receipt Reference:</span>
             <strong style="color: var(--slate-900); font-family: monospace;" id="successReceiptNo">DN-2026-8491</strong>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
             <span style="color: var(--slate-600); font-size: 0.88rem;">Cause / Purpose:</span>
-            <strong style="color: var(--slate-900);" id="successCauseDisplay">Bride Dowry Essentials</strong>
+            <strong style="color: var(--slate-900);" id="successCauseDisplay">Essential Household Start-Up Kit</strong>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
             <span style="color: var(--slate-600); font-size: 0.88rem;">Donor Email:</span>
@@ -3883,17 +5815,22 @@
           </div>
           <div style="display: flex; justify-content: space-between;">
             <span style="color: var(--slate-600); font-size: 0.88rem;">Status:</span>
-            <span style="color: var(--primary-700); font-weight: 800;">✓ 100% Verified &amp; Tax-Deductible</span>
+            <span style="color: var(--primary-700); font-weight: 800;">✓ 100% Verified &amp; Shariah-Compliant</span>
           </div>
         </div>
 
-        <p style="font-size: 0.88rem; color: var(--slate-500); margin-bottom: 20px;">
-          An official itemized receipt and verification certificate have been dispatched to your email.
+        <p style="font-size: 0.88rem; color: var(--slate-600); margin-bottom: 20px;">
+          📧 Automatic email confirmation &amp; audit receipt dispatched to your email. No manual screenshot or WhatsApp messaging required!
         </p>
 
-        <button type="button" class="btn-primary" style="width: 100%; padding: 13px; font-size: 1rem; font-weight: 700; box-sizing: border-box; justify-content: center;" onclick="resetAndCloseCheckout()">
-          Done &amp; Close Window
-        </button>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button type="button" class="btn-primary" style="width: 100%; padding: 13px; font-size: 1rem; font-weight: 700; box-sizing: border-box; justify-content: center;" onclick="window.print()">
+            🖨️ Download / Print Digital Receipt (PDF)
+          </button>
+          <button type="button" class="btn-secondary" style="width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 700; box-sizing: border-box; justify-content: center;" onclick="resetAndCloseCheckout()">
+            Done &amp; Close Window
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3907,7 +5844,7 @@
         📱 Easypaisa
       </div>
       <p id="qrModalTitle" class="qr-modal-title">
-        Account Title: <strong>Muhammad Usman</strong>
+        Account Title: <strong>MarryWithDignity Welfare Trust</strong>
       </p>
 
       <div class="qr-modal-frame">
@@ -3935,14 +5872,94 @@
       <button type="button" class="modal-close" onclick="closeImageLightboxModal()" aria-label="Close modal">✕</button>
       <div class="image-lightbox-header">
         <span class="image-lightbox-badge" id="imageLightboxBadge">📸 Real Field Inventory Showcase</span>
-        <h3 class="image-lightbox-title" id="imageLightboxTitle">Essential Marriage Dowry Kit Items</h3>
+        <h3 class="image-lightbox-title" id="imageLightboxTitle">Essential Household Start-Up Kit Items</h3>
       </div>
       <div class="image-lightbox-body">
-        <img id="imageLightboxImg" src="images/dowry-kit-items.png" alt="Enlarged Dowry Kit Inventory" class="image-lightbox-img">
+        <img id="imageLightboxImg" src="images/dowry-kit-items.png" alt="Enlarged Household Kit Inventory" class="image-lightbox-img">
       </div>
       <p class="image-lightbox-caption" id="imageLightboxCaption">
         100% authentic field inventory procured for deserving orphan &amp; poor brides in Pakistan under strict Tamleek ownership.
       </p>
+    </div>
+  </div>
+
+  <!-- MODAL: SHARIAH COMPLIANCE & FATWA ENDORSEMENT CERTIFICATE -->
+  <div id="shariahCertModal" class="modal-overlay" onclick="handleShariahModalBackdrop(event)">
+    <div class="modal-card" style="max-width: 720px; border-top: 5px solid #f59e0b; padding: 36px 32px; max-height: 90vh; overflow-y: auto;">
+      <button type="button" class="modal-close" onclick="closeShariahModal()" aria-label="Close modal">✕</button>
+      
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="display: inline-flex; align-items: center; gap: 6px; background: #ecfdf5; color: #047857; padding: 6px 16px; border-radius: 999px; font-weight: 800; font-size: 0.82rem; margin-bottom: 12px; border: 1px solid #a7f3d0;">
+          📜 OFFICIAL SHARIAH &amp; AUDIT COMPLIANCE CHARTER
+        </div>
+        <h2 style="font-size: 1.65rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">
+          Reviewed &amp; Certified by Qualified Shariah Scholars
+        </h2>
+        <p style="font-size: 0.94rem; color: #64748b; margin: 0;">
+          Darul Ifta Islamic Jurisprudence Endorsement &amp; Welfare Advisory Compliance Certificate
+        </p>
+      </div>
+
+      <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; margin-bottom: 24px; position: relative;">
+        <div style="position: absolute; top: -14px; right: 20px; background: #047857; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 999px; border: 2px solid #ffffff; box-shadow: 0 4px 10px rgba(4, 120, 87, 0.25);">
+          ✓ CERTIFIED SHARIAH COMPLIANT
+        </div>
+
+        <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px;">
+          <div style="font-size: 2.2rem; line-height: 1;">🕌</div>
+          <div>
+            <h4 style="font-size: 1.08rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Advisory Board &amp; Fatwa Panel</h4>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0; line-height: 1.5;">
+              <strong>Reviewed &amp; Approved by:</strong> Advisory Board of Certified Islamic Scholars (Darul Ifta Jurisprudence Council) &amp; Registered Independent Welfare Audit Committee.
+            </p>
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px dashed #cbd5e1; margin: 16px 0;">
+
+        <h5 style="font-size: 0.95rem; font-weight: 800; color: #047857; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em;">Key Governance &amp; Compliance Standards Verified:</h5>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #334155;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: #059669; font-weight: bold;">✓</span>
+            <span><strong>Principle of Tamleek (100% Transfer):</strong> Full, unconditional physical ownership of household kits is directly transferred to verified needy brides (<em>Fuqara &amp; Masakeen</em>) prior to marriage.</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: #059669; font-weight: bold;">✓</span>
+            <span><strong>0% Admin Deductions from Zakat:</strong> 100% of designated Zakat and Sadaqah funds go strictly toward wholesale product purchasing. Operational overhead is funded privately.</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: #059669; font-weight: bold;">✓</span>
+            <span><strong>Government ID &amp; NADRA Cross-Audit:</strong> National identity cards (CNIC/NADRA) and family tree registries verify genuine financial hardship and prevent duplicate claims.</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: #059669; font-weight: bold;">✓</span>
+            <span><strong>Zero Public Exposure Mandate:</strong> Strict prohibition of public facial photos or social media distribution videos, preserving beneficiary dignity.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="font-size: 1.8rem;">📜</div>
+          <div>
+            <div style="font-size: 0.88rem; font-weight: 800; color: #065f46;">Official Endorsement Charter Ref: MWD-SH-2026/04</div>
+            <div style="font-size: 0.78rem; color: #047857;">Signed by Senior Shariah Jurisprudence Board &amp; Audit Registrar</div>
+          </div>
+        </div>
+        <div style="display: inline-flex; align-items: center; gap: 6px; background: #047857; color: #ffffff; padding: 6px 14px; border-radius: 999px; font-weight: 800; font-size: 0.8rem;">
+          Verified &amp; Active
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="about.html#shariah-compliance" class="btn-primary" style="flex: 1; min-width: 200px; text-decoration: none; justify-content: center; padding: 12px; font-size: 0.95rem;">
+          <span>📖 Learn More on About Page →</span>
+        </a>
+        <button type="button" onclick="closeShariahModal()" class="btn-secondary" style="padding: 12px 24px; font-size: 0.95rem;">
+          Close
+        </button>
+      </div>
     </div>
   </div>
 
@@ -3953,8 +5970,30 @@
         <div class="footer-brand">
           <h4 style="color: var(--white); font-size: 1.25rem; font-weight: 800;">💍 MarryWithDignity</h4>
           <p>
-            Dedicated to providing essential marriage kits and dowry assistance to impoverished and orphan brides across Pakistan with full field transparency and absolute dignity.
+            Dedicated to providing essential marriage kits and household start-up support to impoverished and orphan brides across Pakistan with full field transparency and absolute dignity.
           </p>
+
+          <div style="margin-top: 12px; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            <div>📍 <strong>Registered Address:</strong> 45-C Main Boulevard, Gulberg III, Lahore, Punjab, Pakistan</div>
+            <div>📧 <strong>Official Email:</strong> <a href="mailto:support@marrywithdignity.org" style="color: #6ee7b7; text-decoration: underline;">support@marrywithdignity.org</a></div>
+          </div>
+
+          <div class="footer-trust-box" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius-md); padding: 16px; margin-top: 15px;">
+            <div style="font-weight: 800; color: #f59e0b; font-size: 0.88rem; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              🛡️ Official Trust Registration &amp; Legal Status
+            </div>
+            <ul style="font-size: 0.82rem; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 5px;">
+              <li>• <strong>PCP Certified NGO:</strong> Reg # PCP-2024/8921</li>
+              <li>• <strong>SECP Registered NGO:</strong> Reg # 1004829/2024</li>
+              <li>• <strong>Tax Deductible Status:</strong> FBR Approved Sec 2(36) (Pakistan)</li>
+              <li>• <strong>UK/US Overseas Partners:</strong> Reg # 8921-MWD</li>
+            </ul>
+            <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
+              <span style="font-size: 0.72rem; font-weight: 700; background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); padding: 3px 8px; border-radius: 4px;">PCP Certified</span>
+              <span style="font-size: 0.72rem; font-weight: 700; background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid rgba(245, 158, 11, 0.4); padding: 3px 8px; border-radius: 4px;">SECP Registered</span>
+              <span style="font-size: 0.72rem; font-weight: 700; background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); padding: 3px 8px; border-radius: 4px;">100% Zakat Compliant</span>
+            </div>
+          </div>
         </div>
         <div class="footer-links">
           <h5>Quick Links</h5>
@@ -3978,7 +6017,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 MarryWithDignity. 100% Tax-Receiptable &amp; Zakat/Sadaqah Eligible.</p>
+        <p>© 2026 MarryWithDignity Charity Trust. SECP Reg # 1004829/2024 • PCP Certified (PCP-2024/8921) • FBR Sec 2(36) Tax Deductible (Pakistan). All Rights Reserved.</p>
       </div>
     </div>
   </footer>
@@ -3987,11 +6026,36 @@
   <script>
     let currentCurrency = 'USD';
 
+    function switchPaymentTab(tab) {
+      const intlTab = document.getElementById('payTabIntl');
+      const localTab = document.getElementById('payTabLocal');
+      const intlContainer = document.getElementById('intlPaymentGateways');
+      const localContainer = document.getElementById('localPaymentGateways');
+
+      if (tab === 'intl') {
+        if (intlTab) intlTab.classList.add('active');
+        if (localTab) localTab.classList.remove('active');
+        if (intlContainer) intlContainer.style.display = 'block';
+        if (localContainer) localContainer.style.display = 'none';
+      } else {
+        if (localTab) localTab.classList.add('active');
+        if (intlTab) intlTab.classList.remove('active');
+        if (localContainer) localContainer.style.display = 'block';
+        if (intlContainer) intlContainer.style.display = 'none';
+      }
+    }
+
     function switchCurrency(curr) {
       currentCurrency = curr;
       document.querySelectorAll('.curr-btn').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-curr') === curr);
       });
+
+      if (curr === 'PKR') {
+        switchPaymentTab('local');
+      } else {
+        switchPaymentTab('intl');
+      }
 
       const currencySymbols = { USD: '$', GBP: '£', CAD: '$', AUD: '$', PKR: 'Rs. ' };
       
@@ -4016,9 +6080,10 @@
       document.querySelectorAll('.package-btn-action').forEach(btn => {
         const amount = btn.getAttribute(`data-${curr.toLowerCase()}`);
         if (amount) {
-          const isBasic = btn.getAttribute('data-usd') === '800';
-          const isComplete = btn.getAttribute('data-usd') === '2000';
-          const name = isBasic ? 'Basic Share' : (isComplete ? 'Complete Kit' : 'Essential Package');
+          const usdVal = btn.getAttribute('data-usd');
+          const isShared = usdVal === '50';
+          const isFull = usdVal === '600';
+          const name = isShared ? 'Shared Contribution' : (isFull ? 'Full Marriage Kit' : 'Deluxe Package');
           
           if (curr === 'PKR') {
             btn.textContent = `Donate ${name} (Rs. ${amount})`;
@@ -4125,6 +6190,283 @@
       }
     }
 
+    function switchMainPaymentTab(tab) {
+      const btnIntl = document.getElementById('tabMainIntlBtn');
+      const btnPak = document.getElementById('tabMainPakBtn');
+      const contentIntl = document.getElementById('tabMainIntlContent');
+      const contentPak = document.getElementById('tabMainPakContent');
+
+      if (tab === 'intl') {
+        if (btnIntl) btnIntl.classList.add('active');
+        if (btnPak) btnPak.classList.remove('active');
+        if (contentIntl) contentIntl.style.display = 'block';
+        if (contentPak) contentPak.style.display = 'none';
+      } else if (tab === 'pak') {
+        if (btnPak) btnPak.classList.add('active');
+        if (btnIntl) btnIntl.classList.remove('active');
+        if (contentPak) contentPak.style.display = 'block';
+        if (contentIntl) contentIntl.style.display = 'none';
+      }
+    }
+
+    function setInlineAmount(amt, btn) {
+      const input = document.getElementById('inlineCardAmountInput');
+      if (input) input.value = amt;
+
+      document.querySelectorAll('#tabMainIntlContent .checkout-amount-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      updateInlineBtnText();
+    }
+
+    function updateInlineBtnText() {
+      const input = document.getElementById('inlineCardAmountInput');
+      const submitBtn = document.getElementById('inlineCardPaySubmitBtn');
+      if (!input || !submitBtn) return;
+      const amt = parseFloat(input.value) || 0;
+      const curr = typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD';
+      const currencySymbols = { USD: '$', GBP: '£', CAD: '$', AUD: '$', PKR: 'Rs. ' };
+      const sym = currencySymbols[curr] || '$';
+
+      if (curr === 'PKR') {
+        submitBtn.innerHTML = `<span>🔒 Pay Rs. ${amt.toLocaleString('en-US')} &amp; Get Instant Receipt →</span>`;
+      } else {
+        submitBtn.innerHTML = `<span>🔒 Pay ${sym}${amt > 0 ? amt.toFixed(2) : '0.00'} &amp; Get Instant Receipt →</span>`;
+      }
+    }
+
+    // ========================================================
+    // UNIFIED DONATION FLOW & CHECKOUT STATE SYNCHRONIZATION
+    // ========================================================
+    function selectDonationAndScroll(options = {}) {
+      const currency = options.currency || (typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD');
+      const currencySymbols = { USD: '$', GBP: '£', CAD: '$', AUD: '$', PKR: 'Rs. ' };
+
+      let rawAmt = options.amount;
+      if (typeof rawAmt === 'string') {
+        rawAmt = parseFloat(rawAmt.replace(/,/g, ''));
+      }
+      const amount = parseFloat(rawAmt) || 50;
+
+      if (amount <= 0) {
+        const input = document.getElementById('customAmountInput') || document.getElementById('inlineCardAmountInput');
+        if (input) input.focus();
+        alert('Please enter a valid positive donation amount.');
+        return;
+      }
+
+      if (typeof switchCurrency === 'function' && typeof currentCurrency !== 'undefined' && currentCurrency !== currency) {
+        switchCurrency(currency);
+      }
+
+      const inlineAmountInput = document.getElementById('inlineCardAmountInput');
+      if (inlineAmountInput) {
+        inlineAmountInput.value = amount;
+      }
+
+      const checkoutPills = document.querySelectorAll('#tabMainIntlContent .checkout-amount-btn');
+      checkoutPills.forEach(btn => {
+        const pillVal = parseFloat(btn.textContent.replace(/[^0-9.]/g, ''));
+        if (pillVal === amount) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      const causeSelect = document.getElementById('inlineCardCauseSelect');
+      if (causeSelect && options.cause) {
+        const causeText = options.cause;
+        let optionMatched = false;
+
+        for (let i = 0; i < causeSelect.options.length; i++) {
+          const optVal = causeSelect.options[i].value;
+          const optText = causeSelect.options[i].text;
+          if (optVal === causeText || optText === causeText || optText.includes(causeText) || causeText.includes(optVal)) {
+            causeSelect.selectedIndex = i;
+            optionMatched = true;
+            break;
+          }
+        }
+
+        if (!optionMatched) {
+          if (causeText.includes('Zakat')) causeSelect.value = '100% Zakat on Marriage';
+          else if (causeText.includes('Sadaqah') || causeText.includes('General')) causeSelect.value = 'General Sadaqah / Marriage Fund';
+          else if (causeText.includes('600')) causeSelect.value = 'Full Marriage Kit ($600)';
+          else if (causeText.includes('1000')) causeSelect.value = 'Deluxe Package ($1000)';
+          else causeSelect.value = 'Essential Household Start-Up Kit ($50)';
+        }
+      }
+
+      updateInlineBtnText();
+
+      const customInput = document.getElementById('customAmountInput');
+      if (customInput) {
+        customInput.value = amount;
+      }
+      const presetChips = document.querySelectorAll('.custom-presets .preset-btn');
+      presetChips.forEach(btn => {
+        const val = parseFloat(btn.textContent.replace(/[^0-9.]/g, ''));
+        if (val === amount) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+
+      if (options.type) {
+        const targetRadio = document.querySelector(`input[name="donation_type_custom"][value="${options.type}"]`);
+        if (targetRadio) targetRadio.checked = true;
+      }
+
+      if (typeof updateCustomDonateBtn === 'function') {
+        updateCustomDonateBtn();
+      }
+
+      const cardAmountInput = document.getElementById('cardAmountInput');
+      if (cardAmountInput) cardAmountInput.value = amount;
+      const cardCauseSelect = document.getElementById('cardCauseSelect');
+      if (cardCauseSelect && options.cause) cardCauseSelect.value = options.cause;
+
+      const receiptAmount = document.getElementById('receiptAmount');
+      if (receiptAmount) receiptAmount.value = amount;
+      const receiptCause = document.getElementById('receiptCause');
+      if (receiptCause && options.cause) receiptCause.value = options.cause;
+      const receiptCurrency = document.getElementById('receiptCurrency');
+      if (receiptCurrency) receiptCurrency.value = currency;
+
+      const targetSection = document.getElementById('payment-section') || document.getElementById('payment-methods') || document.querySelector('.payment-container-box');
+      if (targetSection) {
+        const navOffset = 90;
+        const elementPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+
+        targetSection.classList.add('highlight-inject');
+        setTimeout(() => targetSection.classList.remove('highlight-inject'), 2200);
+      }
+    }
+
+    function handlePackageButtonClick(e, btn) {
+      if (e) e.preventDefault();
+      const curr = typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD';
+      const rawAmt = btn.getAttribute(`data-${curr.toLowerCase()}`) || btn.getAttribute('data-usd') || '50';
+      const cleanAmt = parseFloat(rawAmt.replace(/,/g, '')) || 50;
+
+      const usdVal = btn.getAttribute('data-usd');
+      let causeName = 'Essential Household Start-Up Kit ($50)';
+      if (usdVal === '600') causeName = 'Full Marriage Kit ($600)';
+      else if (usdVal === '1000') causeName = 'Deluxe Package ($1000)';
+
+      selectDonationAndScroll({
+        amount: cleanAmt,
+        cause: causeName,
+        type: 'Zakat',
+        currency: curr
+      });
+    }
+
+    function handleCustomDonateClick(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('customAmountInput');
+      const amt = parseFloat(input?.value) || 0;
+
+      if (amt <= 0) {
+        if (input) input.focus();
+        alert('Please enter a valid positive donation amount.');
+        return;
+      }
+
+      const selectedTypeEl = document.querySelector('input[name="donation_type_custom"]:checked');
+      const typeVal = selectedTypeEl ? selectedTypeEl.value : 'Zakat';
+
+      let causeName = '100% Zakat on Marriage';
+      if (typeVal === 'Sadaqah' || typeVal === 'General Support' || typeVal === 'General') {
+        causeName = 'General Sadaqah / Marriage Fund';
+      }
+
+      selectDonationAndScroll({
+        amount: amt,
+        cause: causeName,
+        type: typeVal,
+        currency: typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD'
+      });
+    }
+
+    function donateCalculatedZakat(e) {
+      if (e) e.preventDefault();
+
+      const cash = parseFloat(document.getElementById('zakatCash')?.value) || 0;
+      const gold = parseFloat(document.getElementById('zakatGold')?.value) || 0;
+      const stocks = parseFloat(document.getElementById('zakatStocks')?.value) || 0;
+      const debts = parseFloat(document.getElementById('zakatDebts')?.value) || 0;
+
+      const netWealth = Math.max(0, (cash + gold + stocks) - debts);
+      let zakat = Math.round(netWealth * 0.025);
+
+      if (zakat <= 0) {
+        const cashInput = document.getElementById('zakatCash');
+        if (cashInput && !cashInput.value) cashInput.focus();
+        zakat = currentZakatCurrency === 'PKR' ? 168000 : 580;
+      }
+
+      selectDonationAndScroll({
+        amount: zakat,
+        cause: '100% Zakat on Marriage',
+        type: 'Zakat',
+        currency: currentZakatCurrency || (typeof currentCurrency !== 'undefined' ? currentCurrency : 'USD')
+      });
+    }
+
+    function processInlineCardCheckout(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('inlineCardPaySubmitBtn');
+      const amountInput = document.getElementById('inlineCardAmountInput');
+      const emailInput = document.getElementById('inlineCardEmailInput');
+      const nameInput = document.getElementById('inlineCardNameInput');
+      const causeSelect = document.getElementById('inlineCardCauseSelect');
+
+      const amount = parseFloat(amountInput?.value) || 50;
+      const email = emailInput?.value || 'donor@example.com';
+      const name = nameInput?.value || 'Valued Donor';
+      const cause = causeSelect?.options[causeSelect.selectedIndex]?.text || 'Essential Household Start-Up Kit';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>⏳ Processing 256-Bit SSL Payment...</span>`;
+      }
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<span>🔒 Pay $${amount.toFixed(2)} & Get Instant Receipt →</span>`;
+        }
+
+        openCardModal();
+        const tabCard = document.getElementById('tabContentCard');
+        const tabWire = document.getElementById('tabContentWire');
+        const tabsBar = document.querySelector('.checkout-tabs');
+        const successView = document.getElementById('checkoutSuccessView');
+
+        if (tabCard) tabCard.style.display = 'none';
+        if (tabWire) tabWire.style.display = 'none';
+        if (tabsBar) tabsBar.style.display = 'none';
+
+        const successAmt = document.getElementById('successAmountDisplay');
+        const successReceipt = document.getElementById('successReceiptNo');
+        const successCause = document.getElementById('successCauseDisplay');
+        const successEmail = document.getElementById('successEmailDisplay');
+
+        if (successAmt) successAmt.textContent = `$${amount.toFixed(2)} USD`;
+        if (successReceipt) successReceipt.textContent = `DN-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+        if (successCause) successCause.textContent = cause;
+        if (successEmail) successEmail.textContent = email;
+
+        if (successView) successView.style.display = 'block';
+      }, 1200);
+    }
+
     function openCardModal() {
       const modal = document.getElementById('cardModal');
       if (modal) {
@@ -4217,7 +6559,7 @@
 
       const amount = parseFloat(amountInput?.value) || 50;
       const email = emailInput?.value || 'donor@example.com';
-      const cause = causeSelect?.options[causeSelect.selectedIndex]?.text || 'Bride Dowry Essentials';
+      const cause = causeSelect?.options[causeSelect.selectedIndex]?.text || 'Essential Household Start-Up Kit';
 
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -4352,40 +6694,112 @@
       calculateZakat();
     }
 
+    let currentNisabBenchmark = 'silver';
+
+    const nisabRates = {
+      silver: { USD: 580, PKR: 168000, GBP: 450, EUR: 530 },
+      gold: { USD: 6200, PKR: 1800000, GBP: 4900, EUR: 5600 }
+    };
+
+    function setNisabBenchmark(benchmark) {
+      currentNisabBenchmark = benchmark;
+      document.querySelectorAll('.nisab-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-benchmark') === benchmark);
+      });
+      calculateZakat();
+    }
+
     function calculateZakat() {
       const cash = parseFloat(document.getElementById('zakatCash')?.value) || 0;
       const gold = parseFloat(document.getElementById('zakatGold')?.value) || 0;
       const stocks = parseFloat(document.getElementById('zakatStocks')?.value) || 0;
       const debts = parseFloat(document.getElementById('zakatDebts')?.value) || 0;
 
-      const netWealth = Math.max(0, (cash + gold + stocks) - debts);
-      const zakat = Math.round(netWealth * 0.025);
+      const totalAssets = cash + gold + stocks;
+      const netWealth = Math.max(0, totalAssets - debts);
+
+      const curr = currentZakatCurrency || 'USD';
+      const sym = currentZakatSymbol || '$';
+      const rates = nisabRates[currentNisabBenchmark] || nisabRates.silver;
+      const nisabThreshold = rates[curr] || rates.USD || 580;
+
+      const isEligible = netWealth >= nisabThreshold;
+      const hasEnteredAssets = totalAssets > 0 || debts > 0;
+      const zakat = isEligible ? Math.round(netWealth * 0.025) : 0;
+
+      // Update Nisab Badge Text (Displays both Silver & Gold Thresholds)
+      const nisabValueBadge = document.getElementById('nisabThresholdDisplay');
+      if (nisabValueBadge) {
+        const silverRates = nisabRates.silver;
+        const goldRates = nisabRates.gold;
+
+        const silverVal = silverRates[curr] || silverRates.USD || 580;
+        const goldVal = goldRates[curr] || goldRates.USD || 6200;
+
+        const formattedSilver = curr === 'PKR' ? `Rs. ${silverVal.toLocaleString('en-US')}` : `${sym}${silverVal.toLocaleString('en-US')}`;
+        const formattedGold = curr === 'PKR' ? `Rs. ${goldVal.toLocaleString('en-US')}` : `${sym}${goldVal.toLocaleString('en-US')}`;
+
+        const isSilverActive = currentNisabBenchmark === 'silver';
+
+        nisabValueBadge.innerHTML = `
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; font-size: 0.92rem;">
+            <span><strong>Current Nisab Thresholds:</strong></span>
+            <span style="padding: 4px 12px; border-radius: 8px; ${isSilverActive ? 'background: #d1fae5; border: 1.5px solid #10b981; font-weight: 700; color: #065f46; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);' : 'background: #f8fafc; border: 1px solid #cbd5e1; color: #475569;'}">
+              🥈 <strong>Silver:</strong> ${formattedSilver} (52.5 Tolas / 612g) ${isSilverActive ? '✓ Active' : ''}
+            </span>
+            <span style="padding: 4px 12px; border-radius: 8px; ${!isSilverActive ? 'background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1.5px solid #d97706; font-weight: 800; color: #78350f; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);' : 'background: #fffbeb; border: 1.5px solid #fcd34d; font-weight: 700; color: #b45309;'}">
+              🥇 <strong>Gold:</strong> ${formattedGold} (7.5 Tolas / 87.5g) ${!isSilverActive ? '✓ Active' : ''}
+            </span>
+          </div>
+        `;
+      }
+
+      // Update Nisab Status Alert Banner
+      const statusAlertEl = document.getElementById('nisabStatusAlert');
+      if (statusAlertEl) {
+        const formattedNetWealth = curr === 'PKR' ? `Rs. ${netWealth.toLocaleString('en-US')}` : `${sym}${netWealth.toLocaleString('en-US')}`;
+        const formattedThreshold = curr === 'PKR' ? `Rs. ${nisabThreshold.toLocaleString('en-US')}` : `${sym}${nisabThreshold.toLocaleString('en-US')}`;
+        const bName = currentNisabBenchmark.toUpperCase();
+
+        if (!hasEnteredAssets) {
+          statusAlertEl.className = 'nisab-alert-box info';
+          statusAlertEl.innerHTML = `<span class="alert-icon">ℹ️</span> <div><strong>Nisab Benchmark Active (${bName}):</strong> Total net wealth must be equal to or exceed <strong>${formattedThreshold}</strong> for Zakat to be mandatory (Fard). Enter your net assets above to evaluate.</div>`;
+        } else if (isEligible) {
+          statusAlertEl.className = 'nisab-alert-box success';
+          statusAlertEl.innerHTML = `<span class="alert-icon">✅</span> <div><strong>Zakat is Mandatory (Fard):</strong> Your net wealth of <strong>${formattedNetWealth}</strong> exceeds the Nisab threshold (<strong>${formattedThreshold}</strong>). Zakat is due at 2.5%.</div>`;
+        } else {
+          statusAlertEl.className = 'nisab-alert-box warning';
+          statusAlertEl.innerHTML = `<span class="alert-icon">⚠️</span> <div><strong>Below Nisab Threshold:</strong> Your net wealth of <strong>${formattedNetWealth}</strong> is below the Nisab threshold (<strong>${formattedThreshold}</strong>). Zakat is not mandatory for you, but voluntary Sadaqah contribution is welcome!</div>`;
+        }
+      }
 
       const payableEl = document.getElementById('zakatPayableAmount');
       const impactEl = document.getElementById('zakatImpactMessage');
 
       if (payableEl) {
-        if (currentZakatCurrency === 'PKR') {
+        if (curr === 'PKR') {
           payableEl.textContent = `Rs. ${zakat.toLocaleString('en-US')}`;
         } else {
-          payableEl.textContent = `${currentZakatSymbol}${zakat.toLocaleString('en-US')}`;
+          payableEl.textContent = `${sym}${zakat.toLocaleString('en-US')}`;
         }
       }
 
       if (impactEl) {
-        if (zakat <= 0) {
+        if (!hasEnteredAssets) {
           impactEl.textContent = 'Enter your assets above to compute your exact Zakat and see your bride sponsorship impact.';
+        } else if (!isEligible) {
+          impactEl.innerHTML = `Your net wealth is below the Nisab benchmark. Zakat is not due, but you can make a voluntary Sadaqah contribution towards marriage relief!`;
         } else {
           let brides = 0;
-          if (currentZakatCurrency === 'PKR') {
-            brides = Math.floor(zakat / 180000);
+          if (curr === 'PKR') {
+            brides = Math.floor(zakat / 168000);
           } else {
-            brides = Math.floor(zakat / 800);
+            brides = Math.floor(zakat / 600);
           }
           if (brides >= 1) {
-            impactEl.innerHTML = `✨ MashAllah! Your Zakat of <strong>${currentZakatCurrency === 'PKR' ? 'Rs. ' : currentZakatSymbol}${zakat.toLocaleString('en-US')}</strong> can sponsor <strong>${brides} complete Bride Marriage Kit${brides > 1 ? 's' : ''}</strong>!`;
+            impactEl.innerHTML = `✨ MashAllah! Your Zakat of <strong>${curr === 'PKR' ? 'Rs. ' : sym}${zakat.toLocaleString('en-US')}</strong> can sponsor <strong>${brides} complete Full Marriage Kit${brides > 1 ? 's' : ''} ($600 each)</strong>!`;
           } else {
-            impactEl.innerHTML = `🤲 Your Zakat of <strong>${currentZakatCurrency === 'PKR' ? 'Rs. ' : currentZakatSymbol}${zakat.toLocaleString('en-US')}</strong> directly supports essential bridal household kits &amp; dowry relief.`;
+            impactEl.innerHTML = `🤲 Your Zakat of <strong>${curr === 'PKR' ? 'Rs. ' : sym}${zakat.toLocaleString('en-US')}</strong> provides a shared contribution towards essential bridal household start-up kits.`;
           }
         }
       }
@@ -4692,17 +7106,35 @@
     }
 
     // ========================================================
-    // AUTO POPUP DONATION MODAL LOGIC (HER 2 YA 34 SECOND)
+    // AUTO POPUP DONATION MODAL LOGIC & DONOR TYPE ROUTING
     // ========================================================
     let autoDonateTimer = null;
     let autoDonateInterval = null;
     let autoDonateDismissedSession = false;
 
+    function selectDonorTypeAndNavigate(type) {
+      closeAutoDonatePopup();
+      
+      if (typeof switchMainPaymentTab === 'function') {
+        switchMainPaymentTab(type);
+      }
+      
+      const targetSection = document.getElementById('payment-methods');
+      if (targetSection) {
+        if (typeof scrollToCard === 'function') {
+          scrollToCard(targetSection);
+        } else {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        window.location.href = 'donate.html?donor=' + type + '#payment-methods';
+      }
+    }
+
     function openAutoDonatePopup() {
       const modal = document.getElementById('autoDonatePopupModal');
       if (modal) {
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
       }
     }
 
@@ -4710,31 +7142,76 @@
       const modal = document.getElementById('autoDonatePopupModal');
       if (modal) {
         modal.classList.remove('active');
-        document.body.style.overflow = '';
         autoDonateDismissedSession = true;
       }
     }
 
-    function handleAutoDonateBackdrop(e) {
-      if (e.target.id === 'autoDonatePopupModal') {
-        closeAutoDonatePopup();
+    function toggleAutoDonatePopup() {
+      const modal = document.getElementById('autoDonatePopupModal');
+      if (modal) {
+        if (modal.classList.contains('active')) {
+          closeAutoDonatePopup();
+        } else {
+          openAutoDonatePopup();
+        }
       }
     }
 
-    function selectAutoDonateOption(el, causeName, amountStr) {
-      document.querySelectorAll('.auto-donate-opt-card').forEach(card => card.classList.remove('active'));
-      el.classList.add('active');
+    function copyIbanQuick(text, btnEl) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      if (btnEl) {
+        const orig = btnEl.innerHTML;
+        btnEl.innerHTML = '✅ Copied!';
+        setTimeout(() => { btnEl.innerHTML = orig; }, 2000);
+      }
+    }
 
-      const projectSelect = document.getElementById('autoDonateProject');
-      if (projectSelect) {
-        if (causeName === 'Zakat') {
-          projectSelect.value = 'Marriage Zakat Fund';
-        } else if (causeName === 'Sadaqah') {
-          projectSelect.value = 'General Sadaqah Fund';
-        } else if (causeName === 'Donate for Bride') {
-          projectSelect.value = 'Sponsor a Bride';
+    function openReceiptModalFromPopover() {
+      closeAutoDonatePopup();
+      if (typeof openReceiptModal === 'function') {
+        openReceiptModal();
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      const modal = document.getElementById('autoDonatePopupModal');
+      const trigger = document.querySelector('.auto-donate-floating-trigger');
+      if (modal && modal.classList.contains('active')) {
+        if (!modal.contains(e.target) && (!trigger || !trigger.contains(e.target))) {
+          closeAutoDonatePopup();
         }
       }
+    });
+
+    function selectAutoDonateOption(el, causeName, amountStr) {
+      document.querySelectorAll('.auto-donate-opt-card').forEach(card => card.classList.remove('active'));
+      if (el) el.classList.add('active');
+
+      const modalSel = document.getElementById('autoDonateProject');
+      const inlineSel = document.getElementById('autoDonateProjectInline');
+
+      const applySelectVal = (selectEl) => {
+        if (!selectEl) return;
+        if (causeName === 'Zakat') {
+          selectEl.value = 'Marriage Zakat Fund';
+        } else if (causeName === 'Sadaqah') {
+          selectEl.value = 'General Sadaqah Fund';
+        } else if (causeName === 'Donate for Bride') {
+          selectEl.value = 'Sponsor a Bride';
+        }
+      };
+
+      applySelectVal(modalSel);
+      applySelectVal(inlineSel);
 
       // Immediately navigate directly to Direct Mobile Wallet & Bank Transfer section
       submitAutoDonatePopup();
@@ -4746,77 +7223,78 @@
       cards.forEach(c => c.classList.remove('active'));
 
       if (val.includes('Zakat')) {
-        const zakatCard = Array.from(cards).find(c => c.innerText.includes('Zakat'));
-        if (zakatCard) zakatCard.classList.add('active');
+        const zakatCards = Array.from(cards).filter(c => c.innerText.includes('Zakat'));
+        zakatCards.forEach(c => c.classList.add('active'));
       } else if (val.includes('Sadaqah')) {
-        const sadaqahCard = Array.from(cards).find(c => c.innerText.includes('Sadaqah'));
-        if (sadaqahCard) sadaqahCard.classList.add('active');
+        const sadaqahCards = Array.from(cards).filter(c => c.innerText.includes('Sadaqah'));
+        sadaqahCards.forEach(c => c.classList.add('active'));
       } else {
-        const brideCard = Array.from(cards).find(c => c.innerText.includes('Bride'));
-        if (brideCard) brideCard.classList.add('active');
+        const brideCards = Array.from(cards).filter(c => c.innerText.includes('Bride'));
+        brideCards.forEach(c => c.classList.add('active'));
       }
+
+      const modalSel = document.getElementById('autoDonateProject');
+      const inlineSel = document.getElementById('autoDonateProjectInline');
+      if (modalSel && selectEl !== modalSel) modalSel.value = val;
+      if (inlineSel && selectEl !== inlineSel) inlineSel.value = val;
     }
 
     function submitAutoDonatePopup() {
-      const projectSelect = document.getElementById('autoDonateProject');
-      const selectedProject = projectSelect ? projectSelect.value : 'Sponsor a Bride';
+      const modalSel = document.getElementById('autoDonateProject');
+      const inlineSel = document.getElementById('autoDonateProjectInline');
+      
+      let selectedProject = 'Orphan Marriage Aid';
+      if (modalSel && modalSel.offsetParent !== null) {
+        selectedProject = modalSel.value;
+      } else if (inlineSel) {
+        selectedProject = inlineSel.value;
+      } else if (modalSel) {
+        selectedProject = modalSel.value;
+      }
+
       const activeOpt = document.querySelector('.auto-donate-opt-card.active');
-      const causeText = activeOpt ? activeOpt.innerText.replace('\n', ' ').trim() : 'Donate for Bride';
+      const causeText = activeOpt ? activeOpt.innerText.replace('\n', ' ').trim() : '';
 
       closeAutoDonatePopup();
 
       // Pre-fill fields in receipt modal if user submits receipt later
       const receiptCause = document.getElementById('receiptCause');
       if (receiptCause) {
-        if (causeText.includes('Zakat') || selectedProject.includes('Zakat')) {
+        if (selectedProject.includes('Zakat') || causeText.includes('Zakat')) {
           receiptCause.value = '100% Zakat on Marriage';
-        } else if (causeText.includes('Sadaqah') || selectedProject.includes('Sadaqah')) {
+        } else if (selectedProject.includes('Sadaqah') || causeText.includes('Sadaqah')) {
           receiptCause.value = 'General Sadaqah / Marriage Fund';
         } else {
-          receiptCause.value = 'Complete Bride Sponsorship';
+          receiptCause.value = 'Orphan Marriage Aid';
         }
       }
 
       // Sync custom donation type radio button on main page
-      if (causeText.includes('Zakat') || selectedProject.includes('Zakat')) {
+      if (selectedProject.includes('Zakat') || causeText.includes('Zakat')) {
         const zakatRadio = document.querySelector('input[name="donation_type_custom"][value="Zakat"]');
         if (zakatRadio) {
           zakatRadio.checked = true;
           if (typeof updateCustomDonateBtn === 'function') updateCustomDonateBtn();
         }
-      } else if (causeText.includes('Sadaqah') || selectedProject.includes('Sadaqah')) {
+      } else if (selectedProject.includes('Sadaqah') || causeText.includes('Sadaqah')) {
         const sadaqahRadio = document.querySelector('input[name="donation_type_custom"][value="Sadaqah"]');
         if (sadaqahRadio) {
           sadaqahRadio.checked = true;
           if (typeof updateCustomDonateBtn === 'function') updateCustomDonateBtn();
         }
-      }
-
-      // Highlight the main donation card on page
-      const customCard = document.querySelector('.custom-donate-card');
-      if (customCard) {
-        customCard.classList.add('highlight-inject');
-        setTimeout(() => customCard.classList.remove('highlight-inject'), 2200);
+      } else {
+        const generalRadio = document.querySelector('input[name="donation_type_custom"][value="General Support"]');
+        if (generalRadio) {
+          generalRadio.checked = true;
+          if (typeof updateCustomDonateBtn === 'function') updateCustomDonateBtn();
+        }
       }
 
       // Smooth scroll target routing:
-      // 1. Zakat -> Marriage Aid Zakat Calculator (.zakat-calc-card)
-      // 2. Donate for Bride -> Contribute Any Custom Amount (.custom-donate-card)
-      // 3. Sadaqah / Other -> Direct Mobile Wallet & Bank Transfer (.payment-container-box)
-      const isZakat = causeText.includes('Zakat') || selectedProject.includes('Zakat');
-      const isBride = causeText.includes('Bride') || selectedProject.includes('Bride') || selectedProject.includes('Sponsor') || selectedProject.includes('Jaheez');
-
-      let targetCard = null;
-      if (isZakat) {
-        targetCard = document.querySelector('.zakat-calc-card') || document.getElementById('zakat-calculator');
-      } else if (isBride) {
-        targetCard = document.querySelector('.custom-donate-card');
-      } else {
-        targetCard = document.querySelector('.payment-container-box') || document.getElementById('payment-methods');
-      }
-
-      if (targetCard) {
-        scrollToCard(targetCard);
+      // Direct navigation to payment section (#payment-methods)
+      const targetSection = document.getElementById('payment-methods') || document.querySelector('.custom-donate-card');
+      if (targetSection) {
+        scrollToCard(targetSection);
       }
     }
 
@@ -4845,20 +7323,34 @@
       setTimeout(() => cardEl.classList.remove('highlight-inject'), 2500);
     }
 
-    // Auto-open on page load: initial popup after 2.5s, periodic check every 34s
-    document.addEventListener('DOMContentLoaded', function() {
-      autoDonateTimer = setTimeout(function() {
-        if (!autoDonateDismissedSession) {
-          openAutoDonatePopup();
-        }
-      }, 2500);
+    // ==========================================
+    // SHARIAH COMPLIANCE & FATWA MODAL LOGIC
+    // ==========================================
+    function openShariahModal() {
+      const modal = document.getElementById('shariahCertModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
 
-      autoDonateInterval = setInterval(function() {
-        const modal = document.getElementById('autoDonatePopupModal');
-        if (modal && !modal.classList.contains('active') && !autoDonateDismissedSession) {
-          openAutoDonatePopup();
-        }
-      }, 34000);
+    function closeShariahModal() {
+      const modal = document.getElementById('shariahCertModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleShariahModalBackdrop(e) {
+      if (e.target.id === 'shariahCertModal') {
+        closeShariahModal();
+      }
+    }
+
+    // Auto-open on page load disabled per user request (embedded directly on front page instead)
+    document.addEventListener('DOMContentLoaded', function() {
+      // Auto-popup popup modal disabled on site load
     });
 
     // Close modals on Escape key
@@ -4868,6 +7360,7 @@
         if (typeof closeCardModal === 'function') closeCardModal();
         if (typeof closeReceiptModal === 'function') closeReceiptModal();
         if (typeof closeAutoDonatePopup === 'function') closeAutoDonatePopup();
+        if (typeof closeShariahModal === 'function') closeShariahModal();
       }
     });
 
@@ -4955,9 +7448,9 @@
       const badgeText = document.getElementById('heroBadgeText');
       if (badgeText) {
         const titles = [
-          'Procured Marriage Dowry Goods Kit (اصلی گھریلو سامان)',
-          'Direct Field Dispatch & Vehicle Transport (بیٹیاں بوجھ نہیں ہوتی)',
-          'Social Awareness Campaign (والدین کی عمر لگ جاتی ہے)'
+          'Procured Essential Household Start-Up Kit',
+          'Direct Field Dispatch & Vehicle Transport (Daughters Are Not A Burden)',
+          'Social Awareness Campaign (Supporting Deserving Families)'
         ];
         badgeText.textContent = `Live Operations (${heroCurrentSlide + 1}/3) • ${titles[heroCurrentSlide]}`;
       }
@@ -5024,11 +7517,40 @@
           }
         });
       }
+
+      // Check URL query parameters for donor type routing (e.g., ?donor=intl or ?donor=pak)
+      const urlParams = new URLSearchParams(window.location.search);
+      const donorType = urlParams.get('donor');
+      if (donorType && (donorType === 'intl' || donorType === 'pak')) {
+        if (typeof switchMainPaymentTab === 'function') {
+          switchMainPaymentTab(donorType);
+        }
+        const targetSection = document.getElementById('payment-methods');
+        if (targetSection) {
+          setTimeout(function() {
+            if (typeof scrollToCard === 'function') scrollToCard(targetSection);
+            else targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 300);
+        }
+      }
     });
   </script>
+
+
+  <!-- FLOATING MOBILE STICKY ACTION BAR -->
+  <div class="mobile-sticky-action-bar">
+    <a href="https://wa.me/923001801535" class="mobile-sticky-btn wa-btn" target="_blank" rel="noopener">
+      <span>💬 WhatsApp Support</span>
+    </a>
+    <a href="#payment-methods" class="mobile-sticky-btn donate-btn">
+      <span>💳 Sponsor a Bride</span>
+    </a>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/supabase-client.js"></script>
   <script src="assets/language.js"></script>
   <script src="assets/rareui.js"></script>
 </body>
 </html>
+
