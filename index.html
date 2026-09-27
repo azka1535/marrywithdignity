@@ -279,6 +279,8 @@
       padding: 2px 6px;
       border-radius: 4px;
       border: 1px solid #a7f3d0;
+      white-space: nowrap;
+      display: inline-block;
     }
 
     .top-brand-trust-badges {
@@ -295,6 +297,7 @@
       padding: 6px 14px;
       border-radius: var(--radius-full);
       border: 1.5px solid var(--slate-200);
+      white-space: nowrap;
     }
 
     @media (max-width: 991px) {
@@ -302,7 +305,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 12px;
+        gap: 10px;
       }
       .top-brand-trust-badges {
         flex-wrap: wrap;
@@ -318,6 +321,7 @@
       .top-brand-logo-link {
         gap: 10px;
         align-items: center;
+        justify-content: center;
       }
       .top-brand-logo-img {
         height: 42px;
@@ -326,16 +330,33 @@
         font-size: 1.35rem;
       }
       .top-brand-subtitle {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
         font-size: 0.62rem;
-        letter-spacing: 0.8px;
+        letter-spacing: 0.5px;
         line-height: 1.25;
+      }
+      .top-brand-subtitle .sub-dot {
+        display: none;
+      }
+      .top-brand-subtitle .badge-cert {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+        white-space: nowrap;
+        display: inline-block;
       }
       .top-brand-trust-badges {
         gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       .top-trust-item {
         font-size: 0.72rem;
         padding: 4px 10px;
+        white-space: nowrap;
       }
     }
 
@@ -4287,7 +4308,7 @@
         <img src="images/logo-icon.svg" alt="MarryWithDignity Logo" class="top-brand-logo-img">
         <div class="top-brand-text-group">
           <div class="top-brand-title">Marry<span class="text-gold">With</span>Dignity</div>
-          <div class="top-brand-subtitle">MARRIAGE ASSISTANCE CHARITY • <span class="badge-cert">SECP &amp; PCP CERTIFIED NGO</span></div>
+          <div class="top-brand-subtitle"><span>MARRIAGE ASSISTANCE CHARITY</span> <span class="sub-dot">•</span> <span class="badge-cert">SECP &amp; PCP CERTIFIED NGO</span></div>
         </div>
       </a>
       <div class="top-brand-trust-badges">
